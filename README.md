@@ -84,7 +84,8 @@ fynd/
 └── marketing/
     ├── pitch-notes.md          ← Key investor/partner messages
     ├── target-audience.md      ← Detailed user personas
-    └── competitive-landscape.md← What exists, why Fynd is different
+    ├── competitive-landscape.md← What exists, why Fynd is different
+    └── web-v2-roadmap.md       ← Roadmap: site content polish, business & partner sections
 ```
 
 ---
@@ -97,6 +98,7 @@ fynd/
 - 🗺️ [Roadmap](docs/roadmap.md)
 - 🎨 [Brand & Design](docs/branding.md)
 - 💰 [Investment Overview](marketing/pitch-notes.md)
+- 🗂️ [Marketing Web Roadmap v2](marketing/web-v2-roadmap.md)
 
 ---
 
