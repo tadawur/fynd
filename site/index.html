@@ -75,8 +75,8 @@
   .btn-ghost:hover{border-color:var(--green);color:var(--green);}
 
   /* ---------- HERO ---------- */
-  .hero{padding:90px 0 70px;overflow:hidden;}
-  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
+  .hero{padding:90px 0 70px;overflow:hidden;position:relative;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;position:relative;z-index:1;}
   .hero h1{font-size:clamp(46px,8vw,84px);letter-spacing:-.02em;}
   .hero h1 span{color:var(--green);}
   .hero .tagline{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(20px,2.6vw,28px);color:var(--gold);margin:14px 0 18px;}
@@ -89,6 +89,14 @@
   }
   .pitch-rings{position:absolute;top:-18%;left:-12%;width:135%;height:135%;opacity:.8;pointer-events:none;z-index:0;}
   .bot{position:relative;z-index:1;}
+
+  /* ---------- HERO PITCH-LINE BACKGROUND ---------- */
+  .pitch-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:.13;}
+  .pitch-bg svg{width:100%;height:100%;}
+  .pl{stroke:var(--green);stroke-width:1.5;fill:none;stroke-dasharray:6 5;animation:dash 5s linear infinite;}
+  .pl.s{animation-duration:9s;}
+  .pl.ss{animation-duration:15s;}
+  @keyframes dash{to{stroke-dashoffset:-44;}}
 
   /* ---------- SECTION NAV (right-side slider) ---------- */
   .section-nav{position:fixed;top:50%;right:22px;transform:translateY(-50%);z-index:60;display:flex;flex-direction:column;align-items:center;gap:12px;}
@@ -297,6 +305,26 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="hero">
+  <div class="pitch-bg" aria-hidden="true">
+    <svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+      <rect x="80" y="40" width="1240" height="820" rx="8" class="pl ss"/>
+      <line x1="700" y1="40" x2="700" y2="860" class="pl s"/>
+      <circle cx="700" cy="450" r="88" class="pl"/>
+      <circle cx="700" cy="450" r="4" fill="var(--green)" opacity=".7"/>
+      <path d="M80 280 L270 280 L270 620 L80 620" class="pl s"/>
+      <path d="M1320 280 L1130 280 L1130 620 L1320 620" class="pl s"/>
+      <path d="M80 355 L155 355 L155 545 L80 545" class="pl ss"/>
+      <path d="M1320 355 L1245 355 L1245 545 L1320 545" class="pl ss"/>
+      <path d="M80 40 Q110 40 110 70" class="pl"/>
+      <path d="M1320 40 Q1290 40 1290 70" class="pl"/>
+      <path d="M80 860 Q110 860 110 830" class="pl"/>
+      <path d="M1320 860 Q1290 860 1290 830" class="pl"/>
+      <rect x="36" y="375" width="44" height="150" class="pl ss"/>
+      <rect x="1320" y="375" width="44" height="150" class="pl ss"/>
+      <circle cx="270" cy="450" r="5" class="pl s"/>
+      <circle cx="1130" cy="450" r="5" class="pl s"/>
+    </svg>
+  </div>
   <div class="container hero-grid">
     <div>
       <div class="eyebrow">Komunitná platforma pre slovenský mládežnícky šport</div>
