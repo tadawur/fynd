@@ -50,6 +50,7 @@ Namiesto striktne sekvenčného prechodu 12 položiek nižšie, úlohy sú zosku
 - [x] **SEO/meta:** title, description, OG image, favicon *(Batch 1)* — bez OG image (chýba obrázkový asset, otvorené pre budúcnosť)
 - [x] **Accessibility pass** (kontrast, klávesová navigácia) — pozri `design:accessibility-review` *(Batch 3)*
 - [x] **Kontaktný email opravený na `info@fynd.fans`** (pôvodne placeholder `info@fynd.sk`) — hero CTA, CTA-band aj footer *(dodatočná oprava)*
+- [x] **Doména webu zjednotená na `fynd.fans`** (pôvodne `fynd.sk`) — `og:url` meta tag aj footer *(dodatočná oprava)*
 
 ### Success criteria
 - Všetky čísla a texty na webe súhlasia s aktuálnymi `.md` podkladmi v repo
@@ -114,7 +115,7 @@ Toto poradie je len návrh — finálna priorita a termíny podľa rozhodnutia T
 - Workstream B: samostatná stránka, sekcia na hlavnej stránke, alebo PDF na stiahnutie?
 - Workstream C: aké partnerské tiery/ceny (alebo zatiaľ len "kontaktujte nás")?
 - Existuje formulárový backend (napr. Formspree, Google Form) na zber kontaktov, alebo zatiaľ len `mailto:info@fynd.fans`?
-- Doména webu (`og:url` a text vo footeri) je stále `fynd.sk` ("registrácia domény prebieha"), zatiaľ čo kontaktný email je `info@fynd.fans` — má sa doména webu zjednotiť na `.fans`, alebo ostávajú zámerne odlišné?
+- ~~Doména webu (`og:url` a text vo footeri) je stále `fynd.sk`...~~ **Vyriešené:** doména zjednotená na `fynd.fans` v celom `site/index.html` — dôvod je budúci zámer osloviť aj zahraničné značky a partnerov, preto `.fans` namiesto `.sk`. (`docs/branding.md`, `README.md` a `marketing/pitch-notes.md` ešte obsahujú staré `fynd.sk` — čaká na potvrdenie, či sa majú aktualizovať aj tieto dokumenty.)
 
 ---
 
