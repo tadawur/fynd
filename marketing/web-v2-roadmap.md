@@ -10,6 +10,18 @@ Verzia 0 marketingového webu (`site/index.html`) je hotová a nasadená. Ďalš
 
 Každý workstream je samostatne nasaditeľný — A sa dá robiť priebežne, B a C sú nové sekcie/stránky webu.
 
+> **Tento dokument je jediný zdroj pravdy pre tracking tohto plánu.** Status (🟡 Planning / 🟠 In Progress / 🟢 Done) a checkboxy sa priebežne aktualizujú tu, podľa rovnakého formátu ako `docs/roadmap.md`.
+
+---
+
+## Aktuálny stav
+
+| Workstream | Status | Ďalší krok |
+|---|---|---|
+| A — Doladenie obsahu | 🟡 Planning | Schváliť poradie prác, začať s hero/CTA a SEO |
+| B — Business/Investorská sekcia | 🟡 Planning | Rozhodnúť formu (sekcia vs. podstránka vs. PDF) a publikum |
+| C — Partnerská sekcia | 🟡 Planning | Pripraviť `marketing/partner-program.md` (persony partnerov, value props, tiery) |
+
 ---
 
 ## Workstream A — Doladenie existujúceho obsahu webu
