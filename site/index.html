@@ -22,11 +22,19 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    background:var(--ink);
+    background-color:var(--ink);
+    background-image:repeating-linear-gradient(120deg, rgba(0,217,126,.05) 0 90px, rgba(255,255,255,.018) 90px 180px);
+    background-size:260% 260%;
+    background-attachment:fixed;
+    animation:pitchDrift 90s linear infinite;
     color:var(--text);
     font-family:'Nunito',sans-serif;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
+  }
+  @keyframes pitchDrift{
+    0%{background-position:0% 0%;}
+    100%{background-position:-260% -130%;}
   }
   h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1.15;}
   a{color:inherit;}
@@ -87,6 +95,8 @@
     .hero-grid{grid-template-columns:1fr;}
     .hero-visual{order:-1;}
   }
+  .pitch-rings{position:absolute;inset:0;width:100%;height:100%;opacity:.9;pointer-events:none;}
+  .bot{position:relative;z-index:1;}
 
   /* ---------- STATS ---------- */
   .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface);}
@@ -214,6 +224,22 @@
   .type-sample .h{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;}
   .type-sample .b{font-family:'Nunito',sans-serif;font-size:15px;color:var(--muted);}
 
+  /* ---------- SEASON DEMO ---------- */
+  .season-demo{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:40px;}
+  @media(max-width:840px){.season-demo{grid-template-columns:1fr;padding:26px;gap:28px;}}
+  .season-switcher{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .season-btn{font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer;transition:all .15s ease;}
+  .season-btn:hover{border-color:var(--green);color:var(--green);}
+  .season-btn.active{background:var(--green);color:var(--ink);border-color:var(--green);}
+  .season-name{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;}
+  .season-period{color:var(--green);font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin:6px 0 14px;transition:color .3s;}
+  .season-desc{color:var(--muted);font-size:14px;max-width:440px;}
+  .season-swatches{display:flex;gap:10px;margin-top:18px;}
+  .season-swatches .sw{width:30px;height:30px;border-radius:9px;border:1px solid var(--line);transition:background .3s;}
+  .season-preview-wrap{display:flex;justify-content:center;}
+  .season-preview-wrap .phone{transition:background .35s ease;}
+  .season-preview-wrap .pcard{transition:background .35s ease;}
+
   /* ---------- FOOTER ---------- */
   footer{border-top:1px solid var(--line);background:var(--surface);padding:60px 0 30px;}
   .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;margin-bottom:40px;}
@@ -237,6 +263,7 @@
         <li><a href="#features">Funkcie</a></li>
         <li><a href="#audience">Pre koho</a></li>
         <li><a href="#roadmap">Roadmapa</a></li>
+        <li><a href="#seasons">Sezóny</a></li>
         <li><a href="#brand">Značka</a></li>
       </ul>
       <div class="nav-cta">
@@ -260,32 +287,66 @@
       </div>
     </div>
     <div class="hero-visual">
-      <svg viewBox="0 0 240 280" width="280" xmlns="http://www.w3.org/2000/svg">
+      <svg class="pitch-rings" viewBox="0 0 240 280" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="120" cy="180" r="70" fill="none" stroke="var(--green)" stroke-width="1.5" opacity=".25"/>
+        <circle cx="120" cy="180" r="6" fill="var(--green)" opacity=".3"/>
+        <line x1="0" y1="180" x2="240" y2="180" stroke="var(--green)" stroke-width="1.5" opacity=".18"/>
+        <rect x="6" y="135" width="40" height="90" fill="none" stroke="var(--green)" stroke-width="1.5" opacity=".15"/>
+        <rect x="194" y="135" width="40" height="90" fill="none" stroke="var(--green)" stroke-width="1.5" opacity=".15"/>
+      </svg>
+      <svg class="bot" viewBox="0 0 240 280" width="280" xmlns="http://www.w3.org/2000/svg">
+        <!-- ground shadow -->
+        <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+          <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
+        </ellipse>
         <!-- Futbot mascot -->
-        <rect x="55" y="170" width="130" height="95" rx="16" fill="var(--card)" stroke="var(--line)"/>
-        <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
-        <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
-        <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
-        <!-- arms -->
-        <rect x="30" y="180" width="22" height="60" rx="10" fill="var(--surface)" stroke="var(--line)"/>
-        <rect x="188" y="170" width="22" height="55" rx="10" fill="var(--surface)" stroke="var(--line)" transform="rotate(-25 199 170)"/>
-        <!-- legs -->
-        <rect x="75" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
-        <rect x="139" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
-        <!-- head -->
-        <rect x="60" y="55" width="120" height="85" rx="20" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
-        <rect x="78" y="88" width="84" height="26" rx="8" fill="#03070d"/>
-        <rect x="90" y="95" width="22" height="12" rx="3" fill="var(--green)">
-          <animate attributeName="opacity" values="1;.25;1" dur="2.6s" repeatCount="indefinite"/>
-        </rect>
-        <rect x="128" y="95" width="22" height="12" rx="3" fill="var(--green)">
-          <animate attributeName="opacity" values="1;.25;1" dur="2.6s" begin="0.2s" repeatCount="indefinite"/>
-        </rect>
-        <!-- antenna -->
-        <line x1="120" y1="55" x2="120" y2="30" stroke="var(--green)" stroke-width="3"/>
-        <circle cx="120" cy="24" r="7" fill="var(--gold)">
-          <animate attributeName="opacity" values="1;.2;1" dur="1.8s" repeatCount="indefinite"/>
-        </circle>
+        <g>
+          <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.2s" repeatCount="indefinite"/>
+          <rect x="55" y="170" width="130" height="95" rx="16" fill="var(--card)" stroke="var(--line)"/>
+          <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
+          <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
+          <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+          <!-- left arm (static at side) -->
+          <rect x="30" y="180" width="22" height="60" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+          <!-- right arm waving -->
+          <rect x="188" y="170" width="22" height="55" rx="10" fill="var(--surface)" stroke="var(--line)" transform="rotate(-25 199 170)">
+            <animateTransform attributeName="transform" type="rotate" values="-25 199 170;-58 199 170;-15 199 170;-25 199 170" dur="3.6s" repeatCount="indefinite"/>
+          </rect>
+          <!-- left leg static -->
+          <rect x="75" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+          <!-- right leg kicking -->
+          <rect x="139" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2">
+            <animateTransform attributeName="transform" type="rotate" values="0 139 271;-20 139 271;0 139 271" dur="2.6s" repeatCount="indefinite"/>
+          </rect>
+          <!-- head -->
+          <rect x="60" y="55" width="120" height="85" rx="20" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+          <rect x="78" y="88" width="84" height="26" rx="8" fill="#03070d"/>
+          <rect x="90" y="95" width="22" height="12" rx="3" fill="var(--green)">
+            <animate attributeName="opacity" values="1;.25;1" dur="2.6s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="128" y="95" width="22" height="12" rx="3" fill="var(--green)">
+            <animate attributeName="opacity" values="1;.25;1" dur="2.6s" begin="0.2s" repeatCount="indefinite"/>
+          </rect>
+          <!-- visor scanline -->
+          <rect x="78" y="88" width="18" height="26" rx="4" fill="rgba(255,255,255,.18)">
+            <animate attributeName="x" values="78;144;78" dur="3.4s" repeatCount="indefinite"/>
+          </rect>
+          <!-- antenna -->
+          <line x1="120" y1="55" x2="120" y2="30" stroke="var(--green)" stroke-width="3"/>
+          <circle cx="120" cy="24" r="7" fill="var(--gold)">
+            <animate attributeName="opacity" values="1;.2;1" dur="1.8s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+        <!-- football -->
+        <g>
+          <animateTransform attributeName="transform" type="translate" values="0 0;0 -22;0 0" dur="2.6s" repeatCount="indefinite"/>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" values="0 205 266;360 205 266" dur="1.3s" repeatCount="indefinite"/>
+            <circle cx="205" cy="266" r="13" fill="#EFF6FF" stroke="var(--line)" stroke-width="1.5"/>
+            <path d="M205 256 L213 262 L210 271 L200 271 L197 262 Z" fill="var(--ink)"/>
+          </g>
+        </g>
       </svg>
     </div>
   </div>
@@ -671,6 +732,78 @@
   </div>
 </section>
 
+<!-- ============ SEASONS ============ -->
+<section id="seasons">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" style="justify-content:center">Živý dizajn</div>
+      <h2>Appka sa mení s ročným obdobím</h2>
+      <p>Akcentová farba, pozadie aj dres Futbota sa menia 6× do roka. Vyskúšaj si to naživo — klikni na sezónu.</p>
+    </div>
+    <div class="season-demo">
+      <div>
+        <div class="season-switcher">
+          <button class="season-btn active" onclick="setSeason('default', this)">Predvolená</button>
+          <button class="season-btn" onclick="setSeason('spring', this)">Jar</button>
+          <button class="season-btn" onclick="setSeason('summer', this)">Leto</button>
+          <button class="season-btn" onclick="setSeason('autumn', this)">Jeseň</button>
+          <button class="season-btn" onclick="setSeason('halloween', this)">Halloween</button>
+          <button class="season-btn" onclick="setSeason('christmas', this)">Vianoce</button>
+          <button class="season-btn" onclick="setSeason('winter', this)">Zima</button>
+        </div>
+        <div class="season-name" id="seasonName">Predvolená téma</div>
+        <div class="season-period" id="seasonPeriod">Celoročne</div>
+        <p class="season-desc" id="seasonDesc">Tmavomodré pozadie so zeleným akcentom — štandardný vzhľad appky mimo sezónnych období.</p>
+        <div class="season-swatches">
+          <div class="sw" id="swAccent" style="background:var(--green)"></div>
+          <div class="sw" id="swGold" style="background:var(--gold)"></div>
+        </div>
+      </div>
+      <div class="season-preview-wrap">
+        <div class="phone" id="seasonPreview">
+          <div class="phone-top"><span>👋 Ahoj, Lukáš</span><span class="bell">🔔</span></div>
+          <div class="pcard" style="display:flex;justify-content:center;padding:18px;">
+            <svg id="seasonBot" viewBox="0 0 240 280" width="120" xmlns="http://www.w3.org/2000/svg">
+              <rect x="55" y="170" width="130" height="95" rx="16" fill="var(--card)" stroke="var(--line)"/>
+              <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="1.5"/>
+              <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
+              <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+              <rect x="30" y="180" width="22" height="60" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+              <rect x="188" y="180" width="22" height="60" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+              <rect x="75" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+              <rect x="139" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+              <rect x="60" y="55" width="120" height="85" rx="20" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+              <rect x="78" y="88" width="84" height="26" rx="8" fill="#03070d"/>
+              <rect x="90" y="95" width="22" height="12" rx="3" fill="var(--green)"/>
+              <rect x="128" y="95" width="22" height="12" rx="3" fill="var(--green)"/>
+              <line x1="120" y1="55" x2="120" y2="30" stroke="var(--green)" stroke-width="3"/>
+              <circle cx="120" cy="24" r="7" fill="var(--gold)"/>
+            </svg>
+          </div>
+          <div class="pcard">
+            <div class="ptitle">🔥 Tréningový streak</div>
+            <div class="streak-num">12 dní v rade</div>
+            <div class="week-grid">
+              <div class="day"><div class="dot done">🔥</div>Po</div>
+              <div class="day"><div class="dot done">🔥</div>Ut</div>
+              <div class="day"><div class="dot done">🔥</div>St</div>
+              <div class="day"><div class="dot done">🔥</div>Št</div>
+              <div class="day"><div class="dot today">●</div>Pi</div>
+              <div class="day"><div class="dot">–</div>So</div>
+              <div class="day"><div class="dot">–</div>Ne</div>
+            </div>
+          </div>
+          <div class="pcard">
+            <div class="level-pill">⭐ Level 4 — Nádejný talent</div>
+            <div class="xpbar-track"><div class="xpbar-fill" style="width:45%"></div></div>
+            <div class="xpbar-label">1 450 / 2 000 XP</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="container">
@@ -701,6 +834,39 @@
     </div>
   </div>
 </footer>
+
+<script>
+  const SEASONS = {
+    default:   { accent:'#00D97E', gold:'#FFB830', surface:'#0D1B2E', card:'#1A2C42', name:'Predvolená téma',  period:'Celoročne',           desc:'Tmavomodré pozadie so zeleným akcentom — štandardný vzhľad appky mimo sezónnych období.' },
+    spring:    { accent:'#22C55E', gold:'#FFB830', surface:'#0E2317', card:'#16331F', name:'Jarná téma',       period:'Apríl – Jún',          desc:'Sviežo zelená pre rozbeh novej sezóny — nová sezóna, nové ciele.' },
+    summer:    { accent:'#FBBF24', gold:'#FFB830', surface:'#241809', card:'#33220C', name:'Letná téma',       period:'Júl – August',         desc:'Teplá žltá pre letné prípravy a sústredenia mimo súťažného obdobia.' },
+    autumn:    { accent:'#F97316', gold:'#FFB830', surface:'#221206', card:'#33190A', name:'Jesenná téma',     period:'September – Október',  desc:'Oranžová pre rozbeh súťažnej sezóny — listy padajú, body sa zbierajú.' },
+    halloween: { accent:'#A855F7', gold:'#FFB830', surface:'#160224', card:'#220836', name:'Halloween téma',   period:'31. október',          desc:'Fialová na jeden deň — Futbot dostane strašidelný dizajn.' },
+    christmas: { accent:'#93C5FD', gold:'#FFB830', surface:'#0A1428', card:'#13213B', name:'Vianočná téma',    period:'December – Január',    desc:'Ľadovo modrá pre sviatočné obdobie a novoročné predsavzatia.' },
+    winter:    { accent:'#94A3B8', gold:'#FFB830', surface:'#0D1620', card:'#19232F', name:'Zimná téma',       period:'Február – Marec',      desc:'Chladná sivá pre zimnú prípravu pred jarnou časťou sezóny.' },
+  };
+
+  function setSeason(key, btn){
+    const s = SEASONS[key];
+    const preview = document.getElementById('seasonPreview');
+    const bot = document.getElementById('seasonBot');
+    [preview, bot].forEach(el=>{
+      el.style.setProperty('--green', s.accent);
+      el.style.setProperty('--gold', s.gold);
+      el.style.setProperty('--surface', s.surface);
+      el.style.setProperty('--card', s.card);
+    });
+    document.getElementById('seasonName').textContent = s.name;
+    const periodEl = document.getElementById('seasonPeriod');
+    periodEl.textContent = s.period;
+    periodEl.style.color = s.accent;
+    document.getElementById('seasonDesc').textContent = s.desc;
+    document.getElementById('swAccent').style.background = s.accent;
+    document.getElementById('swGold').style.background = s.gold;
+    document.querySelectorAll('.season-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
 
 </body>
 </html>
