@@ -18,14 +18,14 @@ Každý workstream je samostatne nasaditeľný — A sa dá robiť priebežne, B
 
 | Workstream | Status | Ďalší krok |
 |---|---|---|
-| A — Doladenie obsahu | 🟠 In Progress | Hotovo: SEO/meta+favicon, lead CTA, stats zdroj, features cross-check, roadmap sync, accessibility pass. Zostáva: Hero copy, Problémová/App/Audience sekcie (Batch 2), Brand/Seasons vizuál (Batch 3) |
+| A — Doladenie obsahu | 🟢 Done | Všetkých 12 položiek hotových (Batch 1–3) + oprava kontaktného emailu na `info@fynd.fans`. Pripravené na commit/push a presun na Workstream C |
 | B — Business/Investorská sekcia | 🟡 Planning | Rozhodnúť formu (sekcia vs. podstránka vs. PDF) a publikum |
 | C — Partnerská sekcia | 🟡 Planning | Pripraviť `marketing/partner-program.md` (persony partnerov, value props, tiery) |
 
 ---
 
 ## Workstream A — Doladenie existujúceho obsahu webu
-**Status:** 🟠 In Progress
+**Status:** 🟢 Done
 
 ### Prístup — postup v dávkach
 
@@ -37,18 +37,19 @@ Namiesto striktne sekvenčného prechodu 12 položiek nižšie, úlohy sú zosku
 
 ### Úlohy
 
-- [ ] **Hero sekcia** — overiť tagline a hlavné CTA (registrácia záujmu / waitlist pre kluby vs. "coming soon") *(Batch 1)*
+- [x] **Hero sekcia** — overiť tagline a hlavné CTA (registrácia záujmu / waitlist pre kluby vs. "coming soon") *(Batch 1)* — tagline aj eyebrow zodpovedajú `README.md`, 3 CTA vrátane pilot mailto
 - [x] **Stats sekcia** — prepojiť čísla so zdrojom (`marketing/pitch-notes.md` — SFZ 2025), pridať zdroj/poznámku pod čiarou *(Batch 2)*
-- [ ] **Problémová sekcia** ("Šport prehráva digitálny boj o pozornosť") — skontrolovať, či copy zodpovedá `README.md` → The Problem *(Batch 2)*
-- [ ] **App sekcia** (4 obrazovky, návykový cyklus) — zosúladiť s aktuálnym stavom F1/F2 z `docs/roadmap.md` *(Batch 2)*
+- [x] **Problémová sekcia** ("Šport prehráva digitálny boj o pozornosť") — skontrolovať, či copy zodpovedá `README.md` → The Problem *(Batch 2)* — tematicky zhodné (porovnanie Dnes/S Fyndom)
+- [x] **App sekcia** (4 obrazovky, návykový cyklus) — zosúladiť s aktuálnym stavom F1/F2 z `docs/roadmap.md` *(Batch 2)* — prezentované ako vízia appky, nepôsobí ako "dostupné teraz"
 - [x] **Features sekcia** (14 funkcií) — cross-check s `docs/features.md`, doplniť chýbajúce/odstrániť neaktuálne *(Batch 2)*
-- [ ] **Audience sekcia** (4 postavy) — zosúladiť s personami v `marketing/target-audience.md` *(Batch 2)*
+- [x] **Audience sekcia** (4 postavy) — zosúladiť s personami v `marketing/target-audience.md` *(Batch 2)* — mená, kluby, citáty aj benefity sedia s personami
 - [x] **Roadmap sekcia** — zosúladiť s `docs/roadmap.md` (F1–F5), pridať aktuálny status *(Batch 2)*
-- [ ] **Brand sekcia** — bez zmeny, len vizuálna kontrola *(Batch 3)*
-- [ ] **Seasons sekcia** — funkčná, skontrolovať na mobile *(Batch 3)*
+- [x] **Brand sekcia** — bez zmeny, len vizuálna kontrola *(Batch 3)* — `brand-grid` má media query pre mobile (≤880px)
+- [x] **Seasons sekcia** — funkčná, skontrolovať na mobile *(Batch 3)* — `season-demo` má media query pre mobile (≤840px), prepínač sezón wrapuje
 - [x] **Nové:** kontaktný/lead formulár alebo mailto CTA ("Som klub, chcem pilot" / "Chcem vedieť viac") *(Batch 1)*
 - [x] **SEO/meta:** title, description, OG image, favicon *(Batch 1)* — bez OG image (chýba obrázkový asset, otvorené pre budúcnosť)
 - [x] **Accessibility pass** (kontrast, klávesová navigácia) — pozri `design:accessibility-review` *(Batch 3)*
+- [x] **Kontaktný email opravený na `info@fynd.fans`** (pôvodne placeholder `info@fynd.sk`) — hero CTA, CTA-band aj footer *(dodatočná oprava)*
 
 ### Success criteria
 - Všetky čísla a texty na webe súhlasia s aktuálnymi `.md` podkladmi v repo
@@ -112,7 +113,8 @@ Toto poradie je len návrh — finálna priorita a termíny podľa rozhodnutia T
 
 - Workstream B: samostatná stránka, sekcia na hlavnej stránke, alebo PDF na stiahnutie?
 - Workstream C: aké partnerské tiery/ceny (alebo zatiaľ len "kontaktujte nás")?
-- Existuje formulárový backend (napr. Formspree, Google Form) na zber kontaktov, alebo zatiaľ len `mailto:info@fynd.sk`?
+- Existuje formulárový backend (napr. Formspree, Google Form) na zber kontaktov, alebo zatiaľ len `mailto:info@fynd.fans`?
+- Doména webu (`og:url` a text vo footeri) je stále `fynd.sk` ("registrácia domény prebieha"), zatiaľ čo kontaktný email je `info@fynd.fans` — má sa doména webu zjednotiť na `.fans`, alebo ostávajú zámerne odlišné?
 
 ---
 
