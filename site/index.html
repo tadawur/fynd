@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fynd — Beyond the Score</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#06101E;
+    --surface:#0D1B2E;
+    --card:#1A2C42;
+    --green:#00D97E;
+    --gold:#FFB830;
+    --coral:#FF6B6B;
+    --text:#EFF6FF;
+    --muted:#7A9ABB;
+    --line:rgba(255,255,255,0.09);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--text);
+    font-family:'Nunito',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1.15;}
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+  section{padding:88px 0;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--green);margin-bottom:16px;
+  }
+  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);
+    box-shadow:0 0 0 4px rgba(0,217,126,.15);animation:pulse 2.4s infinite;}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(0,217,126,.15);}50%{box-shadow:0 0 0 8px rgba(0,217,126,.05);}}
+  .section-head{max-width:680px;margin:0 auto 56px;text-align:center;}
+  .section-head h2{font-size:clamp(28px,4vw,42px);margin-bottom:14px;}
+  .section-head p{color:var(--muted);font-size:17px;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(6,16,30,.85);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;text-decoration:none;}
+  .logo .dot{width:12px;height:12px;border-radius:50%;background:var(--green);box-shadow:0 0 14px var(--green);animation:pulse 2.4s infinite;}
+  .nav-links{display:flex;gap:32px;list-style:none;}
+  .nav-links a{font-weight:700;font-size:15px;text-decoration:none;color:var(--text);opacity:.8;transition:opacity .15s,color .15s;}
+  .nav-links a:hover{opacity:1;color:var(--green);}
+  .nav-cta{display:flex;gap:12px;align-items:center;}
+  @media(max-width:840px){.nav-links{display:none;}}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 26px;border-radius:999px;font-weight:800;font-size:15px;
+    text-decoration:none;border:2px solid transparent;cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn-primary{background:var(--green);color:var(--ink);}
+  .btn-primary:hover{box-shadow:0 8px 28px rgba(0,217,126,.35);transform:translateY(-2px);}
+  .btn-ghost{border-color:var(--line);color:var(--text);}
+  .btn-ghost:hover{border-color:var(--green);color:var(--green);}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:90px 0 70px;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
+  .hero h1{font-size:clamp(46px,8vw,84px);letter-spacing:-.02em;}
+  .hero h1 span{color:var(--green);}
+  .hero .tagline{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(20px,2.6vw,28px);color:var(--gold);margin:14px 0 18px;}
+  .hero p.lead{color:var(--muted);font-size:18px;max-width:520px;margin-bottom:34px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .hero-visual{display:flex;justify-content:center;position:relative;}
+  @media(max-width:960px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;}
+  }
+
+  /* ---------- STATS ---------- */
+  .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface);}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;}
+  .stat .num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(28px,4vw,44px);color:var(--green);}
+  .stat .label{color:var(--muted);font-size:14px;margin-top:6px;}
+  @media(max-width:760px){.stats-grid{grid-template-columns:repeat(2,1fr);row-gap:40px;}}
+
+  /* ---------- COMPARE ---------- */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .compare-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px;}
+  .compare-card h3{font-size:20px;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+  .compare-card.bad h3{color:var(--coral);}
+  .compare-card.good h3{color:var(--green);}
+  .compare-card ul{list-style:none;display:flex;flex-direction:column;gap:14px;}
+  .compare-card li{display:flex;gap:12px;font-size:15px;color:var(--text);align-items:flex-start;}
+  .compare-card li::before{flex:none;font-weight:800;font-size:14px;width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+  .compare-card.bad li::before{content:"✕";background:rgba(255,107,107,.12);color:var(--coral);}
+  .compare-card.good li::before{content:"✓";background:rgba(0,217,126,.12);color:var(--green);}
+  @media(max-width:840px){.compare{grid-template-columns:1fr;}}
+
+  /* ---------- PHONE MOCKUPS ---------- */
+  .phones-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
+  @media(max-width:1080px){.phones-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:620px){.phones-grid{grid-template-columns:1fr;}}
+  .phone-wrap{display:flex;flex-direction:column;align-items:center;gap:18px;}
+  .phone{
+    width:100%;max-width:280px;aspect-ratio:9/19;
+    background:var(--surface);border:6px solid #03070d;border-radius:32px;
+    box-shadow:0 24px 60px rgba(0,0,0,.45), inset 0 0 0 1px var(--line);
+    padding:14px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;
+  }
+  .phone::before{
+    content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);
+    width:60px;height:6px;border-radius:4px;background:#03070d;
+  }
+  .phone-top{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;color:var(--text);}
+  .phone-top .bell{color:var(--gold);}
+  .pcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;}
+  .pcard .ptitle{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+  .week-grid{display:flex;gap:5px;justify-content:space-between;}
+  .week-grid .day{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;font-size:9px;color:var(--muted);}
+  .day .dot{width:20px;height:20px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;background:rgba(255,255,255,.04);border:1px solid var(--line);}
+  .day .dot.done{background:rgba(0,217,126,.15);border-color:var(--green);}
+  .day .dot.today{background:rgba(255,184,48,.18);border-color:var(--gold);}
+  .streak-num{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin:6px 0 8px;}
+  .xpbar-track{height:8px;border-radius:99px;background:rgba(255,255,255,.06);overflow:hidden;margin:8px 0 4px;}
+  .xpbar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--green),var(--gold));}
+  .xpbar-label{font-size:11px;color:var(--muted);}
+  .level-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,184,48,.12);color:var(--gold);font-size:11px;font-weight:800;padding:4px 10px;border-radius:99px;margin-bottom:8px;}
+  .live-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,107,107,.15);color:var(--coral);font-size:10px;font-weight:800;padding:3px 8px;border-radius:99px;letter-spacing:.06em;}
+  .score-row{display:flex;align-items:center;justify-content:space-between;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;margin:8px 0;}
+  .score-row .vs{color:var(--green);font-size:18px;}
+  .events-row{display:flex;gap:8px;font-size:11px;color:var(--muted);flex-wrap:wrap;}
+  .avatar-circle{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--ink);font-size:18px;}
+  .profile-head{display:flex;gap:12px;align-items:center;}
+  .profile-head .name{font-weight:800;font-size:14px;}
+  .profile-head .sub{font-size:11px;color:var(--muted);}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center;margin-top:6px;}
+  .stat-grid .v{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:var(--green);}
+  .stat-grid .l{font-size:9px;color:var(--muted);}
+  .badge-row{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;}
+  .badge-chip{width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;background:rgba(0,217,126,.12);border:1px solid rgba(0,217,126,.3);}
+  .badge-chip.locked{background:rgba(255,255,255,.04);border-color:var(--line);filter:grayscale(1);opacity:.5;}
+  .lb-tabs{display:flex;gap:6px;margin-bottom:6px;}
+  .lb-tabs span{font-size:10px;font-weight:800;padding:5px 10px;border-radius:8px;color:var(--muted);}
+  .lb-tabs span.active{background:var(--green);color:var(--ink);}
+  .lb-row{display:flex;align-items:center;gap:8px;font-size:11px;padding:6px 0;border-bottom:1px solid var(--line);}
+  .lb-row:last-child{border-bottom:none;}
+  .lb-row .rank{width:18px;text-align:center;font-weight:800;}
+  .lb-row .lname{flex:1;font-weight:700;}
+  .lb-row .lxp{color:var(--gold);font-weight:800;font-size:10px;}
+  .lb-row.me{background:rgba(0,217,126,.08);border-radius:8px;padding:6px 6px;}
+  .shop-balance{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);margin-bottom:4px;}
+  .shop-balance b{color:var(--gold);font-family:'Space Grotesk',sans-serif;font-size:14px;}
+  .shop-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .shop-item{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;padding:8px;font-size:10px;text-align:center;}
+  .shop-item .ic{font-size:18px;margin-bottom:4px;}
+  .shop-item .px{color:var(--gold);font-weight:800;margin:4px 0;}
+  .shop-item button{width:100%;border:none;border-radius:6px;padding:4px;font-size:9px;font-weight:800;background:var(--green);color:var(--ink);cursor:default;}
+  .shop-item.locked button{background:rgba(255,255,255,.06);color:var(--muted);}
+  .phone-caption{text-align:center;}
+  .phone-caption h4{font-size:16px;margin-bottom:4px;}
+  .phone-caption p{font-size:13px;color:var(--muted);}
+
+  /* ---------- FEATURES ---------- */
+  .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+  .feature-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;transition:border-color .15s,transform .15s;}
+  .feature-card:hover{border-color:var(--green);transform:translateY(-3px);}
+  .feature-card .ic{font-size:28px;margin-bottom:12px;display:block;}
+  .feature-card h3{font-size:17px;margin-bottom:8px;}
+  .feature-card p{font-size:14px;color:var(--muted);}
+
+  /* ---------- PERSONAS ---------- */
+  .persona-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+  .persona-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;}
+  .persona-top{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+  .persona-emoji{font-size:36px;width:60px;height:60px;border-radius:50%;background:var(--card);display:flex;align-items:center;justify-content:center;}
+  .persona-top h3{font-size:18px;}
+  .persona-top .role{font-size:13px;color:var(--green);font-weight:800;}
+  .persona-card .quote{font-style:italic;color:var(--muted);font-size:14px;border-left:3px solid var(--gold);padding-left:12px;margin-bottom:14px;}
+  .persona-card ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .persona-card li{font-size:13.5px;display:flex;gap:8px;}
+  .persona-card li::before{content:"→";color:var(--green);font-weight:800;flex:none;}
+
+  /* ---------- ROADMAP ---------- */
+  .roadmap-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+  @media(max-width:1080px){.roadmap-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.roadmap-grid{grid-template-columns:1fr;}}
+  .road-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px;}
+  .road-phase{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--green);font-size:13px;letter-spacing:.08em;}
+  .road-card h3{font-size:17px;}
+  .road-dur{font-size:12px;color:var(--muted);}
+  .road-card ul{list-style:none;font-size:13px;display:flex;flex-direction:column;gap:6px;color:var(--text);opacity:.85;}
+  .road-card li::before{content:"• ";color:var(--gold);}
+  .road-status{align-self:flex-start;font-size:11px;font-weight:800;padding:4px 10px;border-radius:99px;background:rgba(255,184,48,.12);color:var(--gold);margin-top:auto;}
+
+  /* ---------- BRAND ---------- */
+  .brand-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center;}
+  @media(max-width:880px){.brand-grid{grid-template-columns:1fr;}}
+  .palette{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px;}
+  .swatch{border-radius:12px;padding:14px;font-size:12px;font-weight:800;border:1px solid var(--line);}
+  .swatch .hex{display:block;font-family:'Space Grotesk',sans-serif;font-size:13px;margin-top:24px;}
+  .type-sample{margin-top:20px;display:flex;flex-direction:column;gap:10px;}
+  .type-sample .h{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;}
+  .type-sample .b{font-family:'Nunito',sans-serif;font-size:15px;color:var(--muted);}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);background:var(--surface);padding:60px 0 30px;}
+  .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;margin-bottom:40px;}
+  .footer-tag{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;}
+  .footer-tag span{color:var(--green);}
+  .footer-links{display:flex;gap:60px;flex-wrap:wrap;}
+  .footer-col h4{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:14px;}
+  .footer-col a, .footer-col p{display:block;font-size:14px;margin-bottom:8px;text-decoration:none;color:var(--text);}
+  .footer-col a:hover{color:var(--green);}
+  .footer-bottom{border-top:1px solid var(--line);padding-top:24px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo"><span class="dot"></span>Fynd</a>
+      <ul class="nav-links">
+        <li><a href="#app">Appka</a></li>
+        <li><a href="#features">Funkcie</a></li>
+        <li><a href="#audience">Pre koho</a></li>
+        <li><a href="#roadmap">Roadmapa</a></li>
+        <li><a href="#brand">Značka</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="https://github.com/tadawur/fynd" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Komunitná platforma pre slovenský mládežnícky šport</div>
+      <h1>Fynd<span>.</span></h1>
+      <div class="tagline">Beyond the Score.</div>
+      <p class="lead">Prvá komunitná platforma pre slovenské mládežnícke športové kluby — živé výsledky, tréningové streaky, XP odmeny a komunikácia klubu na jednom mieste. Žiadne ďalšie WhatsApp skupiny. Žiadne hľadanie výsledkov po Sportnete.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#app">Pozrieť appku ↓</a>
+        <a class="btn btn-ghost" href="#audience">Pre koho je Fynd</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 240 280" width="280" xmlns="http://www.w3.org/2000/svg">
+        <!-- Futbot mascot -->
+        <rect x="55" y="170" width="130" height="95" rx="16" fill="var(--card)" stroke="var(--line)"/>
+        <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
+        <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
+        <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+        <!-- arms -->
+        <rect x="30" y="180" width="22" height="60" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+        <rect x="188" y="170" width="22" height="55" rx="10" fill="var(--surface)" stroke="var(--line)" transform="rotate(-25 199 170)"/>
+        <!-- legs -->
+        <rect x="75" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+        <rect x="139" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+        <!-- head -->
+        <rect x="60" y="55" width="120" height="85" rx="20" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+        <rect x="78" y="88" width="84" height="26" rx="8" fill="#03070d"/>
+        <rect x="90" y="95" width="22" height="12" rx="3" fill="var(--green)">
+          <animate attributeName="opacity" values="1;.25;1" dur="2.6s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="128" y="95" width="22" height="12" rx="3" fill="var(--green)">
+          <animate attributeName="opacity" values="1;.25;1" dur="2.6s" begin="0.2s" repeatCount="indefinite"/>
+        </rect>
+        <!-- antenna -->
+        <line x1="120" y1="55" x2="120" y2="30" stroke="var(--green)" stroke-width="3"/>
+        <circle cx="120" cy="24" r="7" fill="var(--gold)">
+          <animate attributeName="opacity" values="1;.2;1" dur="1.8s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><div class="num">2 800+</div><div class="label">registrovaných futbalových klubov (SFZ)</div></div>
+    <div class="stat"><div class="num">180 000+</div><div class="label">registrovaných hráčov (SFZ)</div></div>
+    <div class="stat"><div class="num">0</div><div class="label">komunitných platforiem pre mládežnícky šport</div></div>
+    <div class="stat"><div class="num">~500 000</div><div class="label">potenciálnych používateľov (hráči, rodičia, tréneri)</div></div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM / SOLUTION ============ -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" style="justify-content:center">Prečo Fynd</div>
+      <h2>Šport prehráva digitálny boj o pozornosť</h2>
+      <p>Kluby strácajú mladých hráčov nie pre zlé tréningy, ale preto, že šport sa nevie digitálne porovnať s hrami, sociálnymi sieťami a YouTube. Fynd to mení.</p>
+    </div>
+    <div class="compare">
+      <div class="compare-card bad">
+        <h3>😤 Dnes</h3>
+        <ul>
+          <li>Zrušený tréning sa stratí v skupine s 200 správami</li>
+          <li>Výsledok soboty zisťuješ telefonátom trom rodičom</li>
+          <li>Dva roky hrania a nikde žiadny dôkaz, žiadna štatistika</li>
+          <li>Tréner posiela tú istú správu do troch skupín a ešte rodičom zvlášť</li>
+          <li>Prestup rieši papier, Sportnet aj Excel — zvlášť</li>
+        </ul>
+      </div>
+      <div class="compare-card good">
+        <h3>🚀 S Fyndom</h3>
+        <ul>
+          <li>Zmena tréningu = jedno upozornenie, ktoré nemôžeš preskočiť</li>
+          <li>Live skóre a udalosti priamo na telefóne počas zápasu</li>
+          <li>Každý tréning, gól aj streak sa počíta a je vidno na profile</li>
+          <li>Jedno oznámenie → správne skupiny ho dostanú automaticky</li>
+          <li>Sportnet sync rieši prestupy a štatistiky bez zásahu trénera</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APP MOCKUPS ============ -->
+<section id="app" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" style="justify-content:center">Pozri sa dovnútra</div>
+      <h2>Štyri obrazovky, jeden návykový cyklus</h2>
+      <p>Streak ťa dostane do appky. XP a levely ťa motivujú zostať. Rebríček a Odmeňovňa dávajú zmysel každému tréningu.</p>
+    </div>
+    <div class="phones-grid">
+
+      <!-- Mockup 1: Home -->
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-top"><span>👋 Ahoj, Lukáš</span><span class="bell">🔔</span></div>
+          <div class="pcard">
+            <div class="ptitle">🔥 Tréningový streak</div>
+            <div class="streak-num">12 dní v rade</div>
+            <div class="week-grid">
+              <div class="day"><div class="dot done">🔥</div>Po</div>
+              <div class="day"><div class="dot done">🔥</div>Ut</div>
+              <div class="day"><div class="dot done">🔥</div>St</div>
+              <div class="day"><div class="dot done">🔥</div>Št</div>
+              <div class="day"><div class="dot today">●</div>Pi</div>
+              <div class="day"><div class="dot">–</div>So</div>
+              <div class="day"><div class="dot">–</div>Ne</div>
+            </div>
+          </div>
+          <div class="pcard">
+            <div class="level-pill">⭐ Level 4 — Nádejný talent</div>
+            <div class="xpbar-track"><div class="xpbar-fill" style="width:45%"></div></div>
+            <div class="xpbar-label">1 450 / 2 000 XP do Levelu 5 — Stálica tímu</div>
+          </div>
+          <div class="pcard">
+            <span class="live-pill">🔴 NAŽIVO · 67'</span>
+            <div class="score-row"><span>MFK Nová Baňa</span><span class="vs">2 : 1</span><span>FK Žiar</span></div>
+            <div class="events-row"><span>⚽ 23' Krajčí</span><span>🟨 41'</span><span>⚽ 58' Novák</span></div>
+          </div>
+        </div>
+        <div class="phone-caption">
+          <h4>Domov — streak a live ticker</h4>
+          <p>Streak za posledný týždeň, progres k ďalšiemu levelu a živé skóre zápasu klubov, ktoré sleduješ.</p>
+        </div>
+      </div>
+
+      <!-- Mockup 2: Profile -->
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-top"><span>Profil</span><span>⚙️</span></div>
+          <div class="pcard">
+            <div class="profile-head">
+              <div class="avatar-circle">LK</div>
+              <div>
+                <div class="name">Lukáš K.</div>
+                <div class="sub">MFK Nová Baňa · U15</div>
+              </div>
+            </div>
+            <div class="level-pill" style="margin-top:10px">⭐ Level 4 — Nádejný talent</div>
+            <div class="xpbar-track"><div class="xpbar-fill" style="width:45%"></div></div>
+            <div class="xpbar-label">1 450 / 2 000 XP</div>
+          </div>
+          <div class="pcard">
+            <div class="ptitle">Sezóna 2025/26</div>
+            <div class="stat-grid">
+              <div><div class="v">14</div><div class="l">Zápasy</div></div>
+              <div><div class="v">6</div><div class="l">Góly</div></div>
+              <div><div class="v">3</div><div class="l">Asistencie</div></div>
+              <div><div class="v">92%</div><div class="l">Dochádzka</div></div>
+            </div>
+          </div>
+          <div class="pcard">
+            <div class="ptitle">Odznaky</div>
+            <div class="badge-row">
+              <div class="badge-chip">🎯</div>
+              <div class="badge-chip">🔥</div>
+              <div class="badge-chip">⚽</div>
+              <div class="badge-chip">🤝</div>
+              <div class="badge-chip">📅</div>
+              <div class="badge-chip locked">🏆</div>
+              <div class="badge-chip locked">👑</div>
+              <div class="badge-chip locked">🎩</div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-caption">
+          <h4>Hráčsky profil</h4>
+          <p>Avatar, level, sezónne štatistiky a zbierka odznakov — odomknuté aj uzamknuté, štýlom Steam achievementov.</p>
+        </div>
+      </div>
+
+      <!-- Mockup 3: Leaderboard -->
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-top"><span>Rebríček</span><span>🏆</span></div>
+          <div class="pcard">
+            <div class="lb-tabs"><span class="active">Klub</span><span>Región</span><span>Slovensko</span></div>
+            <div class="lb-row"><span class="rank">🥇</span><span class="lname">Šimon B.</span><span class="lxp">4 250 XP</span></div>
+            <div class="lb-row"><span class="rank">🥈</span><span class="lname">Adam R.</span><span class="lxp">3 980 XP</span></div>
+            <div class="lb-row me"><span class="rank">🥉</span><span class="lname">Lukáš K. (ty)</span><span class="lxp">3 650 XP</span></div>
+            <div class="lb-row"><span class="rank">4</span><span class="lname">Matej H.</span><span class="lxp">3 120 XP</span></div>
+            <div class="lb-row"><span class="rank">5</span><span class="lname">Tomáš P.</span><span class="lxp">2 870 XP</span></div>
+          </div>
+          <div class="pcard">
+            <div class="ptitle">Tvoja pozícia</div>
+            <div style="font-size:12px;line-height:1.9">
+              #3 v klube<br>
+              #128 v regióne<br>
+              #2 410 na Slovensku
+            </div>
+          </div>
+        </div>
+        <div class="phone-caption">
+          <h4>Rebríčky</h4>
+          <p>Tri úrovne — klub, región, Slovensko — a šesť dimenzií: XP, dochádzka, góly a asistencie, streak, hodnotenie, fair play.</p>
+        </div>
+      </div>
+
+      <!-- Mockup 4: Reward Shop -->
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-top"><span>Odmeňovňa</span><span>🎁</span></div>
+          <div class="pcard">
+            <div class="shop-balance"><span>Tvoj zostatok</span><b>💰 1 240 XP</b></div>
+            <div class="shop-grid">
+              <div class="shop-item"><div class="ic">🥤</div>Fľaša s logom<div class="px">200 XP</div><button>Kúpiť</button></div>
+              <div class="shop-item"><div class="ic">👕</div>Tréningové tričko<div class="px">450 XP</div><button>Kúpiť</button></div>
+              <div class="shop-item"><div class="ic">🦵</div>Chrániče holení<div class="px">350 XP</div><button>Kúpiť</button></div>
+              <div class="shop-item"><div class="ic">🎟️</div>Lístok na zápas<div class="px">150 XP</div><button>Kúpiť</button></div>
+              <div class="shop-item"><div class="ic">🎖️</div>Zlatý odznak<div class="px">300 XP</div><button>Kúpiť</button></div>
+              <div class="shop-item locked"><div class="ic">🏋️</div>Individ. tréning<div class="px">800 XP</div><button>Lv. 5+</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-caption">
+          <h4>Odmeňovňa</h4>
+          <p>Klub nastaví katalóg odmien, hráč míňa nazbierané XP. Klub objednávku potvrdí alebo zamietne — XP sa odpočíta až po potvrdení.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section id="features">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" style="justify-content:center">Funkcie</div>
+      <h2>14 funkcií, jeden cieľ</h2>
+      <p>Aby sa každé prísť na tréning, každý gól a každý streak oplatili — a aby tréneri a kluby trávili menej času administratívou.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card"><span class="ic">🔥</span><h3>Tréningový streak</h3><p>Týždenná mriežka, plamienky za odtrénované dni a +50 XP bonus pri 7-dňovom streaku. Inšpirované Duolingom.</p></div>
+      <div class="feature-card"><span class="ic">⭐</span><h3>XP a levely</h3><p>10 levelov so slovenskými názvami — od Začiatočníka po Legendu. XP sa zarába za dochádzku, zápasy, hodnotenia aj odznaky.</p></div>
+      <div class="feature-card"><span class="ic">🔔</span><h3>Sledovanie klubov</h3><p>Notifikácie pre ľubovoľný klub, presne ako na Instagrame — len góly, plné live pokrytie, alebo pripomienky zápasov.</p></div>
+      <div class="feature-card"><span class="ic">📡</span><h3>Live zápasový ticker</h3><p>Góly, karty, polčas aj koniec zápasu v reálnom čase — zo Sportnet API alebo manuálne od trénera.</p></div>
+      <div class="feature-card"><span class="ic">💬</span><h3>Skupinové chaty</h3><p>Jedna uzamknutá skupina na kategóriu. U9–U13 automaticky zahŕňa rodičov, tréner má prístup všade.</p></div>
+      <div class="feature-card"><span class="ic">⭐</span><h3>Hodnotenia po zápase</h3><p>Anonymné hodnotenie rozhodcu, trénera a spoluhráčov — +15 XP za vyplnenie, výsledky vidí len vedenie klubu.</p></div>
+      <div class="feature-card"><span class="ic">🎁</span><h3>Odmeňovňa</h3><p>Klub nastaví katalóg odmien (tričká, lístky, tréningy navyše), hráči ich kupujú za XP.</p></div>
+      <div class="feature-card"><span class="ic">🏆</span><h3>Rebríčky</h3><p>Klubový, regionálny aj celoslovenský rebríček v šiestich dimenziách — XP, dochádzka, góly, streak, hodnotenie, fair play.</p></div>
+      <div class="feature-card"><span class="ic">👤</span><h3>Hráčsky profil</h3><p>Vlastný avatar, level, sezónne štatistiky, zbierka 18+ odznakov a sociálne siete (od 15 rokov).</p></div>
+      <div class="feature-card"><span class="ic">🔍</span><h3>Objavovanie klubov</h3><p>Prehľadávaj všetky kluby na Fynde — členovia, kategórie, liga, sledovanie a obľúbené.</p></div>
+      <div class="feature-card"><span class="ic">📅</span><h3>Kalendár</h3><p>Tréningy aj zápasy na jednom mieste, pripomienky, export do telefónu, farebné rozlíšenie podľa typu.</p></div>
+      <div class="feature-card"><span class="ic">🔗</span><h3>Sportnet integrácia</h3><p>Automatický sync výsledkov, prestupov a overenia registrácie cez Sportnet.online — bez ručného zadávania.</p></div>
+      <div class="feature-card"><span class="ic">🎨</span><h3>Sezónne témy</h3><p>Farebná schéma appky sa 6× ročne mení — jar, leto, jeseň, Halloween, Vianoce, zimná príprava.</p></div>
+      <div class="feature-card"><span class="ic">🤖</span><h3>Futbot</h3><p>Priateľský robotický maskot pre onboarding, prázdne obrazovky a oslavy úspechov.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AUDIENCE / PERSONAS ============ -->
+<section id="audience" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" style="justify-content:center">Pre koho je Fynd</div>
+      <h2>Štyri postavy, jeden klub</h2>
+      <p>Fynd navrhujeme okolo skutočných ľudí v slovenskom mládežníckom futbale — hráčov, rodičov, trénerov aj sekretariátu klubu.</p>
+    </div>
+    <div class="persona-grid">
+      <div class="persona-card">
+        <div class="persona-top">
+          <div class="persona-emoji">⚽</div>
+          <div><h3>Lukáš, 14</h3><div class="role">Hráč · MFK Nová Baňa, U15</div></div>
+        </div>
+        <div class="quote">"Nikto si nevšimne, keď dám gól alebo mám dobrý tréning. Moje štatistiky nikde neexistujú."</div>
+        <ul>
+          <li>Streak, ktorý potvrdzuje jeho pravidelnosť</li>
+          <li>XP za každý gól a tréning, viditeľné na profile</li>
+          <li>Pozícia v rebríčku — chce byť #1 v klube</li>
+          <li>Profil, ktorý môže zdieľať na Instagrame</li>
+        </ul>
+      </div>
+      <div class="persona-card">
+        <div class="persona-top">
+          <div class="persona-emoji">👩</div>
+          <div><h3>Jana, 38</h3><div class="role">Rodič · syn Tomáš, FK Žiar U11</div></div>
+        </div>
+        <div class="quote">"Minulý týždeň som išla na tréning, ktorý zrušili hodinu predtým. Výsledok soboty som zisťovala od troch ľudí."</div>
+        <ul>
+          <li>Notifikácia o zrušení tréningu, ktorú nemožno minúť</li>
+          <li>Live skóre počas zápasu priamo z práce</li>
+          <li>Jednoduchý prehľad dochádzky a streaku syna</li>
+          <li>Jeden kalendár na ďalších 6 týždňov</li>
+        </ul>
+      </div>
+      <div class="persona-card">
+        <div class="persona-top">
+          <div class="persona-emoji">🧑‍🏫</div>
+          <div><h3>Milan, 42</h3><div class="role">Tréner · TJ Kremnica, U13 a U15</div></div>
+        </div>
+        <div class="quote">"Po každom tréningu strávim 20 minút písaním tej istej správy do rôznych skupín."</div>
+        <ul>
+          <li>Jedno oznámenie → správne skupiny automaticky</li>
+          <li>Dochádzka za 30 sekúnd ťuknutím v zozname hráčov</li>
+          <li>Sportnet sync rieši prestupy automaticky</li>
+          <li>Prehľad, kto sa 2 týždne neprihlásil do appky</li>
+        </ul>
+      </div>
+      <div class="persona-card">
+        <div class="persona-top">
+          <div class="persona-emoji">📋</div>
+          <div><h3>Petra, 52</h3><div class="role">Sekretárka a pokladníčka · MFK Nová Baňa</div></div>
+        </div>
+        <div class="quote">"Odmeny sledujem v Exceli, prestupy riešim ručne so Sportnetom. Nemám prehľad, kto je naozaj aktívny."</div>
+        <ul>
+          <li>Prehľad členov s engagement štatistikami</li>
+          <li>Digitálna Odmeňovňa namiesto tabuľky v Exceli</li>
+          <li>Automatický Sportnet sync pre prestupy</li>
+          <li>Návrhy ocenení na konci sezóny na základe dát</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROADMAP ============ -->
+<section id="roadmap">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" style="justify-content:center">Roadmapa</div>
+      <h2>Od MVP po celoslovenské pokrytie</h2>
+      <p>Päť fáz, každá samostatne nasaditeľná — kluby môžu používať F1 kým sa vyvíja F2.</p>
+    </div>
+    <div class="roadmap-grid">
+      <div class="road-card">
+        <div class="road-phase">FÁZA 1</div>
+        <h3>Core MVP</h3>
+        <div class="road-dur">4 – 6 týždňov</div>
+        <ul>
+          <li>Registrácia a profil hráča</li>
+          <li>Štruktúra klubu a kategórie</li>
+          <li>Skupinové chaty</li>
+          <li>Kalendár a dochádzka</li>
+          <li>Streak counter</li>
+        </ul>
+        <div class="road-status">🟡 Plánovanie</div>
+      </div>
+      <div class="road-card">
+        <div class="road-phase">FÁZA 2</div>
+        <h3>XP a motivácia</h3>
+        <div class="road-dur">3 – 4 týždne</div>
+        <ul>
+          <li>XP engine a 10 levelov</li>
+          <li>Systém odznakov</li>
+          <li>Odmeňovňa</li>
+          <li>Hodnotenia po zápase</li>
+          <li>Klubový rebríček</li>
+        </ul>
+        <div class="road-status">🟡 Plánovanie</div>
+      </div>
+      <div class="road-card">
+        <div class="road-phase">FÁZA 3</div>
+        <h3>Komunita a Live</h3>
+        <div class="road-dur">4 – 5 týždňov</div>
+        <ul>
+          <li>Adresár klubov</li>
+          <li>Sledovanie klubov</li>
+          <li>Live zápasový ticker</li>
+          <li>Regionálny rebríček</li>
+        </ul>
+        <div class="road-status">🟡 Plánovanie</div>
+      </div>
+      <div class="road-card">
+        <div class="road-phase">FÁZA 4</div>
+        <h3>Sportnet integrácia</h3>
+        <div class="road-dur">3 – 4 týždne</div>
+        <ul>
+          <li>OAuth a webhooky</li>
+          <li>Overenie cez SFZ číslo</li>
+          <li>Automatický prestup a výsledky</li>
+          <li>Národný rebríček</li>
+          <li>Sezónne témy</li>
+        </ul>
+        <div class="road-status">🟡 Plánovanie</div>
+      </div>
+      <div class="road-card">
+        <div class="road-phase">FÁZA 5</div>
+        <h3>Národné pokrytie</h3>
+        <div class="road-dur">2 – 3 týždne+</div>
+        <ul>
+          <li>Samoobslužný onboarding klubov</li>
+          <li>Partnerstvo so SFZ</li>
+          <li>Marketingová kampaň (50 klubov)</li>
+          <li>Multišport rámec</li>
+        </ul>
+        <div class="road-status">🟡 Plánovanie</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRAND ============ -->
+<section id="brand" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="container brand-grid">
+    <div>
+      <div class="eyebrow">Značka</div>
+      <h2 style="font-size:clamp(26px,4vw,36px);margin-bottom:14px;">Fynd = find + fandom</h2>
+      <p style="color:var(--muted);margin-bottom:10px;">Krátke, zapamätateľné meno, ktoré funguje v slovenčine aj angličtine naprieč športmi. <b style="color:var(--text)">Find</b> — nájdi výsledky, klub, štatistiky, komunitu. <b style="color:var(--text)">Fandom</b> — vášeň, lojalita a identita okolo každého športu.</p>
+      <div class="type-sample">
+        <div class="h">Space Grotesk — nadpisy, skóre, levely</div>
+        <div class="b">Nunito — bežný text, tlačidlá, UI. Priamy a sebavedomý tón, teplý a povzbudivý, bez zbytočnej angličtiny.</div>
+      </div>
+    </div>
+    <div>
+      <div class="ptitle" style="font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;">Farebná paleta</div>
+      <div class="palette">
+        <div class="swatch" style="background:#06101E;color:#EFF6FF;">Ink<span class="hex">#06101E</span></div>
+        <div class="swatch" style="background:#0D1B2E;color:#EFF6FF;">Surface<span class="hex">#0D1B2E</span></div>
+        <div class="swatch" style="background:#1A2C42;color:#EFF6FF;">Card<span class="hex">#1A2C42</span></div>
+        <div class="swatch" style="background:#00D97E;color:#06101E;">Green<span class="hex">#00D97E</span></div>
+        <div class="swatch" style="background:#FFB830;color:#06101E;">Gold<span class="hex">#FFB830</span></div>
+        <div class="swatch" style="background:#FF6B6B;color:#06101E;">Coral<span class="hex">#FF6B6B</span></div>
+      </div>
+      <p style="color:var(--muted);font-size:13px;margin-top:16px;">Sezónne témy menia akcentovú a pozaďovú farbu 6× do roka (jar, leto, jeseň, Halloween, Vianoce, zima) — vrátane farby dresu maskota Futbota.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-tag">Fynd<span>.</span> — Beyond the Score</div>
+        <p style="color:var(--muted);font-size:14px;margin-top:10px;max-width:320px;">Komunitná platforma pre slovenský mládežnícky šport. Football ako prvý use-case, sport-agnostic od základu.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Projekt</h4>
+          <a href="#app">Appka</a>
+          <a href="#features">Funkcie</a>
+          <a href="#roadmap">Roadmapa</a>
+          <a href="https://github.com/tadawur/fynd" target="_blank" rel="noopener">Dokumentácia (GitHub)</a>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <p>Tadeáš Letko — Founder</p>
+          <a href="mailto:info@fynd.sk">info@fynd.sk</a>
+          <p>fynd.sk <span style="color:var(--muted)">(registrácia domény prebieha)</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fynd. Koncepčný materiál pre prezentáciu projektu.</span>
+      <span>Beyond the Score.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
