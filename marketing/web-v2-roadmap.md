@@ -51,6 +51,9 @@ Namiesto striktne sekvenčného prechodu 12 položiek nižšie, úlohy sú zosku
 - [x] **Accessibility pass** (kontrast, klávesová navigácia) — pozri `design:accessibility-review` *(Batch 3)*
 - [x] **Kontaktný email opravený na `info@fynd.fans`** (pôvodne placeholder `info@fynd.sk`) — hero CTA, CTA-band aj footer *(dodatočná oprava)*
 - [x] **Doména webu zjednotená na `fynd.fans`** (pôvodne `fynd.sk`) — `og:url` meta tag aj footer *(dodatočná oprava)*
+- [x] **Wordmark zjednotený na `fynd.fans`** — title, meta tagy (description, og:title, twitter:title), nav logo, hero H1, footer-tag a copyright zmenené z „Fynd"/„Fynd." na „fynd.fans". Skloňované výskyty v bežnom texte (napr. „S Fyndom", „na Fynde", „Fynd = find + fandom") ostali bez zmeny kvôli gramatike a etymológii značky *(dodatočná oprava)*
+- [x] **App sekcia (svetlý režim)** — opravený kontrast textu v telefónnych mockupoch (streak, skóre, profil, rebríček), ktorý bol vo svetlom režime neviditeľný *(dodatočná oprava)*
+- [x] **Hero ilustrácia (Futbot)** — odstránená lopta pri robotovi *(dodatočná oprava)*
 
 ### Success criteria
 - Všetky čísla a texty na webe súhlasia s aktuálnymi `.md` podkladmi v repo

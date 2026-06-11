@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fynd — Beyond the Score</title>
-<meta name="description" content="Fynd je komunitná platforma pre slovenský mládežnícky šport — tréningové streaky, XP odmeny, live výsledky a komunikácia klubu na jednom mieste. Beyond the Score.">
+<title>fynd.fans — Beyond the Score</title>
+<meta name="description" content="fynd.fans je komunitná platforma pre slovenský mládežnícky šport — tréningové streaky, XP odmeny, live výsledky a komunikácia klubu na jednom mieste. Beyond the Score.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Fynd — Beyond the Score">
+<meta property="og:title" content="fynd.fans — Beyond the Score">
 <meta property="og:description" content="Komunitná platforma pre slovenský mládežnícky šport — tréningové streaky, XP odmeny, live výsledky a komunikácia klubu na jednom mieste.">
 <meta property="og:url" content="https://fynd.fans">
 <meta property="og:locale" content="sk_SK">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fynd — Beyond the Score">
+<meta name="twitter:title" content="fynd.fans — Beyond the Score">
 <meta name="twitter:description" content="Komunitná platforma pre slovenský mládežnícky šport — tréningové streaky, XP odmeny, live výsledky a komunikácia klubu na jednom mieste.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -184,18 +184,18 @@
   .day .dot{width:20px;height:20px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;background:rgba(255,255,255,.04);border:1px solid var(--line);}
   .day .dot.done{background:rgba(0,217,126,.15);border-color:var(--green);}
   .day .dot.today{background:rgba(255,184,48,.18);border-color:var(--gold);}
-  .streak-num{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin:6px 0 8px;}
+  .streak-num{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin:6px 0 8px;color:var(--text);}
   .xpbar-track{height:8px;border-radius:99px;background:rgba(255,255,255,.06);overflow:hidden;margin:8px 0 4px;}
   .xpbar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--green),var(--gold));}
   .xpbar-label{font-size:11px;color:var(--muted);}
   .level-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,184,48,.12);color:var(--gold);font-size:11px;font-weight:800;padding:4px 10px;border-radius:99px;margin-bottom:8px;}
   .live-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,107,107,.15);color:var(--coral);font-size:10px;font-weight:800;padding:3px 8px;border-radius:99px;letter-spacing:.06em;}
-  .score-row{display:flex;align-items:center;justify-content:space-between;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;margin:8px 0;}
+  .score-row{display:flex;align-items:center;justify-content:space-between;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;margin:8px 0;color:var(--text);}
   .score-row .vs{color:var(--green);font-size:18px;}
   .events-row{display:flex;gap:8px;font-size:11px;color:var(--muted);flex-wrap:wrap;}
   .avatar-circle{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--ink);font-size:18px;}
   .profile-head{display:flex;gap:12px;align-items:center;}
-  .profile-head .name{font-weight:800;font-size:14px;}
+  .profile-head .name{font-weight:800;font-size:14px;color:var(--text);}
   .profile-head .sub{font-size:11px;color:var(--muted);}
   .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center;margin-top:6px;}
   .stat-grid .v{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:var(--green);}
@@ -208,8 +208,8 @@
   .lb-tabs span.active{background:var(--green);color:var(--ink);}
   .lb-row{display:flex;align-items:center;gap:8px;font-size:11px;padding:6px 0;border-bottom:1px solid var(--line);}
   .lb-row:last-child{border-bottom:none;}
-  .lb-row .rank{width:18px;text-align:center;font-weight:800;}
-  .lb-row .lname{flex:1;font-weight:700;}
+  .lb-row .rank{width:18px;text-align:center;font-weight:800;color:var(--text);}
+  .lb-row .lname{flex:1;font-weight:700;color:var(--text);}
   .lb-row .lxp{color:var(--gold);font-weight:800;font-size:10px;}
   .lb-row.me{background:rgba(0,217,126,.08);border-radius:8px;padding:6px 6px;}
   .shop-balance{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);margin-bottom:4px;}
@@ -309,7 +309,7 @@
 <header>
   <div class="container">
     <nav>
-      <a href="#" class="logo"><span class="dot"></span>Fynd</a>
+      <a href="#" class="logo"><span class="dot"></span>fynd.fans</a>
       <ul class="nav-links">
         <li><a href="#app">Appka</a></li>
         <li><a href="#features">Funkcie</a></li>
@@ -350,7 +350,7 @@
   <div class="container hero-grid">
     <div>
       <div class="eyebrow">Komunitná platforma pre slovenský mládežnícky šport</div>
-      <h1>Fynd<span>.</span></h1>
+      <h1>fynd<span>.fans</span></h1>
       <div class="tagline">Beyond the Score.</div>
       <p class="lead">Prvá komunitná platforma pre slovenské mládežnícke športové kluby — živé výsledky, tréningové streaky, XP odmeny a komunikácia klubu na jednom mieste. Žiadne ďalšie WhatsApp skupiny. Žiadne hľadanie výsledkov po Sportnete.</p>
       <div class="hero-actions">
@@ -409,15 +409,6 @@
           <circle cx="120" cy="24" r="7" fill="var(--gold)">
             <animate attributeName="opacity" values="1;.2;1" dur="1.8s" repeatCount="indefinite"/>
           </circle>
-        </g>
-        <!-- football -->
-        <g>
-          <animateTransform attributeName="transform" type="translate" values="0 0;0 -22;0 0" dur="2.6s" repeatCount="indefinite"/>
-          <g>
-            <animateTransform attributeName="transform" type="rotate" values="0 205 266;360 205 266" dur="1.3s" repeatCount="indefinite"/>
-            <circle cx="205" cy="266" r="13" fill="#EFF6FF" stroke="var(--line)" stroke-width="1.5"/>
-            <path d="M205 256 L213 262 L210 271 L200 271 L197 262 Z" fill="var(--ink)"/>
-          </g>
         </g>
       </svg>
     </div>
@@ -902,7 +893,7 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-tag">Fynd<span>.</span> — Beyond the Score</div>
+        <div class="footer-tag">fynd<span>.fans</span> — Beyond the Score</div>
         <p style="color:var(--muted);font-size:14px;margin-top:10px;max-width:320px;">Komunitná platforma pre slovenský mládežnícky šport. Football ako prvý use-case, sport-agnostic od základu.</p>
       </div>
       <div class="footer-links">
@@ -922,7 +913,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Fynd. Koncepčný materiál pre prezentáciu projektu.</span>
+      <span>© 2026 fynd.fans. Koncepčný materiál pre prezentáciu projektu.</span>
       <span>Beyond the Score.</span>
     </div>
   </div>
