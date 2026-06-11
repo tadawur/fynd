@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fynd — Beyond the Score</title>
+<meta name="description" content="Fynd je komunitná platforma pre slovenský mládežnícky šport — tréningové streaky, XP odmeny, live výsledky a komunikácia klubu na jednom mieste. Beyond the Score.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fynd — Beyond the Score">
+<meta property="og:description" content="Komunitná platforma pre slovenský mládežnícky šport — tréningové streaky, XP odmeny, live výsledky a komunikácia klubu na jednom mieste.">
+<meta property="og:url" content="https://fynd.sk">
+<meta property="og:locale" content="sk_SK">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fynd — Beyond the Score">
+<meta name="twitter:description" content="Komunitná platforma pre slovenský mládežnícky šport — tréningové streaky, XP odmeny, live výsledky a komunikácia klubu na jednom mieste.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -74,6 +84,17 @@
   .btn-ghost{border-color:var(--line);color:var(--text);}
   .btn-ghost:hover{border-color:var(--green);color:var(--green);}
 
+  /* ---------- CTA BAND ---------- */
+  .cta-band{
+    background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .cta-band .container{
+    text-align:center;max-width:760px;
+  }
+  .cta-band h2{font-size:clamp(26px,3.6vw,38px);margin-bottom:14px;}
+  .cta-band p{color:var(--muted);font-size:17px;margin-bottom:32px;}
+  .cta-band .hero-actions{justify-content:center;}
+
   /* ---------- HERO ---------- */
   .hero{padding:90px 0 70px;overflow:hidden;position:relative;}
   .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;position:relative;z-index:1;}
@@ -124,6 +145,7 @@
   .stat .num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(28px,4vw,44px);color:var(--green);}
   .stat .label{color:var(--muted);font-size:14px;margin-top:6px;}
   @media(max-width:760px){.stats-grid{grid-template-columns:repeat(2,1fr);row-gap:40px;}}
+  .stats-source{text-align:center;color:var(--muted);font-size:12px;margin-top:32px;opacity:.7;}
 
   /* ---------- COMPARE ---------- */
   .compare{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
@@ -334,16 +356,17 @@
       <div class="hero-actions">
         <a class="btn btn-primary" href="#app">Pozrieť appku ↓</a>
         <a class="btn btn-ghost" href="#audience">Pre koho je Fynd</a>
+        <a class="btn btn-ghost" href="mailto:info@fynd.sk?subject=Pilot%20pre%20n%C3%A1%C5%A1%20klub">Som klub, chcem pilot</a>
       </div>
     </div>
     <div class="hero-visual">
-      <svg class="pitch-rings" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <svg class="pitch-rings" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <circle cx="210" cy="170" r="185" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="7 11" opacity=".3"/>
         <circle cx="210" cy="170" r="6" fill="var(--green)" opacity=".35"/>
         <circle cx="55" cy="305" r="34" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 8" opacity=".25"/>
         <line x1="210" y1="-15" x2="210" y2="355" stroke="var(--muted)" stroke-width="1" stroke-dasharray="2 9" opacity=".2"/>
       </svg>
-      <svg class="bot" viewBox="0 0 240 280" width="280" xmlns="http://www.w3.org/2000/svg">
+      <svg class="bot" viewBox="0 0 240 280" width="280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <!-- ground shadow -->
         <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
           <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
@@ -409,6 +432,9 @@
     <div class="stat"><div class="num">0</div><div class="label">komunitných platforiem pre mládežnícky šport</div></div>
     <div class="stat"><div class="num">~500 000</div><div class="label">potenciálnych používateľov (hráči, rodičia, tréneri)</div></div>
   </div>
+  <div class="container">
+    <p class="stats-source">Zdroj: Slovenský futbalový zväz (SFZ), 2025. Odhad potenciálnych používateľov vychádza z počtu registrovaných hráčov a ich rodín/trénerov — pozri <code>marketing/pitch-notes.md</code>.</p>
+  </div>
 </section>
 
 <!-- ============ PROBLEM / SOLUTION ============ -->
@@ -461,7 +487,7 @@
 
       <!-- Mockup 1: Home -->
       <div class="phone-wrap">
-        <div class="phone">
+        <div class="phone" aria-hidden="true">
           <div class="phone-top"><span>👋 Ahoj, Lukáš</span><span class="bell">🔔</span></div>
           <div class="pcard">
             <div class="ptitle">🔥 Tréningový streak</div>
@@ -495,7 +521,7 @@
 
       <!-- Mockup 2: Profile -->
       <div class="phone-wrap">
-        <div class="phone">
+        <div class="phone" aria-hidden="true">
           <div class="phone-top"><span>Profil</span><span>⚙️</span></div>
           <div class="pcard">
             <div class="profile-head">
@@ -540,7 +566,7 @@
 
       <!-- Mockup 3: Leaderboard -->
       <div class="phone-wrap">
-        <div class="phone">
+        <div class="phone" aria-hidden="true">
           <div class="phone-top"><span>Rebríček</span><span>🏆</span></div>
           <div class="pcard">
             <div class="lb-tabs"><span class="active">Klub</span><span>Región</span><span>Slovensko</span></div>
@@ -567,7 +593,7 @@
 
       <!-- Mockup 4: Reward Shop -->
       <div class="phone-wrap">
-        <div class="phone">
+        <div class="phone" aria-hidden="true">
           <div class="phone-top"><span>Odmeňovňa</span><span>🎁</span></div>
           <div class="pcard">
             <div class="shop-balance"><span>Tvoj zostatok</span><b>💰 1 240 XP</b></div>
@@ -605,7 +631,7 @@
       <div class="feature-card"><span class="ic">🔔</span><h3>Sledovanie klubov</h3><p>Notifikácie pre ľubovoľný klub, presne ako na Instagrame — len góly, plné live pokrytie, alebo pripomienky zápasov.</p></div>
       <div class="feature-card"><span class="ic">📡</span><h3>Live zápasový ticker</h3><p>Góly, karty, polčas aj koniec zápasu v reálnom čase — zo Sportnet API alebo manuálne od trénera.</p></div>
       <div class="feature-card"><span class="ic">💬</span><h3>Skupinové chaty</h3><p>Jedna uzamknutá skupina na kategóriu. U9–U13 automaticky zahŕňa rodičov, tréner má prístup všade.</p></div>
-      <div class="feature-card"><span class="ic">⭐</span><h3>Hodnotenia po zápase</h3><p>Anonymné hodnotenie rozhodcu, trénera a spoluhráčov — +15 XP za vyplnenie, výsledky vidí len vedenie klubu.</p></div>
+      <div class="feature-card"><span class="ic">📋</span><h3>Hodnotenia po zápase</h3><p>Anonymné hodnotenie rozhodcu, trénera a spoluhráčov — +15 XP za vyplnenie, výsledky vidí len vedenie klubu.</p></div>
       <div class="feature-card"><span class="ic">🎁</span><h3>Odmeňovňa</h3><p>Klub nastaví katalóg odmien (tričká, lístky, tréningy navyše), hráči ich kupujú za XP.</p></div>
       <div class="feature-card"><span class="ic">🏆</span><h3>Rebríčky</h3><p>Klubový, regionálny aj celoslovenský rebríček v šiestich dimenziách — XP, dochádzka, góly, streak, hodnotenie, fair play.</p></div>
       <div class="feature-card"><span class="ic">👤</span><h3>Hráčsky profil</h3><p>Vlastný avatar, level, sezónne štatistiky, zbierka 18+ odznakov a sociálne siete (od 15 rokov).</p></div>
@@ -814,10 +840,10 @@
         </div>
       </div>
       <div class="season-preview-wrap">
-        <div class="phone" id="seasonPreview">
+        <div class="phone" id="seasonPreview" aria-hidden="true">
           <div class="phone-top"><span>👋 Ahoj, Lukáš</span><span class="bell">🔔</span></div>
           <div class="pcard" style="display:flex;justify-content:center;padding:18px;">
-            <svg id="seasonBot" viewBox="0 0 240 280" width="120" xmlns="http://www.w3.org/2000/svg">
+            <svg id="seasonBot" viewBox="0 0 240 280" width="120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <rect x="55" y="170" width="130" height="95" rx="16" fill="var(--card)" stroke="var(--line)"/>
               <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="1.5"/>
               <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
@@ -854,6 +880,19 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-band" id="cta">
+  <div class="container">
+    <div class="eyebrow" style="justify-content:center">Poďme na to spolu</div>
+    <h2>Chcete vyskúšať Fynd vo svojom klube?</h2>
+    <p>Hľadáme prvé kluby na pilotnú prevádzku — bez záväzkov, s priamou spätnou väzbou do vývoja appky. Ozvite sa nám a dohodneme si krátky úvodný hovor.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="mailto:info@fynd.sk?subject=Pilot%20pre%20n%C3%A1%C5%A1%20klub">Som klub, chcem pilot</a>
+      <a class="btn btn-ghost" href="mailto:info@fynd.sk?subject=Chcem%20vedie%C5%A5%20viac%20o%20Fynde">Chcem vedieť viac</a>
     </div>
   </div>
 </section>

@@ -18,29 +18,37 @@ Každý workstream je samostatne nasaditeľný — A sa dá robiť priebežne, B
 
 | Workstream | Status | Ďalší krok |
 |---|---|---|
-| A — Doladenie obsahu | 🟡 Planning | Schváliť poradie prác, začať s hero/CTA a SEO |
+| A — Doladenie obsahu | 🟠 In Progress | Hotovo: SEO/meta+favicon, lead CTA, stats zdroj, features cross-check, roadmap sync, accessibility pass. Zostáva: Hero copy, Problémová/App/Audience sekcie (Batch 2), Brand/Seasons vizuál (Batch 3) |
 | B — Business/Investorská sekcia | 🟡 Planning | Rozhodnúť formu (sekcia vs. podstránka vs. PDF) a publikum |
 | C — Partnerská sekcia | 🟡 Planning | Pripraviť `marketing/partner-program.md` (persony partnerov, value props, tiery) |
 
 ---
 
 ## Workstream A — Doladenie existujúceho obsahu webu
-**Status:** 🟡 Planning
+**Status:** 🟠 In Progress
+
+### Prístup — postup v dávkach
+
+Namiesto striktne sekvenčného prechodu 12 položiek nižšie, úlohy sú zoskupené do 3 dávok podľa rizika/závislostí:
+
+- **Batch 1 — Základy (rýchle víťazstvá):** SEO/meta (title, description, OG, favicon) + lead-capture CTA (hero + CTA sekcia pred footer). Toto sú net-new doplnky bez závislosti na obsahovej kontrole.
+- **Batch 2 — Zosúladenie obsahu:** Stats (zdroj/poznámka), Problémová sekcia (vs. `README.md`), App sekcia (vs. F1/F2), Features (vs. `docs/features.md`), Audience (vs. `marketing/target-audience.md`), Roadmap (vs. `docs/roadmap.md`).
+- **Batch 3 — Vizuál a prístupnosť:** Brand a Seasons vizuálna kontrola (vrátane mobile) + accessibility pass (kontrast, klávesová navigácia).
 
 ### Úlohy
 
-- [ ] **Hero sekcia** — overiť tagline a hlavné CTA (registrácia záujmu / waitlist pre kluby vs. "coming soon")
-- [ ] **Stats sekcia** — prepojiť čísla so zdrojom (`marketing/pitch-notes.md` — SFZ 2025), pridať zdroj/poznámku pod čiarou
-- [ ] **Problémová sekcia** ("Šport prehráva digitálny boj o pozornosť") — skontrolovať, či copy zodpovedá `README.md` → The Problem
-- [ ] **App sekcia** (4 obrazovky, návykový cyklus) — zosúladiť s aktuálnym stavom F1/F2 z `docs/roadmap.md`
-- [ ] **Features sekcia** (14 funkcií) — cross-check s `docs/features.md`, doplniť chýbajúce/odstrániť neaktuálne
-- [ ] **Audience sekcia** (4 postavy) — zosúladiť s personami v `marketing/target-audience.md`
-- [ ] **Roadmap sekcia** — zosúladiť s `docs/roadmap.md` (F1–F5), pridať aktuálny status
-- [ ] **Brand sekcia** — bez zmeny, len vizuálna kontrola
-- [ ] **Seasons sekcia** — funkčná, skontrolovať na mobile
-- [ ] **Nové:** kontaktný/lead formulár alebo mailto CTA ("Som klub, chcem pilot" / "Chcem vedieť viac")
-- [ ] **SEO/meta:** title, description, OG image, favicon
-- [ ] **Accessibility pass** (kontrast, klávesová navigácia) — pozri `design:accessibility-review`
+- [ ] **Hero sekcia** — overiť tagline a hlavné CTA (registrácia záujmu / waitlist pre kluby vs. "coming soon") *(Batch 1)*
+- [x] **Stats sekcia** — prepojiť čísla so zdrojom (`marketing/pitch-notes.md` — SFZ 2025), pridať zdroj/poznámku pod čiarou *(Batch 2)*
+- [ ] **Problémová sekcia** ("Šport prehráva digitálny boj o pozornosť") — skontrolovať, či copy zodpovedá `README.md` → The Problem *(Batch 2)*
+- [ ] **App sekcia** (4 obrazovky, návykový cyklus) — zosúladiť s aktuálnym stavom F1/F2 z `docs/roadmap.md` *(Batch 2)*
+- [x] **Features sekcia** (14 funkcií) — cross-check s `docs/features.md`, doplniť chýbajúce/odstrániť neaktuálne *(Batch 2)*
+- [ ] **Audience sekcia** (4 postavy) — zosúladiť s personami v `marketing/target-audience.md` *(Batch 2)*
+- [x] **Roadmap sekcia** — zosúladiť s `docs/roadmap.md` (F1–F5), pridať aktuálny status *(Batch 2)*
+- [ ] **Brand sekcia** — bez zmeny, len vizuálna kontrola *(Batch 3)*
+- [ ] **Seasons sekcia** — funkčná, skontrolovať na mobile *(Batch 3)*
+- [x] **Nové:** kontaktný/lead formulár alebo mailto CTA ("Som klub, chcem pilot" / "Chcem vedieť viac") *(Batch 1)*
+- [x] **SEO/meta:** title, description, OG image, favicon *(Batch 1)* — bez OG image (chýba obrázkový asset, otvorené pre budúcnosť)
+- [x] **Accessibility pass** (kontrast, klávesová navigácia) — pozri `design:accessibility-review` *(Batch 3)*
 
 ### Success criteria
 - Všetky čísla a texty na webe súhlasia s aktuálnymi `.md` podkladmi v repo
