@@ -22,8 +22,11 @@
 - Streak counter that validates his consistency
 - XP for every goal and training — visible on his profile
 - Leaderboard position (he's #3 in his club right now, wants to be #1)
+- Samostatné tabuľky najviac gólov a odohraných minút (sezónne aj kariérne) — ďalšie spôsoby, ako sa porovnávať
+- Ak sa umiestni v top 1-3 sezónne alebo celoslovensky, dostane viditeľné označenie na profile + trvalý odznak s rokom
 - Clean profile he can link from his Instagram bio
 - Notifications that tell him exactly what changed, when
+- Ak prestúpi do iného klubu, jeho XP, level a história prejdú s ním — nezačína od nuly
 
 **Key metric:** Opens app 3–4× per week, maintains streak for 28+ days
 
@@ -77,9 +80,11 @@
 **What Fynd gives Milan:**
 - One announcement → correct groups receive it automatically
 - Attendance marking takes 30 seconds with a tap-through player list
-- Sportnet sync means transfer updates happen automatically
+- Sportnet sync means transfer updates happen automatically (vrátane prenosu XP a levelu hráča)
 - Post-match ratings give him structured (anonymous) player feedback
 - Engagement dashboard shows him who hasn't opened the app in 2 weeks
+- Zostava zápasu (hráči, tréneri, rozhodcovia) sa generuje automaticky a je prístupná všetkým s klikateľnými profilmi
+- Disciplína (žlté/červené karty) sa premieta do malého záporného XP — platí aj pre neho ako trénera, nielen pre hráčov
 
 **Key metric:** Marks attendance after 90%+ of sessions, sends announcements via Fynd instead of WhatsApp
 
@@ -105,11 +110,98 @@
 
 **What Fynd gives Petra:**
 - Member overview with engagement stats (last login, streak, XP)
-- Digital reward shop — no spreadsheet required
-- Automatic Sportnet sync for transfers
+- Digital reward shop — no spreadsheet required, klub si sám definuje vlastný zoznam odmien
+- Automatic Sportnet sync for transfers (XP a level hráča prejdú s ním)
 - End-of-season award suggestions based on data
+- Straty a nálezy — prehľad nahlásených strát po zápasoch a možnosť priamo odpovedať hráčom/rodičom, či sa vec našla
 
 **Key metric:** Logs in weekly, processes at least 1 reward order per month
+
+---
+
+## Persona 5: Jozef, 58 — The Veteran Player
+
+**Location:** Banská Štiavnica  
+**Club:** TJ Banská Štiavnica, veteráni (starí páni)  
+**Devices:** Basic Android phone
+
+**Behaviour:**
+- Hráva veteránsku ligu raz týždenne, dlhoročný člen klubu (40+ rokov)
+- Používa WhatsApp na dohodnutie zostavy a odvozu na zápasy
+- Sleduje výsledky a tabuľku veteránskej súťaže cez Facebook skupinu klubu
+- Nemá záujem o hry ani sociálne siete typu Instagram, telefón používa hlavne na volanie a WhatsApp
+
+**Frustrations:**
+- Appky pôsobia "pre mladých" — malé písmo, veľa animácií a hier, ktoré ho nezaujímajú
+- Nevie, kedy a kde má najbližší zápas, kým mu to niekto nenapíše do skupiny
+- Chcel by mať prehľad svojich zápasov a výsledkov za posledné roky, no nikde to nie je
+- Streaky a XP mu pripadajú zbytočné, chce len vedieť čo, kde a kedy sa hrá
+
+**What Fynd gives Jozefovi:**
+- Jednoduché, prehľadné rozhranie s väčším písmom a minimom rozptyľujúcich prvkov
+- Jasný prehľad nadchádzajúcich zápasov a výsledkov veteránskej ligy
+- Archív jeho zápasovej histórie a štatistík za celú kariéru v klube
+- Možnosť vypnúť herné prvky (XP, streaky, odznaky) a nechať si len to podstatné
+- Skupinový chat tímu na jednom mieste namiesto WhatsAppu
+
+**Key metric:** Otvorí appku 1× týždenne pred zápasom, pozrie si nadchádzajúci program a výsledok posledného zápasu
+
+---
+
+## Rozšírené role v klube
+
+Tieto role nie sú súčasťou piatich hlavných cieľových skupín — ide o voliteľné, klubom priradené role pre členov, ktorí už dnes neformálne fotia alebo spracúvajú obsah zo zápasov.
+
+### Rozšírená rola 6: Fotograf
+
+**Location:** Ľubovoľný klub  
+**Club:** Dobrovoľník/rodič, ktorý fotí zápasy a tréningy  
+**Devices:** Smartfón s fotoaparátom
+
+**Behaviour:**
+- Na každom domácom zápase odfotí desiatky až stovky fotiek
+- Fotky doteraz skončia v jeho telefóne, prípadne v jednej veľkej WhatsApp/Facebook skupine
+- Niekedy fotí aj pre konkrétnych hráčov (napr. narodeninový zápas, posledný zápas sezóny)
+
+**Frustrations:**
+- Fotky sa strácajú v chate medzi desiatkami iných správ
+- Nemá spôsob, ako fotky priradiť ku konkrétnemu zápasu alebo hráčovi
+- Niektoré fotky (napr. zranenia, nepodarené momenty) nechce zdieľať so všetkými
+- Grafik klubu si musí fotky vypýtať osobne a čakať
+
+**What Fynd gives Fotografovi:**
+- Nahratie fotiek priamo ku konkrétnemu zápasu, prepojené s kalendárom a live tickerom
+- Možnosť priradiť fotky konkrétnym hráčom alebo celému tímu
+- Nastavenie viditeľnosti pre každú sadu fotiek — celý klub alebo len vybraní členovia
+- Samostatná "súkromná" sada fotiek, ktorú vidí len určený Grafik klubu
+
+**Key metric:** Nahrá fotky z 80 %+ domácich zápasov do 48 hodín od konca zápasu
+
+---
+
+### Rozšírená rola 7: Grafik
+
+**Location:** Ľubovoľný klub  
+**Club:** Člen klubu zodpovedný za grafiku (sociálne siete, plagáty, ročenka)  
+**Devices:** Počítač/notebook, smartfón
+
+**Behaviour:**
+- Pripravuje grafiku na sociálne siete klubu, plagáty na zápasy a sezónne výstupy
+- Potrebuje kvalitné fotografie zo zápasov, ktoré nemá kde systematicky hľadať
+- Komunikuje s fotografom cez Messenger alebo WhatsApp, čaká na zaslanie súborov
+
+**Frustrations:**
+- Fotky musí pýtať osobne od fotografa a dúfať, že dostane tie správne
+- Žiadny prehľad podľa zápasu alebo hráča — len chaotický prúd správ
+- Citlivé fotky (napr. interné momenty) sa nechtiac dostanú aj k iným členom klubu
+
+**What Fynd gives Grafikovi:**
+- Prehľad všetkých fotosád, ktoré mu Fotograf zdieľal — vrátane tých skrytých pre ostatných
+- Filtrovanie podľa zápasu alebo hráča, bez prehrabávania sa v chatoch
+- Stiahnutie fotiek v plnom rozlíšení pre grafické výstupy
+- Istota, že vidí len to, čo mu Fotograf výslovne sprístupnil
+
+**Key metric:** Nájde a stiahne potrebné fotky do 5 minút bez kontaktovania fotografa
 
 ---
 

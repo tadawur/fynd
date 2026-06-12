@@ -13,9 +13,10 @@ Five phases from MVP to national scale. Each phase is independently deployable �
 ### Deliverables
 - [ ] User registration and login (email + Google)
 - [ ] Player profile with customisable avatar
+- [ ] Multiple animated profile background options
 - [ ] Club structure and category assignment
 - [ ] Group chats (with category-based access control)
-- [ ] Training calendar (coach creates, players view)
+- [ ] Training calendar (coach creates, players view) — mesačný prehľad + konfigurovateľné notifikácie (deň tréningu, X dní vopred)
 - [ ] Training attendance marking (coach action)
 - [ ] Streak counter (weekly grid, flame animation)
 - [ ] Basic announcements (broadcast to category or club-wide)
@@ -36,11 +37,14 @@ Five phases from MVP to national scale. Each phase is independently deployable �
 - [ ] XP awarding engine (attendance, ratings, match, streak, badges)
 - [ ] Level system (10 levels, Slovak names)
 - [ ] XP progress bar and level badge on profile
-- [ ] Badge system (18+ badges, earn/locked state)
-- [ ] Reward shop (Odmeňovňa) — club configures, player requests
+- [ ] Badge system (rozšírená zbierka odznakov, earn/locked state)
+- [ ] Reward shop (Odmeňovňa) — club configures own catalogue (rewards, ceny, dostupnosť), player requests
+- [ ] Profile design/skin shop — players buy cosmetic profile designs with XP
 - [ ] Post-match rating screen (referee, coach, teammates)
 - [ ] Rating XP reward
-- [ ] Club leaderboard (XP dimension)
+- [ ] Negatívne XP za žlté/červené karty (platí pre hráčov aj trénerov)
+- [ ] Bonus XP za postup tímu v lige (malý bonus, výška podľa úrovne ligy)
+- [ ] Club leaderboard (XP dimension) + samostatné tabuľky najviac gólov a najviac odohraných minút (sezónne)
 
 ### Success criteria
 - Average session frequency ≥ 1.5× per week per active user
@@ -57,11 +61,16 @@ Five phases from MVP to national scale. Each phase is independently deployable �
 - [ ] Club directory (browse all Fynd clubs)
 - [ ] Club following with per-club notification settings
 - [ ] Live match ticker (events, score, timeline)
+- [ ] Zostavy zápasu — zoznam hráčov, trénerov a rozhodcov s klikateľnými profilmi
 - [ ] Push notifications for live events (goal, card, result)
 - [ ] Match schedule view (followed clubs)
 - [ ] Match reminder system (3 days before, match morning)
 - [ ] Regional leaderboard
+- [ ] Zobrazenie pozície v rebríčku na profile (top 50, s kategóriou)
 - [ ] Social media links on profile (age 15+ gate)
+- [ ] Photographer role — upload match photos, tag players, set per-set visibility
+- [ ] Graphic Designer role — access to photo sets shared by Photographer
+- [ ] Straty a nálezy — komunikácia s vedením klubu o stratených/nájdených veciach po zápase
 
 ### Success criteria
 - 30%+ of users follow at least one club beyond their own
@@ -77,10 +86,11 @@ Five phases from MVP to national scale. Each phase is independently deployable �
 ### Deliverables
 - [ ] Sportnet OAuth and webhook setup
 - [ ] Player registration verification via SFZ number
-- [ ] Automatic transfer sync (club changes)
+- [ ] Automatic transfer sync (club changes) + prenos XP a levelu hráča pri prestupe do iného klubu
 - [ ] Match results from Sportnet (replaces manual input)
-- [ ] Full season stats on player profile (goals, assists, minutes)
-- [ ] National leaderboard
+- [ ] Full season stats on player profile (goals, assists, minutes played on pitch, žlté/červené karty, rohové kopy)
+- [ ] National leaderboard + celoročné/kariérne tabuľky najviac gólov a najviac odohraných minút
+- [ ] Sezónne a celoslovenské umiestnenia (top 1-3) na profile + trvalé odznaky s rokom po skončení platnosti
 - [ ] Seasonal themes engine (6 themes, auto-switch by date)
 - [ ] End-of-season awards (auto-generated, permanent badges)
 

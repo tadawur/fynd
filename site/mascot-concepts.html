@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fynd.fans — Návrhy maskotov</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#06101E;
+    --surface:#0D1B2E;
+    --card:#1A2C42;
+    --green:#00D97E;
+    --gold:#FFB830;
+    --coral:#FF6B6B;
+    --text:#EFF6FF;
+    --muted:#7A9ABB;
+    --line:rgba(255,255,255,0.09);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--ink);
+    color:var(--text);
+    font-family:'Nunito',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding:48px 24px 96px;
+  }
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1.15;}
+  .wrap{max-width:1180px;margin:0 auto;}
+  header{text-align:center;max-width:720px;margin:0 auto 56px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--green);margin-bottom:16px;
+  }
+  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);
+    box-shadow:0 0 0 4px rgba(0,217,126,.15);}
+  header h1{font-size:clamp(28px,4vw,40px);margin-bottom:14px;}
+  header p{color:var(--muted);font-size:17px;}
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+  }
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:28px 22px 24px;
+    text-align:center;
+  }
+  .card .stage{
+    display:flex;align-items:flex-end;justify-content:center;
+    height:200px;margin-bottom:18px;
+  }
+  .card svg{display:block;}
+  .card h2{font-size:21px;margin-bottom:6px;}
+  .card .role{
+    display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink);background:var(--green);border-radius:999px;padding:3px 12px;margin-bottom:12px;
+  }
+  .card p{color:var(--muted);font-size:14.5px;text-align:left;}
+  .card p strong{color:var(--text);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">fynd.fans — návrhy maskota</div>
+    <h1>21 konceptov maskota</h1>
+    <p>Alternatívy k súčasnému robotovi „Futbot" — každý maskot má meno, charakter a dôvod, prečo by sedel ku komunite mladých futbalistov a ich rodín. Posledné tri zvieracie návrhy (žralok, sova, delfín) majú telo v prirodzených farbách zvieraťa — brand farby ostávajú len v detailoch (pruh, oči). Päťka mravcov sú varianty na tému „tímová práca · komunita" — každý v inej prirodzenej farbe a s inou rolou v tíme. Šestica guľatých robotov (Loptoš, Iskra, Mincoš, Ozvena, Trofej, Kométa) má jednotné guľaté telo a líši sa farbou a detailom na hrudi podľa toho, akú funkciu appky predstavuje (odmeny, level-up, komunita, úspechy, streaky). Poslednú dvojicu dopĺňajú ďalšie robotické varianty — štíhly bežecký robot a veľký maskot-robot s fanúšikovským šálom — na výber popri zvieracích konceptoch.</p>
+  </header>
+
+  <div class="grid">
+
+    <!-- 1. LÍŠKA — FYXA -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.2s" repeatCount="indefinite"/>
+            <!-- tail -->
+            <path d="M185 200 Q230 195 222 150 Q216 185 180 195 Z" fill="#FF8A4C" stroke="var(--line)">
+              <animateTransform attributeName="transform" type="rotate" values="0 185 200;10 185 200;0 185 200" dur="2.8s" repeatCount="indefinite"/>
+            </path>
+            <path d="M214 158 Q220 168 210 178 L200 168 Z" fill="var(--text)"/>
+            <!-- body / jersey -->
+            <path d="M120 168 C166 168 189 188 187 222 C185 252 159 266 120 266 C81 266 55 252 53 222 C51 188 74 168 120 168 Z" fill="var(--card)" stroke="var(--line)"/>
+            <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
+            <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
+            <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+            <!-- legs -->
+            <rect x="75" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+            <rect x="139" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" values="0 139 271;-20 139 271;0 139 271" dur="2.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- left arm -->
+            <rect x="30" y="180" width="22" height="60" rx="10" fill="#FF8A4C" stroke="var(--line)"/>
+            <!-- right arm waving -->
+            <rect x="188" y="170" width="22" height="55" rx="10" fill="#FF8A4C" stroke="var(--line)" transform="rotate(-25 199 170)">
+              <animateTransform attributeName="transform" type="rotate" values="-25 199 170;-58 199 170;-15 199 170;-25 199 170" dur="3.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- head -->
+            <path d="M60 95 Q60 50 120 50 Q180 50 180 95 L180 120 Q180 150 120 150 Q60 150 60 120 Z" fill="#FF8A4C" stroke="var(--line)" stroke-width="2"/>
+            <!-- ears -->
+            <path d="M68 58 L52 18 L92 48 Z" fill="#FF8A4C" stroke="var(--line)" stroke-width="2"/>
+            <path d="M68 56 L60 30 L86 48 Z" fill="var(--ink)"/>
+            <path d="M172 58 L188 18 L148 48 Z" fill="#FF8A4C" stroke="var(--line)" stroke-width="2"/>
+            <path d="M172 56 L180 30 L154 48 Z" fill="var(--ink)"/>
+            <!-- white muzzle -->
+            <path d="M85 95 Q120 145 155 95 Q155 130 120 138 Q85 130 85 95 Z" fill="var(--text)"/>
+            <!-- nose -->
+            <ellipse cx="120" cy="118" rx="8" ry="6" fill="var(--ink)"/>
+            <!-- eyes -->
+            <ellipse cx="98" cy="92" rx="9" ry="11" fill="var(--ink)"/>
+            <ellipse cx="142" cy="92" rx="9" ry="11" fill="var(--ink)"/>
+            <circle cx="101" cy="89" r="2.4" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="145" cy="89" r="2.4" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Útočník · rýchlosť</div>
+      <h2>Líška „Fyxa"</h2>
+      <p><strong>Charakter:</strong> mrštná, šikovná, vždy o krok vpred. Symbol rýchlych prihrávok, driblingu a „fígľov" v appke (streaky, bonusové XP).<br><br>
+      <strong>Prečo sedí:</strong> oranžová farba dodá webu teplý kontrast k zelenej, líška je v SK kultúre spojená s prefíkanosťou a šikovnosťou — ladí s „Beyond the Score".</p>
+    </div>
+
+    <!-- 2. SOKOL — FALKO -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.2s" repeatCount="indefinite"/>
+            <!-- body / jersey -->
+            <path d="M120 168 C166 168 189 188 187 222 C185 252 159 266 120 266 C81 266 55 252 53 222 C51 188 74 168 120 168 Z" fill="var(--card)" stroke="var(--line)"/>
+            <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
+            <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
+            <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+            <!-- legs -->
+            <rect x="75" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+            <rect x="139" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" values="0 139 271;-20 139 271;0 139 271" dur="2.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- left wing -->
+            <path d="M55 185 Q15 195 22 240 Q40 210 60 215 Z" fill="#5C7A9E" stroke="var(--line)"/>
+            <!-- right wing flapping -->
+            <path d="M185 175 Q230 165 224 215 Q205 190 180 200 Z" fill="#5C7A9E" stroke="var(--line)">
+              <animateTransform attributeName="transform" type="rotate" values="0 185 195;-22 185 195;0 185 195" dur="2.4s" repeatCount="indefinite"/>
+            </path>
+            <!-- head -->
+            <ellipse cx="120" cy="100" rx="62" ry="52" fill="#5C7A9E" stroke="var(--line)" stroke-width="2"/>
+            <!-- crest feathers -->
+            <path d="M95 52 L100 28 L112 50 Z" fill="#5C7A9E" stroke="var(--line)"/>
+            <path d="M120 48 L122 22 L134 48 Z" fill="#5C7A9E" stroke="var(--line)"/>
+            <path d="M145 52 L150 28 L160 50 Z" fill="#5C7A9E" stroke="var(--line)"/>
+            <!-- face mask -->
+            <path d="M65 100 Q120 80 175 100 Q175 135 120 145 Q65 135 65 100 Z" fill="var(--text)"/>
+            <!-- beak -->
+            <path d="M105 118 L120 145 L135 118 Z" fill="var(--gold)" stroke="var(--ink)" stroke-width="1.5"/>
+            <!-- eyes -->
+            <circle cx="100" cy="100" r="11" fill="var(--ink)"/>
+            <circle cx="140" cy="100" r="11" fill="var(--ink)"/>
+            <circle cx="103" cy="96" r="3" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="143" cy="96" r="3" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Brankár · prehľad</div>
+      <h2>Sokol „Falko"</h2>
+      <p><strong>Charakter:</strong> sleduje ihrisko zhora, nič mu neunikne. Symbol live výsledkov, notifikácií a „celkového prehľadu" (rebríček, štatistiky).<br><br>
+      <strong>Prečo sedí:</strong> sokol = bystrosť a presnosť, dobre funguje ako „maskot-sprievodca" pri dátach a upozorneniach v appke.</p>
+    </div>
+
+    <!-- 3. VLK — WOLFIK -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.2s" repeatCount="indefinite"/>
+            <!-- tail -->
+            <path d="M188 205 Q235 200 230 160 Q220 195 182 198 Z" fill="#7E8DA3" stroke="var(--line)">
+              <animateTransform attributeName="transform" type="rotate" values="0 188 205;-12 188 205;0 188 205" dur="2.8s" repeatCount="indefinite"/>
+            </path>
+            <!-- body / jersey -->
+            <path d="M120 168 C166 168 189 188 187 222 C185 252 159 266 120 266 C81 266 55 252 53 222 C51 188 74 168 120 168 Z" fill="var(--card)" stroke="var(--line)"/>
+            <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
+            <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
+            <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+            <!-- left arm -->
+            <rect x="30" y="180" width="22" height="60" rx="10" fill="#7E8DA3" stroke="var(--line)"/>
+            <!-- right arm waving -->
+            <rect x="188" y="170" width="22" height="55" rx="10" fill="#7E8DA3" stroke="var(--line)" transform="rotate(-25 199 170)">
+              <animateTransform attributeName="transform" type="rotate" values="-25 199 170;-58 199 170;-15 199 170;-25 199 170" dur="3.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- legs -->
+            <rect x="75" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+            <rect x="139" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" values="0 139 271;-20 139 271;0 139 271" dur="2.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- ears -->
+            <path d="M70 60 L50 15 L100 50 Z" fill="#7E8DA3" stroke="var(--line)" stroke-width="2"/>
+            <path d="M170 60 L190 15 L140 50 Z" fill="#7E8DA3" stroke="var(--line)" stroke-width="2"/>
+            <path d="M72 56 L60 28 L92 50 Z" fill="var(--ink)"/>
+            <path d="M168 56 L180 28 L148 50 Z" fill="var(--ink)"/>
+            <!-- head -->
+            <path d="M62 100 Q60 50 120 50 Q180 50 178 100 Q178 150 120 150 Q62 150 62 100 Z" fill="#7E8DA3" stroke="var(--line)" stroke-width="2"/>
+            <!-- muzzle -->
+            <path d="M90 110 Q120 150 150 110 Q150 100 120 102 Q90 100 90 110 Z" fill="var(--text)"/>
+            <ellipse cx="120" cy="120" rx="9" ry="6" fill="var(--ink)"/>
+            <!-- eyes -->
+            <ellipse cx="97" cy="92" rx="10" ry="9" fill="var(--green)"/>
+            <ellipse cx="143" cy="92" rx="10" ry="9" fill="var(--green)"/>
+            <ellipse cx="97" cy="93" rx="4" ry="5" fill="var(--ink)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </ellipse>
+            <ellipse cx="143" cy="93" rx="4" ry="5" fill="var(--ink)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </ellipse>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Kapitán · tímový duch</div>
+      <h2>Vlk „Wolfik"</h2>
+      <p><strong>Charakter:</strong> vodca svorky/tímu. Reprezentuje spoluprácu, komunikáciu klubu a „partiu" — nikdy nehrá sám.<br><br>
+      <strong>Prečo sedí:</strong> šedo-zelená kombinácia pôsobí „štadiónovo" a sebavedomo, vlk dobre symbolizuje tímový chat a spoločné ciele (klubové XP, výzvy).</p>
+    </div>
+
+    <!-- 4. JEŽKO — PICHOŠ -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="65" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="65;52;65" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.2s" repeatCount="indefinite"/>
+            <!-- spikes -->
+            <g fill="#8B5E3C" stroke="var(--line)">
+              <path d="M70 130 L55 95 L85 118 Z"/>
+              <path d="M95 110 L85 70 L112 102 Z"/>
+              <path d="M125 105 L120 64 L145 100 Z"/>
+              <path d="M155 110 L162 70 L178 105 Z"/>
+              <path d="M178 128 L198 98 L188 135 Z"/>
+            </g>
+            <!-- body / jersey (rounder) -->
+            <path d="M120 170 C164 170 186 190 184 222 C182 250 158 262 120 262 C82 262 58 250 56 222 C54 190 76 170 120 170 Z" fill="var(--card)" stroke="var(--line)"/>
+            <rect x="95" y="193" width="50" height="22" rx="6" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
+            <text x="120" y="209" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
+            <rect x="68" y="223" width="104" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+            <!-- legs (short) -->
+            <rect x="80" y="260" width="24" height="16" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+            <rect x="136" y="260" width="24" height="16" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" values="0 136 268;-18 136 268;0 136 268" dur="2.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- arms (short, stubby) -->
+            <rect x="38" y="195" width="20" height="42" rx="10" fill="#A97A52" stroke="var(--line)"/>
+            <rect x="182" y="190" width="20" height="40" rx="10" fill="#A97A52" stroke="var(--line)" transform="rotate(-20 192 190)">
+              <animateTransform attributeName="transform" type="rotate" values="-20 192 190;-50 192 190;-15 192 190;-20 192 190" dur="3.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- face (round, light) -->
+            <ellipse cx="120" cy="118" rx="58" ry="50" fill="#C99A6E" stroke="var(--line)" stroke-width="2"/>
+            <!-- nose -->
+            <ellipse cx="120" cy="142" rx="10" ry="8" fill="var(--ink)"/>
+            <!-- eyes -->
+            <circle cx="98" cy="108" r="9" fill="var(--ink)"/>
+            <circle cx="142" cy="108" r="9" fill="var(--ink)"/>
+            <circle cx="101" cy="105" r="2.6" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="145" cy="105" r="2.6" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <!-- small green sweatband -->
+            <rect x="78" y="78" width="84" height="14" rx="7" fill="var(--green)" opacity=".85"/>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Stredopoliar · houževnatosť</div>
+      <h2>Jež „Pichoš"</h2>
+      <p><strong>Charakter:</strong> malý, guľatý, nikdy sa nevzdáva — ideálny „underdog" maskot pre streaky a odmeny za vytrvalosť ("12 dní v rade").<br><br>
+      <strong>Prečo sedí:</strong> teplá, prístupná farba a roztomilý dizajn osloví aj mladších hráčov a rodičov; jasná metafora „malý, ale húževnatý".</p>
+    </div>
+
+    <!-- 5. MÝVAL — MÝV -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.2s" repeatCount="indefinite"/>
+            <!-- striped tail -->
+            <g>
+              <animateTransform attributeName="transform" type="rotate" values="0 195 210;8 195 210;0 195 210" dur="2.8s" repeatCount="indefinite"/>
+              <path d="M188 205 Q238 195 228 150 Q220 190 182 195 Z" fill="#9AA6B2" stroke="var(--line)"/>
+              <rect x="200" y="158" width="26" height="9" rx="2" fill="var(--ink)" transform="rotate(-22 213 162)"/>
+              <rect x="195" y="178" width="28" height="9" rx="2" fill="var(--ink)" transform="rotate(-12 209 182)"/>
+            </g>
+            <!-- body / jersey -->
+            <path d="M120 168 C166 168 189 188 187 222 C185 252 159 266 120 266 C81 266 55 252 53 222 C51 188 74 168 120 168 Z" fill="var(--card)" stroke="var(--line)"/>
+            <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
+            <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
+            <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+            <!-- legs -->
+            <rect x="75" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+            <rect x="139" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" values="0 139 271;-20 139 271;0 139 271" dur="2.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- left arm -->
+            <rect x="30" y="180" width="22" height="60" rx="10" fill="#9AA6B2" stroke="var(--line)"/>
+            <!-- right arm waving -->
+            <rect x="188" y="170" width="22" height="55" rx="10" fill="#9AA6B2" stroke="var(--line)" transform="rotate(-25 199 170)">
+              <animateTransform attributeName="transform" type="rotate" values="-25 199 170;-58 199 170;-15 199 170;-25 199 170" dur="3.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- ears -->
+            <circle cx="75" cy="55" r="20" fill="#9AA6B2" stroke="var(--line)" stroke-width="2"/>
+            <circle cx="165" cy="55" r="20" fill="#9AA6B2" stroke="var(--line)" stroke-width="2"/>
+            <circle cx="75" cy="55" r="10" fill="var(--ink)"/>
+            <circle cx="165" cy="55" r="10" fill="var(--ink)"/>
+            <!-- head -->
+            <ellipse cx="120" cy="100" rx="62" ry="52" fill="#9AA6B2" stroke="var(--line)" stroke-width="2"/>
+            <!-- mask (gamer visor look) -->
+            <path d="M68 92 Q120 75 172 92 Q172 118 120 122 Q68 118 68 92 Z" fill="var(--ink)"/>
+            <!-- eyes / visor glow -->
+            <rect x="86" y="92" width="24" height="14" rx="4" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="130" y="92" width="24" height="14" rx="4" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" begin="0.2s" repeatCount="indefinite"/>
+            </rect>
+            <!-- nose -->
+            <ellipse cx="120" cy="128" rx="9" ry="7" fill="var(--ink)"/>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Sprievodca appkou · tech</div>
+      <h2>Mýval „Mýv"</h2>
+      <p><strong>Charakter:</strong> zvedavý, šikovný s appkou — maska okolo očí pripomína „visor" (podobne ako pôvodný Futbot). Vhodný ako sprievodca onboardingom a tutoriálmi.<br><br>
+      <strong>Prečo sedí:</strong> spája „roztomilé zviera" s technologickým detailom (svietiaci visor), takže je most medzi animovaným maskotom a doterajším robotickým motívom Futbota.</p>
+    </div>
+
+    <!-- 6. ŽRALOK — ŠARKO -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.2s" repeatCount="indefinite"/>
+            <!-- tail fin -->
+            <path d="M190 195 Q236 184 226 144 Q217 180 183 189 Z" fill="#5C7A91" stroke="var(--line)">
+              <animateTransform attributeName="transform" type="rotate" values="0 190 195;10 190 195;0 190 195" dur="2.8s" repeatCount="indefinite"/>
+            </path>
+            <!-- body (natural belly tone) -->
+            <path d="M120 168 C166 168 189 188 187 222 C185 252 159 266 120 266 C81 266 55 252 53 222 C51 188 74 168 120 168 Z" fill="#C9D9E3" stroke="var(--line)"/>
+            <!-- dorsal fin -->
+            <path d="M120 170 L133 130 L147 172 Z" fill="#5C7A91" stroke="var(--line)"/>
+            <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
+            <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
+            <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+            <!-- legs -->
+            <rect x="75" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+            <rect x="139" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" values="0 139 271;-20 139 271;0 139 271" dur="2.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- left pectoral fin -->
+            <path d="M52 188 Q22 205 38 242 Q58 212 66 192 Z" fill="#5C7A91" stroke="var(--line)"/>
+            <!-- right pectoral fin (waving) -->
+            <path d="M188 188 Q220 172 232 200 Q210 212 184 202 Z" fill="#5C7A91" stroke="var(--line)" transform="rotate(-15 196 196)">
+              <animateTransform attributeName="transform" type="rotate" values="-15 196 196;-45 196 196;-5 196 196;-15 196 196" dur="3.6s" repeatCount="indefinite"/>
+            </path>
+            <!-- head -->
+            <path d="M55 100 Q50 48 120 45 Q190 48 185 100 Q185 146 120 150 Q55 146 55 100 Z" fill="#5C7A91" stroke="var(--line)" stroke-width="2"/>
+            <!-- belly / jaw -->
+            <path d="M65 110 Q120 158 175 110 Q175 136 120 144 Q65 136 65 110 Z" fill="#EFF6FF"/>
+            <!-- teeth -->
+            <path d="M90 122 L98 132 L106 122 Z" fill="var(--text)"/>
+            <path d="M112 126 L120 136 L128 126 Z" fill="var(--text)"/>
+            <path d="M134 122 L142 132 L150 122 Z" fill="var(--text)"/>
+            <!-- gills -->
+            <path d="M58 92 Q50 98 58 106" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M66 86 Q56 94 66 104" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+            <!-- eyes -->
+            <ellipse cx="98" cy="82" rx="9" ry="10" fill="var(--ink)"/>
+            <ellipse cx="148" cy="82" rx="9" ry="10" fill="var(--ink)"/>
+            <circle cx="101" cy="79" r="2.4" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="151" cy="79" r="2.4" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Skaut · presný inštinkt</div>
+      <h2>Žralok „Šarko"</h2>
+      <p><strong>Charakter:</strong> ide vždy rovno za cieľom, nič ho nerozptýli. Symbol presného „nájdenia" toho najlepšieho zápasu, hráča alebo štatistiky — ladí s podstatou mena „fynd".<br><br>
+      <strong>Prečo sedí:</strong> sivomodré prirodzené telo pôsobí silno a sebavedomo bez toho, aby vyzeralo robotický; zelený pruh a FN odznak ho jasne spájajú s appkou.</p>
+    </div>
+
+    <!-- 7. SOVA — SOVÍK -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.2s" repeatCount="indefinite"/>
+            <!-- left wing -->
+            <path d="M55 185 Q15 195 22 240 Q40 210 60 215 Z" fill="#8B6F52" stroke="var(--line)"/>
+            <!-- right wing (flapping) -->
+            <path d="M185 175 Q230 165 224 215 Q205 190 180 200 Z" fill="#8B6F52" stroke="var(--line)">
+              <animateTransform attributeName="transform" type="rotate" values="0 185 195;-22 185 195;0 185 195" dur="2.4s" repeatCount="indefinite"/>
+            </path>
+            <!-- body (natural feather tone) -->
+            <path d="M120 168 C166 168 189 188 187 222 C185 252 159 266 120 266 C81 266 55 252 53 222 C51 188 74 168 120 168 Z" fill="#E3C9A6" stroke="var(--line)"/>
+            <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
+            <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
+            <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+            <!-- legs -->
+            <rect x="75" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+            <rect x="139" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" values="0 139 271;-20 139 271;0 139 271" dur="2.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- ear tufts -->
+            <path d="M90 50 L80 18 L105 45 Z" fill="#8B6F52" stroke="var(--line)"/>
+            <path d="M150 50 L160 18 L135 45 Z" fill="#8B6F52" stroke="var(--line)"/>
+            <!-- head -->
+            <circle cx="120" cy="100" r="62" fill="#8B6F52" stroke="var(--line)" stroke-width="2"/>
+            <!-- facial disc -->
+            <ellipse cx="120" cy="106" rx="50" ry="46" fill="#F0E0C5"/>
+            <!-- beak -->
+            <path d="M112 118 L120 134 L128 118 Z" fill="var(--gold)" stroke="var(--ink)" stroke-width="1.5"/>
+            <!-- eyes -->
+            <circle cx="98" cy="98" r="17" fill="var(--gold)" stroke="var(--ink)" stroke-width="2"/>
+            <circle cx="142" cy="98" r="17" fill="var(--gold)" stroke="var(--ink)" stroke-width="2"/>
+            <circle cx="98" cy="98" r="7" fill="var(--ink)"/>
+            <circle cx="142" cy="98" r="7" fill="var(--ink)"/>
+            <circle cx="101" cy="94" r="2.4" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="145" cy="94" r="2.4" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Analytik · nočný prehľad</div>
+      <h2>Sova „Sovík"</h2>
+      <p><strong>Charakter:</strong> múdra, pokojná, všetko si premyslí skôr, než niečo povie. Symbol štatistík, analýz a večerných zhrnutí zápasov — „čo sa dnes naozaj stalo".<br><br>
+      <strong>Prečo sedí:</strong> teplé hnedo-krémové farby pôsobia prirodzene a dôveryhodne, veľké oči zvýraznené brandovou zlatou ladia s appkou bez toho, aby telo pôsobilo ako „dres".</p>
+    </div>
+
+    <!-- 8. DELFÍN — DELFI -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.2s" repeatCount="indefinite"/>
+            <!-- tail fluke -->
+            <path d="M185 205 Q210 184 233 194 Q220 206 224 223 Q204 211 185 216 Z" fill="#6E93AD" stroke="var(--line)">
+              <animateTransform attributeName="transform" type="rotate" values="0 185 210;10 185 210;0 185 210" dur="2.8s" repeatCount="indefinite"/>
+            </path>
+            <!-- body (natural belly tone) -->
+            <path d="M120 168 C166 168 189 188 187 222 C185 252 159 266 120 266 C81 266 55 252 53 222 C51 188 74 168 120 168 Z" fill="#D7E6EE" stroke="var(--line)"/>
+            <!-- dorsal fin -->
+            <path d="M120 170 L131 134 L144 172 Z" fill="#6E93AD" stroke="var(--line)"/>
+            <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
+            <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
+            <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+            <!-- legs -->
+            <rect x="75" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+            <rect x="139" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" values="0 139 271;-20 139 271;0 139 271" dur="2.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- left flipper -->
+            <path d="M48 188 Q20 205 35 240 Q55 212 64 192 Z" fill="#6E93AD" stroke="var(--line)"/>
+            <!-- right flipper (waving) -->
+            <path d="M186 185 Q218 172 228 205 Q205 215 182 200 Z" fill="#6E93AD" stroke="var(--line)" transform="rotate(-15 196 196)">
+              <animateTransform attributeName="transform" type="rotate" values="-15 196 196;-45 196 196;-5 196 196;-15 196 196" dur="3.6s" repeatCount="indefinite"/>
+            </path>
+            <!-- head / melon -->
+            <ellipse cx="120" cy="95" rx="65" ry="50" fill="#6E93AD" stroke="var(--line)" stroke-width="2"/>
+            <!-- rostrum / underside -->
+            <path d="M85 130 Q120 165 155 130 Q155 150 120 158 Q85 150 85 130 Z" fill="#EFF6FF"/>
+            <!-- blowhole -->
+            <ellipse cx="120" cy="48" rx="6" ry="3" fill="var(--ink)"/>
+            <!-- smile -->
+            <path d="M95 138 Q120 152 145 138" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+            <!-- eyes -->
+            <ellipse cx="95" cy="85" rx="8" ry="9" fill="var(--ink)"/>
+            <ellipse cx="145" cy="85" rx="8" ry="9" fill="var(--ink)"/>
+            <circle cx="98" cy="82" r="2.2" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="148" cy="82" r="2.2" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Komunita · priateľská tvár</div>
+      <h2>Delfín „Delfi"</h2>
+      <p><strong>Charakter:</strong> spoločenský, hravý, vždy v dobrej nálade — symbol komunity fanúšikov, zdieľania zápasov a vzájomného povzbudzovania.<br><br>
+      <strong>Prečo sedí:</strong> svetlé modro-sivé telo pôsobí priateľsky a prístupne pre celú rodinu, brandové detaily (FN odznak, pruh) ho jednoznačne zaraďujú do appky.</p>
+    </div>
+
+    <!-- 9. MRAVEC — TÍMO -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.2s" repeatCount="indefinite"/>
+            <!-- legs -->
+            <g stroke="#3D2B1F" stroke-width="6" fill="none" stroke-linecap="round">
+              <path d="M70 195 Q40 185 25 165"/>
+              <path d="M65 215 Q35 215 18 225"/>
+              <path d="M70 235 Q45 252 30 270">
+                <animateTransform attributeName="transform" type="rotate" values="0 70 235;-12 70 235;0 70 235" dur="2.6s" repeatCount="indefinite"/>
+              </path>
+              <path d="M170 195 Q200 185 215 165"/>
+              <path d="M175 215 Q205 215 222 225"/>
+              <path d="M170 235 Q195 252 210 270">
+                <animateTransform attributeName="transform" type="rotate" values="0 170 235;12 170 235;0 170 235" dur="2.6s" repeatCount="indefinite"/>
+              </path>
+            </g>
+            <!-- abdomen -->
+            <path d="M120 168 C166 168 189 188 187 222 C185 252 159 266 120 266 C81 266 55 252 53 222 C51 188 74 168 120 168 Z" fill="#3D2B1F" stroke="var(--line)"/>
+            <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
+            <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
+            <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+            <!-- thorax -->
+            <ellipse cx="120" cy="150" rx="40" ry="32" fill="#3D2B1F" stroke="var(--line)" stroke-width="2"/>
+            <!-- head -->
+            <circle cx="120" cy="92" r="44" fill="#3D2B1F" stroke="var(--line)" stroke-width="2"/>
+            <!-- antennae -->
+            <path d="M104 58 Q86 28 70 22" stroke="#3D2B1F" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="70" cy="22" r="5" fill="#3D2B1F"/>
+            <path d="M136 58 Q154 28 170 22" stroke="#3D2B1F" stroke-width="5" fill="none" stroke-linecap="round">
+              <animateTransform attributeName="transform" type="rotate" values="0 136 58;10 136 58;0 136 58" dur="2.4s" repeatCount="indefinite"/>
+            </path>
+            <circle cx="170" cy="22" r="5" fill="#3D2B1F">
+              <animateTransform attributeName="transform" type="rotate" values="0 136 58;10 136 58;0 136 58" dur="2.4s" repeatCount="indefinite"/>
+            </circle>
+            <!-- mandibles -->
+            <path d="M95 118 Q80 130 90 142 Q105 130 105 116 Z" fill="#241A12"/>
+            <path d="M145 118 Q160 130 150 142 Q135 130 135 116 Z" fill="#241A12"/>
+            <!-- eyes -->
+            <circle cx="104" cy="84" r="11" fill="var(--text)"/>
+            <circle cx="136" cy="84" r="11" fill="var(--text)"/>
+            <circle cx="104" cy="84" r="6" fill="var(--ink)"/>
+            <circle cx="136" cy="84" r="6" fill="var(--ink)"/>
+            <circle cx="107" cy="81" r="2" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="139" cy="81" r="2" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <!-- lopta v rukách -->
+            <circle cx="120" cy="180" r="15" fill="var(--gold)" stroke="var(--ink)" stroke-width="2"/>
+            <path d="M106 174 Q120 192 134 174" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Tímová práca · nosič</div>
+      <h2>Mravec „Tímo"</h2>
+      <p><strong>Charakter:</strong> vždy pomôže preniesť ťažké veci, loptu nesie spoločne s ostatnými — symbol toho, že nikto v tíme neťahá záťaž sám.<br><br>
+      <strong>Prečo sedí:</strong> tmavohnedá prirodzená farba mravca pôsobí pevne a spoľahlivo, lopta v rukách priamo spája tému futbalu s myšlienkou „spolu to zvládneme".</p>
+    </div>
+
+    <!-- 10. MRAVEC — ROBKO -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.2s" repeatCount="indefinite"/>
+            <!-- legs -->
+            <g stroke="#8B4A2B" stroke-width="6" fill="none" stroke-linecap="round">
+              <path d="M70 195 Q40 185 25 165"/>
+              <path d="M65 215 Q35 215 18 225"/>
+              <path d="M70 235 Q45 252 30 270">
+                <animateTransform attributeName="transform" type="rotate" values="0 70 235;-12 70 235;0 70 235" dur="2.6s" repeatCount="indefinite"/>
+              </path>
+              <path d="M170 195 Q200 185 215 165"/>
+              <path d="M175 215 Q205 215 222 225"/>
+              <path d="M170 235 Q195 252 210 270">
+                <animateTransform attributeName="transform" type="rotate" values="0 170 235;12 170 235;0 170 235" dur="2.6s" repeatCount="indefinite"/>
+              </path>
+            </g>
+            <!-- abdomen -->
+            <path d="M120 168 C166 168 189 188 187 222 C185 252 159 266 120 266 C81 266 55 252 53 222 C51 188 74 168 120 168 Z" fill="#8B4A2B" stroke="var(--line)"/>
+            <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
+            <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
+            <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+            <!-- thorax -->
+            <ellipse cx="120" cy="150" rx="40" ry="32" fill="#8B4A2B" stroke="var(--line)" stroke-width="2"/>
+            <!-- head -->
+            <circle cx="120" cy="92" r="44" fill="#8B4A2B" stroke="var(--line)" stroke-width="2"/>
+            <!-- antennae -->
+            <path d="M104 58 Q86 28 70 22" stroke="#8B4A2B" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="70" cy="22" r="5" fill="#8B4A2B"/>
+            <path d="M136 58 Q154 28 170 22" stroke="#8B4A2B" stroke-width="5" fill="none" stroke-linecap="round">
+              <animateTransform attributeName="transform" type="rotate" values="0 136 58;10 136 58;0 136 58" dur="2.4s" repeatCount="indefinite"/>
+            </path>
+            <circle cx="170" cy="22" r="5" fill="#8B4A2B">
+              <animateTransform attributeName="transform" type="rotate" values="0 136 58;10 136 58;0 136 58" dur="2.4s" repeatCount="indefinite"/>
+            </circle>
+            <!-- mandibles -->
+            <path d="M95 118 Q80 130 90 142 Q105 130 105 116 Z" fill="#5C2E18"/>
+            <path d="M145 118 Q160 130 150 142 Q135 130 135 116 Z" fill="#5C2E18"/>
+            <!-- eyes -->
+            <circle cx="104" cy="84" r="11" fill="var(--text)"/>
+            <circle cx="136" cy="84" r="11" fill="var(--text)"/>
+            <circle cx="104" cy="84" r="6" fill="var(--ink)"/>
+            <circle cx="136" cy="84" r="6" fill="var(--ink)"/>
+            <circle cx="107" cy="81" r="2" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="139" cy="81" r="2" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <!-- stavebná tehla -->
+            <rect x="100" y="166" width="40" height="24" rx="4" fill="var(--green)" stroke="var(--ink)" stroke-width="2"/>
+            <line x1="100" y1="178" x2="140" y2="178" stroke="var(--ink)" stroke-width="1.5"/>
+            <line x1="120" y1="166" x2="120" y2="178" stroke="var(--ink)" stroke-width="1.5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Tímová práca · staviteľ</div>
+      <h2>Mravec „Robko"</h2>
+      <p><strong>Charakter:</strong> stavia, opravuje, pripravuje zázemie pre ostatných — reprezentuje budovanie komunity okolo klubu aj appky.<br><br>
+      <strong>Prečo sedí:</strong> červenohnedá prirodzená farba pôsobí robustne a prakticky, zelená „tehla" naznačuje, že sa spoločne stavia niečo nové — klub, tím, fynd.fans.</p>
+    </div>
+
+    <!-- 11. MRAVEC — KAPO -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.2s" repeatCount="indefinite"/>
+            <!-- legs -->
+            <g stroke="#2B2B2E" stroke-width="6" fill="none" stroke-linecap="round">
+              <path d="M70 195 Q40 185 25 165"/>
+              <path d="M65 215 Q35 215 18 225"/>
+              <path d="M70 235 Q45 252 30 270">
+                <animateTransform attributeName="transform" type="rotate" values="0 70 235;-12 70 235;0 70 235" dur="2.6s" repeatCount="indefinite"/>
+              </path>
+              <path d="M170 195 Q200 185 215 165"/>
+              <path d="M175 215 Q205 215 222 225"/>
+              <path d="M170 235 Q195 252 210 270">
+                <animateTransform attributeName="transform" type="rotate" values="0 170 235;12 170 235;0 170 235" dur="2.6s" repeatCount="indefinite"/>
+              </path>
+            </g>
+            <!-- abdomen -->
+            <path d="M120 168 C166 168 189 188 187 222 C185 252 159 266 120 266 C81 266 55 252 53 222 C51 188 74 168 120 168 Z" fill="#2B2B2E" stroke="var(--line)"/>
+            <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
+            <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
+            <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+            <!-- thorax -->
+            <ellipse cx="120" cy="150" rx="40" ry="32" fill="#2B2B2E" stroke="var(--line)" stroke-width="2"/>
+            <!-- head -->
+            <circle cx="120" cy="92" r="44" fill="#2B2B2E" stroke="var(--line)" stroke-width="2"/>
+            <!-- antennae -->
+            <path d="M104 58 Q86 28 70 22" stroke="#2B2B2E" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="70" cy="22" r="5" fill="#2B2B2E"/>
+            <path d="M136 58 Q154 28 170 22" stroke="#2B2B2E" stroke-width="5" fill="none" stroke-linecap="round">
+              <animateTransform attributeName="transform" type="rotate" values="0 136 58;10 136 58;0 136 58" dur="2.4s" repeatCount="indefinite"/>
+            </path>
+            <circle cx="170" cy="22" r="5" fill="#2B2B2E">
+              <animateTransform attributeName="transform" type="rotate" values="0 136 58;10 136 58;0 136 58" dur="2.4s" repeatCount="indefinite"/>
+            </circle>
+            <!-- mandibles -->
+            <path d="M95 118 Q80 130 90 142 Q105 130 105 116 Z" fill="#161614"/>
+            <path d="M145 118 Q160 130 150 142 Q135 130 135 116 Z" fill="#161614"/>
+            <!-- eyes -->
+            <circle cx="104" cy="84" r="11" fill="var(--text)"/>
+            <circle cx="136" cy="84" r="11" fill="var(--text)"/>
+            <circle cx="104" cy="84" r="6" fill="var(--ink)"/>
+            <circle cx="136" cy="84" r="6" fill="var(--ink)"/>
+            <circle cx="107" cy="81" r="2" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="139" cy="81" r="2" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <!-- kapitánska páska -->
+            <rect x="14" y="160" width="22" height="9" rx="2" fill="var(--gold)" stroke="var(--ink)" stroke-width="1" transform="rotate(-35 25 164)"/>
+            <!-- hviezda kapitána -->
+            <path d="M165 28 L168 35 L176 36 L170 41 L172 49 L165 45 L158 49 L160 41 L154 36 L162 35 Z" fill="var(--gold)" stroke="var(--ink)" stroke-width="1"/>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Tímová práca · kapitán</div>
+      <h2>Mravec „Kapo"</h2>
+      <p><strong>Charakter:</strong> drží partiu pohromade, organizuje a motivuje ostatných — nosí kapitánsku pásku a má prehľad o celom „mraveniská".<br><br>
+      <strong>Prečo sedí:</strong> tmavá uhlíková farba pôsobí sebavedomo a vodcovsky, zlatá páska a hviezda symbolizujú rolu kapitána tímu — v partii aj v appke.</p>
+    </div>
+
+    <!-- 12. MRAVEC — STRAT -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.2s" repeatCount="indefinite"/>
+            <!-- legs -->
+            <g stroke="#6B5440" stroke-width="6" fill="none" stroke-linecap="round">
+              <path d="M70 195 Q40 185 25 165"/>
+              <path d="M65 215 Q35 215 18 225"/>
+              <path d="M70 235 Q45 252 30 270">
+                <animateTransform attributeName="transform" type="rotate" values="0 70 235;-12 70 235;0 70 235" dur="2.6s" repeatCount="indefinite"/>
+              </path>
+              <path d="M170 195 Q200 185 215 165"/>
+              <path d="M175 215 Q205 215 222 225"/>
+              <path d="M170 235 Q195 252 210 270">
+                <animateTransform attributeName="transform" type="rotate" values="0 170 235;12 170 235;0 170 235" dur="2.6s" repeatCount="indefinite"/>
+              </path>
+            </g>
+            <!-- abdomen -->
+            <path d="M120 168 C166 168 189 188 187 222 C185 252 159 266 120 266 C81 266 55 252 53 222 C51 188 74 168 120 168 Z" fill="#6B5440" stroke="var(--line)"/>
+            <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
+            <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
+            <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+            <!-- thorax -->
+            <ellipse cx="120" cy="150" rx="40" ry="32" fill="#6B5440" stroke="var(--line)" stroke-width="2"/>
+            <!-- head -->
+            <circle cx="120" cy="92" r="44" fill="#6B5440" stroke="var(--line)" stroke-width="2"/>
+            <!-- antennae -->
+            <path d="M104 58 Q86 28 70 22" stroke="#6B5440" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="70" cy="22" r="5" fill="#6B5440"/>
+            <path d="M136 58 Q154 28 170 22" stroke="#6B5440" stroke-width="5" fill="none" stroke-linecap="round">
+              <animateTransform attributeName="transform" type="rotate" values="0 136 58;10 136 58;0 136 58" dur="2.4s" repeatCount="indefinite"/>
+            </path>
+            <circle cx="170" cy="22" r="5" fill="#6B5440">
+              <animateTransform attributeName="transform" type="rotate" values="0 136 58;10 136 58;0 136 58" dur="2.4s" repeatCount="indefinite"/>
+            </circle>
+            <!-- mandibles -->
+            <path d="M95 118 Q80 130 90 142 Q105 130 105 116 Z" fill="#43352A"/>
+            <path d="M145 118 Q160 130 150 142 Q135 130 135 116 Z" fill="#43352A"/>
+            <!-- eyes -->
+            <circle cx="104" cy="84" r="11" fill="var(--text)"/>
+            <circle cx="136" cy="84" r="11" fill="var(--text)"/>
+            <circle cx="104" cy="84" r="6" fill="var(--ink)"/>
+            <circle cx="136" cy="84" r="6" fill="var(--ink)"/>
+            <circle cx="107" cy="81" r="2" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="139" cy="81" r="2" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <!-- vlajka so šípkou (taktika) -->
+            <line x1="158" y1="200" x2="158" y2="150" stroke="var(--ink)" stroke-width="3"/>
+            <path d="M158 150 L190 158 L158 166 Z" fill="var(--coral)" stroke="var(--line)"/>
+            <path d="M165 158 L178 154 L178 162 Z" fill="var(--text)"/>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Tímová práca · stratég</div>
+      <h2>Mravec „Strat"</h2>
+      <p><strong>Charakter:</strong> analyzuje situáciu, plánuje ťahy a drží vlajku s plánom — reprezentuje taktickú a dátovú stránku appky.<br><br>
+      <strong>Prečo sedí:</strong> zemito hnedá prirodzená farba pôsobí seriózne a premyslene, vlajka so šípkou priamo odkazuje na štatistiky, taktiku a tréningové plány.</p>
+    </div>
+
+    <!-- 13. MRAVEC — FANKO -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.2s" repeatCount="indefinite"/>
+            <!-- legs -->
+            <g stroke="#A0653A" stroke-width="6" fill="none" stroke-linecap="round">
+              <path d="M70 195 Q40 185 25 165"/>
+              <path d="M65 215 Q35 215 18 225"/>
+              <path d="M70 235 Q45 252 30 270">
+                <animateTransform attributeName="transform" type="rotate" values="0 70 235;-12 70 235;0 70 235" dur="2.6s" repeatCount="indefinite"/>
+              </path>
+              <path d="M170 195 Q200 185 215 165"/>
+              <path d="M175 215 Q205 215 222 225"/>
+              <path d="M170 235 Q195 252 210 270">
+                <animateTransform attributeName="transform" type="rotate" values="0 170 235;12 170 235;0 170 235" dur="2.6s" repeatCount="indefinite"/>
+              </path>
+            </g>
+            <!-- abdomen -->
+            <path d="M120 168 C166 168 189 188 187 222 C185 252 159 266 120 266 C81 266 55 252 53 222 C51 188 74 168 120 168 Z" fill="#A0653A" stroke="var(--line)"/>
+            <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
+            <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
+            <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+            <!-- thorax -->
+            <ellipse cx="120" cy="150" rx="40" ry="32" fill="#A0653A" stroke="var(--line)" stroke-width="2"/>
+            <!-- head -->
+            <circle cx="120" cy="92" r="44" fill="#A0653A" stroke="var(--line)" stroke-width="2"/>
+            <!-- antennae -->
+            <path d="M104 58 Q86 28 70 22" stroke="#A0653A" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="70" cy="22" r="5" fill="#A0653A"/>
+            <path d="M136 58 Q154 28 170 22" stroke="#A0653A" stroke-width="5" fill="none" stroke-linecap="round">
+              <animateTransform attributeName="transform" type="rotate" values="0 136 58;10 136 58;0 136 58" dur="2.4s" repeatCount="indefinite"/>
+            </path>
+            <circle cx="170" cy="22" r="5" fill="#A0653A">
+              <animateTransform attributeName="transform" type="rotate" values="0 136 58;10 136 58;0 136 58" dur="2.4s" repeatCount="indefinite"/>
+            </circle>
+            <!-- mandibles -->
+            <path d="M95 118 Q80 130 90 142 Q105 130 105 116 Z" fill="#6B4423"/>
+            <path d="M145 118 Q160 130 150 142 Q135 130 135 116 Z" fill="#6B4423"/>
+            <!-- eyes -->
+            <circle cx="104" cy="84" r="11" fill="var(--text)"/>
+            <circle cx="136" cy="84" r="11" fill="var(--text)"/>
+            <circle cx="104" cy="84" r="6" fill="var(--ink)"/>
+            <circle cx="136" cy="84" r="6" fill="var(--ink)"/>
+            <circle cx="107" cy="81" r="2" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="139" cy="81" r="2" fill="var(--text)">
+              <animate attributeName="opacity" values="1;1;0;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <!-- megafón -->
+            <path d="M95 188 L135 176 L135 200 L95 196 Z" fill="var(--gold)" stroke="var(--ink)" stroke-width="1.5"/>
+            <path d="M140 182 Q150 188 140 194" fill="none" stroke="var(--green)" stroke-width="2"/>
+            <path d="M148 178 Q162 188 148 198" fill="none" stroke="var(--green)" stroke-width="2" opacity=".6"/>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Tímová práca · podporovateľ</div>
+      <h2>Mravec „Fanko"</h2>
+      <p><strong>Charakter:</strong> povzbudzuje z lavičky aj z tribúny, drží megafón a šíri dobrú náladu medzi fanúšikmi.<br><br>
+      <strong>Prečo sedí:</strong> teplá karamelová prirodzená farba pôsobí pozitívne a energicky, megafón priamo odkazuje na „fans" v mene fynd.fans.</p>
+    </div>
+
+    <!-- 14. ROBOT — LOPTOŠ -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.2s" repeatCount="indefinite"/>
+            <!-- guľaté telo (lopta) -->
+            <circle cx="120" cy="145" r="78" fill="#C7D2DC" stroke="var(--line)" stroke-width="2"/>
+            <ellipse cx="95" cy="108" rx="30" ry="20" fill="rgba(255,255,255,.22)"/>
+            <path d="M62 120 Q120 145 178 120" stroke="var(--line)" stroke-width="2" fill="none" opacity=".5"/>
+            <path d="M120 67 Q146 145 120 223" stroke="var(--line)" stroke-width="2" fill="none" opacity=".4"/>
+            <!-- nohy -->
+            <rect x="92" y="216" width="22" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+            <rect x="126" y="216" width="22" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" values="0 137 225;-15 137 225;0 137 225" dur="2.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- ruky -->
+            <rect x="26" y="128" width="18" height="46" rx="9" fill="#9AA6B2" stroke="var(--line)"/>
+            <rect x="196" y="118" width="18" height="44" rx="9" fill="#9AA6B2" stroke="var(--line)" transform="rotate(-25 205 118)">
+              <animateTransform attributeName="transform" type="rotate" values="-25 205 118;-58 205 118;-15 205 118;-25 205 118" dur="3.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- anténa -->
+            <line x1="120" y1="67" x2="120" y2="35" stroke="#5C6B7E" stroke-width="4"/>
+            <circle cx="120" cy="30" r="7" fill="var(--gold)">
+              <animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/>
+            </circle>
+            <!-- visor / displej -->
+            <rect x="72" y="120" width="96" height="36" rx="14" fill="var(--ink)"/>
+            <ellipse cx="100" cy="138" rx="10" ry="10" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" repeatCount="indefinite"/>
+            </ellipse>
+            <ellipse cx="140" cy="138" rx="10" ry="10" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" begin="0.2s" repeatCount="indefinite"/>
+            </ellipse>
+            <rect x="74" y="195" width="92" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Talizman · energia a odmeny</div>
+      <h2>Robot „Loptoš"</h2>
+      <p><strong>Charakter:</strong> guľatý, hravý robot, ktorý sa neustále jemne odráža a žiari energiou — symbolizuje body, odmeny, streaky a bonusy v appke.<br><br>
+      <strong>Prečo sedí:</strong> guľaté telo pôsobí veselo a hravo, kovový dizajn a svietiaci visor nadväzujú na pôvodného Futbota, zelený pruh ho jasne radí medzi maskotov fynd.fans.</p>
+    </div>
+
+    <!-- 15. ROBOT — ISKRA -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.0s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.0s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.0s" repeatCount="indefinite"/>
+            <!-- guľaté telo (lopta) -->
+            <circle cx="120" cy="145" r="78" fill="#D9CFA0" stroke="var(--line)" stroke-width="2"/>
+            <ellipse cx="95" cy="108" rx="30" ry="20" fill="rgba(255,255,255,.22)"/>
+            <path d="M62 120 Q120 145 178 120" stroke="var(--line)" stroke-width="2" fill="none" opacity=".5"/>
+            <path d="M120 67 Q146 145 120 223" stroke="var(--line)" stroke-width="2" fill="none" opacity=".4"/>
+            <!-- nohy -->
+            <rect x="92" y="216" width="22" height="18" rx="6" fill="var(--surface)" stroke="var(--gold)" stroke-width="2"/>
+            <rect x="126" y="216" width="22" height="18" rx="6" fill="var(--surface)" stroke="var(--gold)" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" values="0 137 225;-15 137 225;0 137 225" dur="2.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- ruky -->
+            <rect x="26" y="128" width="18" height="46" rx="9" fill="#C9BE8E" stroke="var(--line)"/>
+            <rect x="196" y="118" width="18" height="44" rx="9" fill="#C9BE8E" stroke="var(--line)" transform="rotate(-25 205 118)">
+              <animateTransform attributeName="transform" type="rotate" values="-25 205 118;-58 205 118;-15 205 118;-25 205 118" dur="3.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- anténa s bleskom -->
+            <line x1="120" y1="67" x2="120" y2="35" stroke="#B8AE82" stroke-width="4"/>
+            <path d="M114 28 L126 28 L118 42 L128 42 L110 60 L116 44 L106 44 Z" fill="var(--gold)">
+              <animate attributeName="opacity" values="1;.4;1" dur="1.4s" repeatCount="indefinite"/>
+            </path>
+            <!-- visor / displej -->
+            <rect x="72" y="120" width="96" height="36" rx="14" fill="var(--ink)"/>
+            <ellipse cx="100" cy="138" rx="10" ry="10" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" repeatCount="indefinite"/>
+            </ellipse>
+            <ellipse cx="140" cy="138" rx="10" ry="10" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" begin="0.2s" repeatCount="indefinite"/>
+            </ellipse>
+            <!-- iskra na hrudi -->
+            <path d="M126 168 L116 168 L122 182 L114 182 L128 198 L122 184 L130 184 Z" fill="var(--green)" opacity=".9"/>
+            <rect x="74" y="195" width="92" height="6" rx="3" fill="var(--gold)" opacity=".5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Energia · XP a level-up</div>
+      <h2>Robot „Iskra"</h2>
+      <p><strong>Charakter:</strong> guľatý robot nabitý energiou — na anténe mu pulzuje malý blesk a na hrudi mu občas zaiskrí, presne keď v appke získaš XP alebo postúpiš na vyšší level.<br><br>
+      <strong>Prečo sedí:</strong> rovnaké guľaté telo ako Loptoš drží rodinu maskotov pokope, teplý zlatistý odtieň a blesk jasne odkazujú na energiu, XP a postup v appke.</p>
+    </div>
+
+    <!-- 16. ROBOT — MINCOŠ -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.4s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.4s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.4s" repeatCount="indefinite"/>
+            <!-- guľaté telo (lopta) -->
+            <circle cx="120" cy="145" r="78" fill="#C9D6C4" stroke="var(--line)" stroke-width="2"/>
+            <ellipse cx="95" cy="108" rx="30" ry="20" fill="rgba(255,255,255,.22)"/>
+            <path d="M62 120 Q120 145 178 120" stroke="var(--line)" stroke-width="2" fill="none" opacity=".5"/>
+            <path d="M120 67 Q146 145 120 223" stroke="var(--line)" stroke-width="2" fill="none" opacity=".4"/>
+            <!-- nohy -->
+            <rect x="92" y="216" width="22" height="18" rx="6" fill="var(--surface)" stroke="var(--gold)" stroke-width="2"/>
+            <rect x="126" y="216" width="22" height="18" rx="6" fill="var(--surface)" stroke="var(--gold)" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" values="0 137 225;-15 137 225;0 137 225" dur="2.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- ruky -->
+            <rect x="26" y="128" width="18" height="46" rx="9" fill="#A9BBB0" stroke="var(--line)"/>
+            <rect x="196" y="118" width="18" height="44" rx="9" fill="#A9BBB0" stroke="var(--line)" transform="rotate(-25 205 118)">
+              <animateTransform attributeName="transform" type="rotate" values="-25 205 118;-58 205 118;-15 205 118;-25 205 118" dur="3.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- anténa s mincou -->
+            <line x1="120" y1="67" x2="120" y2="35" stroke="#9DB0A4" stroke-width="4"/>
+            <circle cx="120" cy="30" r="9" fill="var(--gold)">
+              <animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="120" cy="30" r="4" fill="var(--ink)"/>
+            <!-- visor / displej -->
+            <rect x="72" y="120" width="96" height="36" rx="14" fill="var(--ink)"/>
+            <ellipse cx="100" cy="138" rx="10" ry="10" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" repeatCount="indefinite"/>
+            </ellipse>
+            <ellipse cx="140" cy="138" rx="10" ry="10" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" begin="0.2s" repeatCount="indefinite"/>
+            </ellipse>
+            <!-- mince na hrudi -->
+            <circle cx="112" cy="178" r="10" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+            <circle cx="128" cy="178" r="10" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+            <rect x="74" y="195" width="92" height="6" rx="3" fill="var(--gold)" opacity=".5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Odmeny · mince a bonusy</div>
+      <h2>Robot „Mincoš"</h2>
+      <p><strong>Charakter:</strong> guľatý robot, ktorý zbiera a rozdáva odmeny — na anténe nosí trblietavú mincu a na hrudi pár ďalších, presne ako bonusy a zľavy v appke.<br><br>
+      <strong>Prečo sedí:</strong> guľatý tvar nadväzuje na Loptoša, mince priamo symbolizujú odmeny, body a bonusový systém appky.</p>
+    </div>
+
+    <!-- 17. ROBOT — OZVENA -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="2.8s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="2.8s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="2.8s" repeatCount="indefinite"/>
+            <!-- guľaté telo (lopta) -->
+            <circle cx="120" cy="145" r="78" fill="#AFC4DC" stroke="var(--line)" stroke-width="2"/>
+            <ellipse cx="95" cy="108" rx="30" ry="20" fill="rgba(255,255,255,.22)"/>
+            <path d="M62 120 Q120 145 178 120" stroke="var(--line)" stroke-width="2" fill="none" opacity=".5"/>
+            <path d="M120 67 Q146 145 120 223" stroke="var(--line)" stroke-width="2" fill="none" opacity=".4"/>
+            <!-- nohy -->
+            <rect x="92" y="216" width="22" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+            <rect x="126" y="216" width="22" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" values="0 137 225;-15 137 225;0 137 225" dur="2.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- ruky -->
+            <rect x="26" y="128" width="18" height="46" rx="9" fill="#93AAC2" stroke="var(--line)"/>
+            <rect x="196" y="118" width="18" height="44" rx="9" fill="#93AAC2" stroke="var(--line)" transform="rotate(-25 205 118)">
+              <animateTransform attributeName="transform" type="rotate" values="-25 205 118;-58 205 118;-15 205 118;-25 205 118" dur="3.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- anténa so signálom -->
+            <line x1="120" y1="67" x2="120" y2="35" stroke="#8CA2BC" stroke-width="4"/>
+            <circle cx="120" cy="32" r="6" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/>
+            </circle>
+            <path d="M108 24 Q120 10 132 24" stroke="var(--green)" stroke-width="2.5" fill="none" opacity=".6"/>
+            <path d="M101 30 Q120 6 139 30" stroke="var(--green)" stroke-width="2" fill="none" opacity=".35"/>
+            <!-- visor / displej -->
+            <rect x="72" y="120" width="96" height="36" rx="14" fill="var(--ink)"/>
+            <ellipse cx="100" cy="138" rx="10" ry="10" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" repeatCount="indefinite"/>
+            </ellipse>
+            <ellipse cx="140" cy="138" rx="10" ry="10" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" begin="0.2s" repeatCount="indefinite"/>
+            </ellipse>
+            <!-- zvukové vlny na hrudi -->
+            <path d="M104 188 a14 14 0 0 1 0 -20" stroke="var(--green)" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M136 168 a14 14 0 0 1 0 20" stroke="var(--green)" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="120" cy="178" r="6" fill="var(--green)"/>
+            <rect x="74" y="195" width="92" height="6" rx="3" fill="var(--green)" opacity=".5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Komunita · správy a výzvy</div>
+      <h2>Robot „Ozvena"</h2>
+      <p><strong>Charakter:</strong> vždy naladený na komunitu — z antény mu vychádzajú signálové vlny a na hrudi mu blikajú zvukové vlnky, keď príde nová správa, výzva alebo pozvánka od kamarátov.<br><br>
+      <strong>Prečo sedí:</strong> rovnaké guľaté telo ako Loptoš, signál a zvukové vlny priamo odkazujú na notifikácie, chat a komunitné funkcie appky.</p>
+    </div>
+
+    <!-- 18. ROBOT — TROFEJ -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.6s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.6s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.6s" repeatCount="indefinite"/>
+            <!-- guľaté telo (lopta) -->
+            <circle cx="120" cy="145" r="78" fill="#A3ABC2" stroke="var(--line)" stroke-width="2"/>
+            <ellipse cx="95" cy="108" rx="30" ry="20" fill="rgba(255,255,255,.22)"/>
+            <path d="M62 120 Q120 145 178 120" stroke="var(--line)" stroke-width="2" fill="none" opacity=".5"/>
+            <path d="M120 67 Q146 145 120 223" stroke="var(--line)" stroke-width="2" fill="none" opacity=".4"/>
+            <!-- nohy -->
+            <rect x="92" y="216" width="22" height="18" rx="6" fill="var(--surface)" stroke="var(--gold)" stroke-width="2"/>
+            <rect x="126" y="216" width="22" height="18" rx="6" fill="var(--surface)" stroke="var(--gold)" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" values="0 137 225;-15 137 225;0 137 225" dur="2.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- ruky -->
+            <rect x="26" y="128" width="18" height="46" rx="9" fill="#828FA6" stroke="var(--line)"/>
+            <rect x="196" y="118" width="18" height="44" rx="9" fill="#828FA6" stroke="var(--line)" transform="rotate(-25 205 118)">
+              <animateTransform attributeName="transform" type="rotate" values="-25 205 118;-58 205 118;-15 205 118;-25 205 118" dur="3.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- anténa s hviezdou -->
+            <line x1="120" y1="67" x2="120" y2="40" stroke="#7C899E" stroke-width="4"/>
+            <g>
+              <animateTransform attributeName="transform" type="rotate" values="0 120 28;10 120 28;0 120 28" dur="2.4s" repeatCount="indefinite"/>
+              <path d="M120 18 L124 28 L135 28 L126 35 L129 46 L120 39 L111 46 L114 35 L105 28 L116 28 Z" fill="var(--gold)" stroke="var(--ink)" stroke-width="1"/>
+            </g>
+            <!-- visor / displej -->
+            <rect x="72" y="120" width="96" height="36" rx="14" fill="var(--ink)"/>
+            <ellipse cx="100" cy="138" rx="10" ry="10" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" repeatCount="indefinite"/>
+            </ellipse>
+            <ellipse cx="140" cy="138" rx="10" ry="10" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" begin="0.2s" repeatCount="indefinite"/>
+            </ellipse>
+            <!-- trofej na hrudi -->
+            <path d="M106 162 h28 v8 a14 14 0 0 1 -28 0 Z" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+            <line x1="120" y1="184" x2="120" y2="190" stroke="var(--gold)" stroke-width="2.5"/>
+            <line x1="110" y1="190" x2="130" y2="190" stroke="var(--gold)" stroke-width="2.5"/>
+            <rect x="74" y="195" width="92" height="6" rx="3" fill="var(--gold)" opacity=".5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Úspechy · odznaky a tróféje</div>
+      <h2>Robot „Trofej"</h2>
+      <p><strong>Charakter:</strong> guľatý robot zberateľ úspechov — na anténe mu žiari hviezda a na hrudi nosí malú trofej za každý splnený cieľ či prekonaný rekord.<br><br>
+      <strong>Prečo sedí:</strong> guľaté telo z rovnakej rodiny ako Loptoš, hviezda a trofej priamo symbolizujú odznaky, rebríčky a úspechy v appke.</p>
+    </div>
+
+    <!-- 19. ROBOT — KOMÉTA -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.1s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.1s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.1s" repeatCount="indefinite"/>
+            <!-- stopa kométy -->
+            <circle cx="40" cy="200" r="7" fill="var(--coral)" opacity=".5">
+              <animate attributeName="opacity" values=".5;.1;.5" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="58" cy="215" r="5" fill="var(--coral)" opacity=".35">
+              <animate attributeName="opacity" values=".35;.05;.35" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="74" cy="226" r="3.5" fill="var(--coral)" opacity=".25">
+              <animate attributeName="opacity" values=".25;.05;.25" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+            </circle>
+            <!-- guľaté telo (lopta) -->
+            <circle cx="120" cy="145" r="78" fill="#C7B8C9" stroke="var(--line)" stroke-width="2"/>
+            <ellipse cx="95" cy="108" rx="30" ry="20" fill="rgba(255,255,255,.22)"/>
+            <path d="M62 120 Q120 145 178 120" stroke="var(--line)" stroke-width="2" fill="none" opacity=".5"/>
+            <path d="M120 67 Q146 145 120 223" stroke="var(--line)" stroke-width="2" fill="none" opacity=".4"/>
+            <!-- nohy -->
+            <rect x="92" y="216" width="22" height="18" rx="6" fill="var(--surface)" stroke="var(--coral)" stroke-width="2"/>
+            <rect x="126" y="216" width="22" height="18" rx="6" fill="var(--surface)" stroke="var(--coral)" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" values="0 137 225;-15 137 225;0 137 225" dur="2.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- ruky -->
+            <rect x="26" y="128" width="18" height="46" rx="9" fill="#9CA6BC" stroke="var(--line)"/>
+            <rect x="196" y="118" width="18" height="44" rx="9" fill="#9CA6BC" stroke="var(--line)" transform="rotate(-25 205 118)">
+              <animateTransform attributeName="transform" type="rotate" values="-25 205 118;-58 205 118;-15 205 118;-25 205 118" dur="3.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- anténa -->
+            <line x1="120" y1="67" x2="120" y2="35" stroke="#939EB6" stroke-width="4"/>
+            <circle cx="120" cy="30" r="7" fill="var(--gold)">
+              <animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/>
+            </circle>
+            <!-- visor / displej -->
+            <rect x="72" y="120" width="96" height="36" rx="14" fill="var(--ink)"/>
+            <ellipse cx="100" cy="138" rx="10" ry="10" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" repeatCount="indefinite"/>
+            </ellipse>
+            <ellipse cx="140" cy="138" rx="10" ry="10" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" begin="0.2s" repeatCount="indefinite"/>
+            </ellipse>
+            <!-- plamienok streaku na hrudi -->
+            <path d="M120 164 C112 174 110 184 116 192 C113 186 118 182 122 184 C120 178 126 176 126 168 C130 176 132 186 124 192 C132 188 134 176 120 164 Z" fill="var(--coral)"/>
+            <rect x="74" y="195" width="92" height="6" rx="3" fill="var(--coral)" opacity=".5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Streaky · séria dní v rade</div>
+      <h2>Robot „Kométa"</h2>
+      <p><strong>Charakter:</strong> za sebou necháva žiariacu stopu ako kométa a na hrudi mu horí malý plamienok — presne ako streak, teda séria dní, počas ktorých si bol v appke aktívny.<br><br>
+      <strong>Prečo sedí:</strong> guľaté telo nadväzuje na Loptoša, plamienok a kométová stopa priamo zobrazujú streaky a sériu úspešných dní v appke.</p>
+    </div>
+
+    <!-- 20. ROBOT — ŠPRINT -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -7;0 0" dur="1.6s" repeatCount="indefinite"/>
+            <!-- štíhly trup -->
+            <path d="M120 150 C150 150 165 168 163 198 C161 225 142 238 120 238 C98 238 79 225 77 198 C75 168 90 150 120 150 Z" fill="#9AA6B2" stroke="var(--line)" stroke-width="2"/>
+            <rect x="100" y="178" width="40" height="18" rx="5" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
+            <text x="120" y="191" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="11" fill="var(--green)">FN</text>
+            <rect x="85" y="202" width="70" height="5" rx="2.5" fill="var(--green)" opacity=".5"/>
+            <!-- nohy v behu -->
+            <rect x="92" y="232" width="16" height="44" rx="8" fill="#7E8DA3" stroke="var(--green)" stroke-width="2" transform="rotate(18 100 232)">
+              <animateTransform attributeName="transform" type="rotate" values="18 100 232;-18 100 232;18 100 232" dur="1.4s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="132" y="232" width="16" height="44" rx="8" fill="#7E8DA3" stroke="var(--green)" stroke-width="2" transform="rotate(-18 140 232)">
+              <animateTransform attributeName="transform" type="rotate" values="-18 140 232;18 140 232;-18 140 232" dur="1.4s" repeatCount="indefinite"/>
+            </rect>
+            <!-- ruky v pohybe -->
+            <rect x="58" y="160" width="14" height="44" rx="7" fill="#7E8DA3" stroke="var(--line)" transform="rotate(25 65 160)">
+              <animateTransform attributeName="transform" type="rotate" values="25 65 160;-15 65 160;25 65 160" dur="1.4s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="168" y="158" width="14" height="44" rx="7" fill="#7E8DA3" stroke="var(--line)" transform="rotate(-25 175 158)">
+              <animateTransform attributeName="transform" type="rotate" values="-25 175 158;15 175 158;-25 175 158" dur="1.4s" repeatCount="indefinite"/>
+            </rect>
+            <!-- hlava -->
+            <circle cx="120" cy="108" r="38" fill="#B8C4D0" stroke="var(--line)" stroke-width="2"/>
+            <!-- čelenka -->
+            <rect x="84" y="86" width="72" height="10" rx="5" fill="var(--coral)"/>
+            <!-- visor / displej -->
+            <rect x="98" y="96" width="44" height="22" rx="8" fill="var(--ink)"/>
+            <ellipse cx="110" cy="107" rx="7" ry="7" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" repeatCount="indefinite"/>
+            </ellipse>
+            <ellipse cx="130" cy="107" rx="7" ry="7" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" begin="0.2s" repeatCount="indefinite"/>
+            </ellipse>
+            <!-- anténa -->
+            <line x1="120" y1="70" x2="120" y2="52" stroke="#7E8DA3" stroke-width="4"/>
+            <circle cx="120" cy="48" r="6" fill="var(--gold)">
+              <animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Krídlo · rýchlosť a výkon</div>
+      <h2>Robot „Šprint"</h2>
+      <p><strong>Charakter:</strong> štíhly, rýchly robot v permanentnom behu — ruky aj nohy sa hýbu v behovom rytme, farebná čelenka mu dodáva športový, „hráčsky" look.<br><br>
+      <strong>Prečo sedí:</strong> štíhly tvar a behová pozícia symbolizujú live dáta o rýchlosti a výkone, kovový základ a svietiaci visor zachovávajú spojenie s pôvodným Futbotom, čelenka a dynamika pridávajú fanúšikovskú energiu.</p>
+    </div>
+
+    <!-- 21. ROBOT — MAXO -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 240 280" width="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="120" cy="274" rx="70" ry="10" fill="rgba(0,0,0,.35)">
+            <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;0 -8;0 0" dur="3.4s" repeatCount="indefinite"/>
+            <!-- veľké guľaté telo -->
+            <path d="M120 130 C185 130 208 165 205 215 C202 258 168 274 120 274 C72 274 38 258 35 215 C32 165 55 130 120 130 Z" fill="#A6B4C4" stroke="var(--line)" stroke-width="2"/>
+            <rect x="90" y="195" width="60" height="26" rx="8" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
+            <text x="120" y="213" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="15" fill="var(--green)">FN</text>
+            <rect x="55" y="230" width="130" height="7" rx="3.5" fill="var(--green)" opacity=".5"/>
+            <!-- nohy -->
+            <rect x="84" y="262" width="26" height="14" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+            <rect x="130" y="262" width="26" height="14" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" values="0 143 269;-12 143 269;0 143 269" dur="2.6s" repeatCount="indefinite"/>
+            </rect>
+            <!-- ľavá ruka -->
+            <rect x="22" y="170" width="24" height="50" rx="12" fill="#9AA6B2" stroke="var(--line)"/>
+            <!-- fanúšikovský šál -->
+            <path d="M55 158 Q120 180 185 158 L190 178 Q120 200 50 178 Z" fill="var(--coral)" stroke="var(--line)"/>
+            <g>
+              <animateTransform attributeName="transform" type="rotate" values="-6 65 175;2 65 175;-6 65 175" dur="3s" repeatCount="indefinite"/>
+              <rect x="54" y="170" width="22" height="68" rx="5" fill="var(--coral)" stroke="var(--line)"/>
+              <rect x="54" y="190" width="22" height="9" fill="var(--gold)"/>
+              <rect x="54" y="212" width="22" height="9" fill="var(--green)"/>
+            </g>
+            <g>
+              <animateTransform attributeName="transform" type="rotate" values="6 175 175;-2 175 175;6 175 175" dur="3s" repeatCount="indefinite"/>
+              <rect x="164" y="170" width="22" height="68" rx="5" fill="var(--coral)" stroke="var(--line)"/>
+              <rect x="164" y="190" width="22" height="9" fill="var(--gold)"/>
+              <rect x="164" y="212" width="22" height="9" fill="var(--green)"/>
+            </g>
+            <!-- pravá ruka s vlajkou -->
+            <g transform="rotate(-30 204 150)">
+              <animateTransform attributeName="transform" type="rotate" values="-30 204 150;-55 204 150;-15 204 150;-30 204 150" dur="3.6s" repeatCount="indefinite"/>
+              <rect x="192" y="150" width="24" height="50" rx="12" fill="#9AA6B2" stroke="var(--line)"/>
+              <line x1="204" y1="150" x2="204" y2="118" stroke="var(--ink)" stroke-width="3"/>
+              <path d="M204 118 L232 127 L204 136 Z" fill="var(--green)" stroke="var(--line)"/>
+            </g>
+            <!-- veľký displej -->
+            <rect x="70" y="82" width="100" height="56" rx="20" fill="var(--ink)"/>
+            <ellipse cx="100" cy="110" rx="12" ry="12" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" repeatCount="indefinite"/>
+            </ellipse>
+            <ellipse cx="140" cy="110" rx="12" ry="12" fill="var(--green)">
+              <animate attributeName="opacity" values="1;.25;1" dur="2.6s" begin="0.2s" repeatCount="indefinite"/>
+            </ellipse>
+            <path d="M95 128 Q120 142 145 128" fill="none" stroke="var(--green)" stroke-width="3" stroke-linecap="round"/>
+            <!-- anténa s hviezdou -->
+            <line x1="120" y1="82" x2="120" y2="54" stroke="#7E8DA3" stroke-width="4"/>
+            <g>
+              <animateTransform attributeName="transform" type="rotate" values="0 120 44;8 120 44;0 120 44" dur="2.4s" repeatCount="indefinite"/>
+              <path d="M120 28 L124 40 L137 40 L126 48 L130 60 L120 52 L110 60 L114 48 L103 40 L116 40 Z" fill="var(--gold)" stroke="var(--ink)" stroke-width="1"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="role">Maskot štadióna · oslava gólov</div>
+      <h2>Robot „Maxo"</h2>
+      <p><strong>Charakter:</strong> veľký, objímateľný maskot-robot s farebným fanúšikovským šálom okolo „krku" a hviezdou na anténe — mávaním vlajkou oslavuje každý gól spolu s fanúšikmi.<br><br>
+      <strong>Prečo sedí:</strong> robustná „maskotská" postava je ideálna pre fanzónu, oslavy gólov a komunitné akcie klubu, robotický základ a svietiaci displej zachovávajú spojenie s pôvodným Futbotom, šál a vlajka pridávajú teplo a fanúšikovskú náladu.</p>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

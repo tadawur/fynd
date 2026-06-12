@@ -137,6 +137,8 @@
     --text:#0B1626;
     --muted:#64748B;
     --line:rgba(6,16,30,.08);
+    --green:#00935A;
+    --gold:#B8860B;
   }
 
   /* ---------- STATS ---------- */
@@ -170,6 +172,7 @@
     background:var(--surface);border:6px solid #03070d;border-radius:32px;
     box-shadow:0 24px 60px rgba(0,0,0,.45), inset 0 0 0 1px var(--line);
     padding:14px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;
+    color:var(--text);
   }
   .phone::before{
     content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);
@@ -244,6 +247,20 @@
   .persona-card li{font-size:13.5px;display:flex;gap:8px;}
   .persona-card li::before{content:"→";color:var(--green);font-weight:800;flex:none;}
 
+  /* ---------- XP VYSVETLENÉ ---------- */
+  .xp-earn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-bottom:40px;}
+  .xp-earn-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;text-align:center;}
+  .xp-earn-card .ic{font-size:28px;margin-bottom:12px;display:block;}
+  .xp-earn-card h3{font-size:16px;margin-bottom:8px;}
+  .xp-earn-card p{font-size:13px;color:var(--muted);margin-bottom:14px;}
+  .xp-amount{display:inline-block;font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:13px;color:var(--ink);background:var(--gold);padding:4px 12px;border-radius:99px;}
+  .xp-levels{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;}
+  .xp-levels-head h3{font-size:18px;margin-bottom:8px;}
+  .xp-levels-head p{font-size:14px;color:var(--muted);margin-bottom:20px;}
+  .xp-level-track{display:flex;flex-wrap:wrap;gap:10px;}
+  .xp-level{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:8px 14px 8px 8px;font-size:13px;font-weight:700;}
+  .xp-level-num{display:flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--green);color:var(--ink);font-size:12px;font-weight:800;flex:none;}
+
   /* ---------- ROADMAP ---------- */
   .roadmap-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
   @media(max-width:1080px){.roadmap-grid{grid-template-columns:repeat(2,1fr);}}
@@ -300,6 +317,7 @@
   <a href="#hero" aria-label="Domov"></a>
   <a href="#app" aria-label="Appka"></a>
   <a href="#features" aria-label="Funkcie"></a>
+  <a href="#xp-explained" aria-label="XP a levely"></a>
   <a href="#audience" aria-label="Pre koho"></a>
   <a href="#roadmap" aria-label="Roadmapa"></a>
   <a href="#seasons" aria-label="Sezóny"></a>
@@ -313,6 +331,7 @@
       <ul class="nav-links">
         <li><a href="#app">Appka</a></li>
         <li><a href="#features">Funkcie</a></li>
+        <li><a href="#xp-explained">XP a levely</a></li>
         <li><a href="#audience">Pre koho</a></li>
         <li><a href="#roadmap">Roadmapa</a></li>
         <li><a href="#seasons">Sezóny</a></li>
@@ -372,43 +391,38 @@
           <animate attributeName="rx" values="70;58;70" dur="3.2s" repeatCount="indefinite"/>
           <animate attributeName="opacity" values=".35;.2;.35" dur="3.2s" repeatCount="indefinite"/>
         </ellipse>
-        <!-- Futbot mascot -->
+        <!-- Loptoš mascot -->
         <g>
           <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="3.2s" repeatCount="indefinite"/>
-          <rect x="55" y="170" width="130" height="95" rx="16" fill="var(--card)" stroke="var(--line)"/>
-          <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--ink)" stroke="var(--green)" stroke-width="1.5"/>
-          <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
-          <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
-          <!-- left arm (static at side) -->
-          <rect x="30" y="180" width="22" height="60" rx="10" fill="var(--surface)" stroke="var(--line)"/>
-          <!-- right arm waving -->
-          <rect x="188" y="170" width="22" height="55" rx="10" fill="var(--surface)" stroke="var(--line)" transform="rotate(-25 199 170)">
-            <animateTransform attributeName="transform" type="rotate" values="-25 199 170;-58 199 170;-15 199 170;-25 199 170" dur="3.6s" repeatCount="indefinite"/>
+          <!-- guľaté telo (lopta) -->
+          <circle cx="120" cy="145" r="78" fill="#C7D2DC" stroke="var(--line)" stroke-width="2"/>
+          <ellipse cx="95" cy="108" rx="30" ry="20" fill="rgba(255,255,255,.22)"/>
+          <path d="M62 120 Q120 145 178 120" stroke="var(--line)" stroke-width="2" fill="none" opacity=".5"/>
+          <path d="M120 67 Q146 145 120 223" stroke="var(--line)" stroke-width="2" fill="none" opacity=".4"/>
+          <!-- nohy -->
+          <rect x="92" y="216" width="22" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+          <rect x="126" y="216" width="22" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2">
+            <animateTransform attributeName="transform" type="rotate" values="0 137 225;-15 137 225;0 137 225" dur="2.6s" repeatCount="indefinite"/>
           </rect>
-          <!-- left leg static -->
-          <rect x="75" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
-          <!-- right leg kicking -->
-          <rect x="139" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2">
-            <animateTransform attributeName="transform" type="rotate" values="0 139 271;-20 139 271;0 139 271" dur="2.6s" repeatCount="indefinite"/>
+          <!-- ruky -->
+          <rect x="26" y="128" width="18" height="46" rx="9" fill="#9AA6B2" stroke="var(--line)"/>
+          <rect x="196" y="118" width="18" height="44" rx="9" fill="#9AA6B2" stroke="var(--line)" transform="rotate(-25 205 118)">
+            <animateTransform attributeName="transform" type="rotate" values="-25 205 118;-58 205 118;-15 205 118;-25 205 118" dur="3.6s" repeatCount="indefinite"/>
           </rect>
-          <!-- head -->
-          <rect x="60" y="55" width="120" height="85" rx="20" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
-          <rect x="78" y="88" width="84" height="26" rx="8" fill="#03070d"/>
-          <rect x="90" y="95" width="22" height="12" rx="3" fill="var(--green)">
-            <animate attributeName="opacity" values="1;.25;1" dur="2.6s" repeatCount="indefinite"/>
-          </rect>
-          <rect x="128" y="95" width="22" height="12" rx="3" fill="var(--green)">
-            <animate attributeName="opacity" values="1;.25;1" dur="2.6s" begin="0.2s" repeatCount="indefinite"/>
-          </rect>
-          <!-- visor scanline -->
-          <rect x="78" y="88" width="18" height="26" rx="4" fill="rgba(255,255,255,.18)">
-            <animate attributeName="x" values="78;144;78" dur="3.4s" repeatCount="indefinite"/>
-          </rect>
-          <!-- antenna -->
-          <line x1="120" y1="55" x2="120" y2="30" stroke="var(--green)" stroke-width="3"/>
-          <circle cx="120" cy="24" r="7" fill="var(--gold)">
-            <animate attributeName="opacity" values="1;.2;1" dur="1.8s" repeatCount="indefinite"/>
+          <!-- anténa -->
+          <line x1="120" y1="67" x2="120" y2="35" stroke="#5C6B7E" stroke-width="4"/>
+          <circle cx="120" cy="30" r="7" fill="var(--gold)">
+            <animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/>
           </circle>
+          <!-- visor / displej -->
+          <rect x="72" y="120" width="96" height="36" rx="14" fill="var(--ink)"/>
+          <ellipse cx="100" cy="138" rx="10" ry="10" fill="var(--green)">
+            <animate attributeName="opacity" values="1;.25;1" dur="2.6s" repeatCount="indefinite"/>
+          </ellipse>
+          <ellipse cx="140" cy="138" rx="10" ry="10" fill="var(--green)">
+            <animate attributeName="opacity" values="1;.25;1" dur="2.6s" begin="0.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <rect x="74" y="195" width="92" height="6" rx="3" fill="var(--green)" opacity=".5"/>
         </g>
       </svg>
     </div>
@@ -613,24 +627,81 @@
   <div class="container">
     <div class="section-head">
       <div class="eyebrow" style="justify-content:center">Funkcie</div>
-      <h2>14 funkcií, jeden cieľ</h2>
+      <h2>16 funkcií, jeden cieľ</h2>
       <p>Aby sa každé prísť na tréning, každý gól a každý streak oplatili — a aby tréneri a kluby trávili menej času administratívou.</p>
     </div>
     <div class="features-grid">
       <div class="feature-card"><span class="ic">🔥</span><h3>Tréningový streak</h3><p>Týždenná mriežka, plamienky za odtrénované dni a +50 XP bonus pri 7-dňovom streaku. Inšpirované Duolingom.</p></div>
-      <div class="feature-card"><span class="ic">⭐</span><h3>XP a levely</h3><p>10 levelov so slovenskými názvami — od Začiatočníka po Legendu. XP sa zarába za dochádzku, zápasy, hodnotenia aj odznaky.</p></div>
+      <div class="feature-card"><span class="ic">⭐</span><h3>XP a levely</h3><p>10 levelov so slovenskými názvami — od Začiatočníka po Legendu. XP sa zarába za dochádzku, zápasy, hodnotenia aj odznaky. Malý bonus za postup tímu v lige, malé záporné XP za žlté/červené karty (hráči aj tréneri) a XP prechádza s hráčom aj pri prestupe do iného klubu.</p></div>
       <div class="feature-card"><span class="ic">🔔</span><h3>Sledovanie klubov</h3><p>Notifikácie pre ľubovoľný klub, presne ako na Instagrame — len góly, plné live pokrytie, alebo pripomienky zápasov.</p></div>
-      <div class="feature-card"><span class="ic">📡</span><h3>Live zápasový ticker</h3><p>Góly, karty, polčas aj koniec zápasu v reálnom čase — zo Sportnet API alebo manuálne od trénera.</p></div>
+      <div class="feature-card"><span class="ic">📡</span><h3>Live zápasový ticker</h3><p>Góly, karty, polčas aj koniec zápasu v reálnom čase — zo Sportnet API alebo manuálne od trénera. Pri každom zápase aj zostava hráčov, trénerov a rozhodcov s klikateľnými profilmi.</p></div>
       <div class="feature-card"><span class="ic">💬</span><h3>Skupinové chaty</h3><p>Jedna uzamknutá skupina na kategóriu. U9–U13 automaticky zahŕňa rodičov, tréner má prístup všade.</p></div>
       <div class="feature-card"><span class="ic">📋</span><h3>Hodnotenia po zápase</h3><p>Anonymné hodnotenie rozhodcu, trénera a spoluhráčov — +15 XP za vyplnenie, výsledky vidí len vedenie klubu.</p></div>
-      <div class="feature-card"><span class="ic">🎁</span><h3>Odmeňovňa</h3><p>Klub nastaví katalóg odmien (tričká, lístky, tréningy navyše), hráči ich kupujú za XP.</p></div>
-      <div class="feature-card"><span class="ic">🏆</span><h3>Rebríčky</h3><p>Klubový, regionálny aj celoslovenský rebríček v šiestich dimenziách — XP, dochádzka, góly, streak, hodnotenie, fair play.</p></div>
-      <div class="feature-card"><span class="ic">👤</span><h3>Hráčsky profil</h3><p>Vlastný avatar, level, sezónne štatistiky, zbierka 18+ odznakov a sociálne siete (od 15 rokov).</p></div>
+      <div class="feature-card"><span class="ic">🎁</span><h3>Odmeňovňa</h3><p>Každý klub si nezávisle nastaví vlastný katalóg odmien (tričká, lístky, tréningy navyše) podľa svojho rozpočtu, hráči ich kupujú za XP — vrátane vlastných dizajnov a skinov profilu.</p></div>
+      <div class="feature-card"><span class="ic">🏆</span><h3>Rebríčky</h3><p>Klubový, regionálny aj celoslovenský rebríček v šiestich dimenziách — XP, dochádzka, góly, streak, hodnotenie, fair play. Samostatné tabuľky najviac gólov a najviac odohraných minút (sezónne aj kariérne). Top 1-3 umiestnenie sa zobrazí na profile a po skončení ostane ako trvalý odznak s rokom.</p></div>
+      <div class="feature-card"><span class="ic">👤</span><h3>Hráčsky profil</h3><p>Vlastný avatar s viacerými animáciami pozadia, level, sezónne štatistiky vrátane minút na ihrisku, žltých/červených kariet a rohových kopov, rozšírená zbierka odznakov a sociálne siete (od 15 rokov). Ak si v top 50 rebríčka, vidno tam aj presné poradie.</p></div>
       <div class="feature-card"><span class="ic">🔍</span><h3>Objavovanie klubov</h3><p>Prehľadávaj všetky kluby na Fynde — členovia, kategórie, liga, sledovanie a obľúbené.</p></div>
-      <div class="feature-card"><span class="ic">📅</span><h3>Kalendár</h3><p>Tréningy aj zápasy na jednom mieste, pripomienky, export do telefónu, farebné rozlíšenie podľa typu.</p></div>
+      <div class="feature-card"><span class="ic">📅</span><h3>Kalendár</h3><p>Tréningy aj zápasy na jednom mieste vrátane mesačného prehľadu tréningov, pripomienky podľa vlastného nastavenia, export do telefónu, farebné rozlíšenie podľa typu.</p></div>
       <div class="feature-card"><span class="ic">🔗</span><h3>Sportnet integrácia</h3><p>Automatický sync výsledkov, prestupov a overenia registrácie cez Sportnet.online — bez ručného zadávania.</p></div>
       <div class="feature-card"><span class="ic">🎨</span><h3>Sezónne témy</h3><p>Farebná schéma appky sa 6× ročne mení — jar, leto, jeseň, Halloween, Vianoce, zimná príprava.</p></div>
       <div class="feature-card"><span class="ic">🤖</span><h3>Futbot</h3><p>Priateľský robotický maskot pre onboarding, prázdne obrazovky a oslavy úspechov.</p></div>
+      <div class="feature-card"><span class="ic">📸</span><h3>Fotky zo zápasov</h3><p>Fotograf nahráva fotky k zápasom, priraďuje ich hráčom a nastaví viditeľnosť — pre celý klub, vybraných členov, alebo len pre grafika klubu.</p></div>
+      <div class="feature-card"><span class="ic">🧤</span><h3>Straty a nálezy</h3><p>Po zápase nahlásiš stratenú vec priamo v appke a komunikuješ s vedením klubu, či sa našla — bez WhatsApp skupín.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ XP VYSVETLENÉ ============ -->
+<section id="xp-explained" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" style="justify-content:center">Ako to funguje</div>
+      <h2>Čo je XP a na čo slúžia levely?</h2>
+      <p>XP (skúsenostné body) dostávaš za všetko, čo robíš pre svoj tím — chodíš na tréningy, hráš zápasy, hodnotíš spoluhráčov. Čím viac XP nazbieraš, tým vyšší level dosiahneš a tým viac ťa vidno v rebríčkoch aj na profile.</p>
+    </div>
+    <div class="xp-earn-grid">
+      <div class="xp-earn-card">
+        <span class="ic">🏃</span>
+        <h3>Účasť na tréningu</h3>
+        <p>Za každý odtrénovaný tréning ti appka pripíše XP. Pravidelná dochádzka sa naozaj oplatí.</p>
+        <div class="xp-amount">+10 XP</div>
+      </div>
+      <div class="xp-earn-card">
+        <span class="ic">⚽</span>
+        <h3>Odohraný zápas</h3>
+        <p>Za štart v zápase, gól alebo asistenciu pribudnú ďalšie body navyše.</p>
+        <div class="xp-amount">+20–50 XP</div>
+      </div>
+      <div class="xp-earn-card">
+        <span class="ic">📋</span>
+        <h3>Hodnotenie po zápase</h3>
+        <p>Vyplň krátke anonymné hodnotenie zápasu a získaj bonus XP.</p>
+        <div class="xp-amount">+15 XP</div>
+      </div>
+      <div class="xp-earn-card">
+        <span class="ic">🔥</span>
+        <h3>Tréningový streak</h3>
+        <p>Udrž si streak 7 dní v rade a dostaneš odmenu navyše.</p>
+        <div class="xp-amount">+50 XP</div>
+      </div>
+    </div>
+    <div class="xp-levels">
+      <div class="xp-levels-head">
+        <h3>10 levelov — od nováčika po legendu klubu</h3>
+        <p>XP sa postupne sčítavajú a po dosiahnutí hranice ťa appka posunie na ďalší level. Level je viditeľný na profile, v rebríčkoch aj v sezónnych štatistikách — je to spôsob, ako appka ukáže tvoj dlhodobý progres, nie len jeden dobrý zápas.</p>
+      </div>
+      <div class="xp-level-track">
+        <div class="xp-level"><span class="xp-level-num">1</span>Začiatočník</div>
+        <div class="xp-level"><span class="xp-level-num">2</span>Nováčik</div>
+        <div class="xp-level"><span class="xp-level-num">3</span>Bojovník</div>
+        <div class="xp-level"><span class="xp-level-num">4</span>Nádejný talent</div>
+        <div class="xp-level"><span class="xp-level-num">5</span>Opora tímu</div>
+        <div class="xp-level"><span class="xp-level-num">6</span>Kapitán</div>
+        <div class="xp-level"><span class="xp-level-num">7</span>Hviezda klubu</div>
+        <div class="xp-level"><span class="xp-level-num">8</span>Reprezentant</div>
+        <div class="xp-level"><span class="xp-level-num">9</span>Majster</div>
+        <div class="xp-level"><span class="xp-level-num">10</span>Legenda</div>
+      </div>
     </div>
   </div>
 </section>
@@ -640,8 +711,8 @@
   <div class="container">
     <div class="section-head">
       <div class="eyebrow" style="justify-content:center">Pre koho je Fynd</div>
-      <h2>Štyri postavy, jeden klub</h2>
-      <p>Fynd navrhujeme okolo skutočných ľudí v slovenskom mládežníckom futbale — hráčov, rodičov, trénerov aj sekretariátu klubu.</p>
+      <h2>Päť postáv, jeden klub</h2>
+      <p>Fynd navrhujeme okolo skutočných ľudí v slovenskom futbale naprieč generáciami — hráčov, rodičov, trénerov, sekretariátu klubu aj veteránov.</p>
     </div>
     <div class="persona-grid">
       <div class="persona-card">
@@ -696,6 +767,52 @@
           <li>Návrhy ocenení na konci sezóny na základe dát</li>
         </ul>
       </div>
+      <div class="persona-card">
+        <div class="persona-top">
+          <div class="persona-emoji">🧓</div>
+          <div><h3>Jozef, 58</h3><div class="role">Hráč veterán · TJ Banská Štiavnica</div></div>
+        </div>
+        <div class="quote">"Appky pôsobia tak nejak pre mladých. Ja chcem len vedieť, kedy a kde hráme a aký bol posledný výsledok."</div>
+        <ul>
+          <li>Jednoduché rozhranie s väčším písmom, bez zbytočných animácií</li>
+          <li>Prehľad nadchádzajúcich zápasov a výsledkov veteránskej ligy</li>
+          <li>Archív zápasovej histórie a štatistík za celú kariéru v klube</li>
+          <li>Možnosť vypnúť XP, streaky aj odznaky a nechať si len podstatné</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section-head" style="margin-top:64px;">
+      <div class="eyebrow" style="justify-content:center">Voliteľné role v klube</div>
+      <h2>Fotograf a grafik</h2>
+      <p>Okrem piatich hlavných postáv ponúka Fynd aj dve voliteľné role pre kluby, ktoré chcú spracovávať fotky zo zápasov bez chaosu v WhatsApp skupinách.</p>
+    </div>
+    <div class="persona-grid">
+      <div class="persona-card">
+        <div class="persona-top">
+          <div class="persona-emoji">📸</div>
+          <div><h3>Fotograf</h3><div class="role">Rozšírená rola · ľubovoľný klub</div></div>
+        </div>
+        <div class="quote">"Z každého zápasu odfotím desiatky fotiek, ale doteraz skončili len v mojom telefóne alebo jednej veľkej skupine."</div>
+        <ul>
+          <li>Nahratie fotiek priamo ku konkrétnemu zápasu</li>
+          <li>Priradenie fotiek konkrétnym hráčom alebo celému tímu</li>
+          <li>Viditeľnosť pre celý klub alebo len vybraných členov</li>
+          <li>Súkromná sada fotiek len pre grafika klubu</li>
+        </ul>
+      </div>
+      <div class="persona-card">
+        <div class="persona-top">
+          <div class="persona-emoji">🎨</div>
+          <div><h3>Grafik</h3><div class="role">Rozšírená rola · ľubovoľný klub</div></div>
+        </div>
+        <div class="quote">"Aby som vyrobil grafiku na zápas, musím prosiť fotografa o fotky cez Messenger a dúfať, že mi pošle tie správne."</div>
+        <ul>
+          <li>Prehľad fotosád, ktoré mu fotograf zdieľal</li>
+          <li>Filtrovanie podľa zápasu alebo hráča</li>
+          <li>Stiahnutie fotiek vo vysokom rozlíšení</li>
+          <li>Vidí len to, čo mu fotograf výslovne sprístupnil</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -715,9 +832,10 @@
         <div class="road-dur">4 – 6 týždňov</div>
         <ul>
           <li>Registrácia a profil hráča</li>
+          <li>Viac animácií pozadia profilu</li>
           <li>Štruktúra klubu a kategórie</li>
           <li>Skupinové chaty</li>
-          <li>Kalendár a dochádzka</li>
+          <li>Kalendár (mesačný prehľad) a dochádzka</li>
           <li>Streak counter</li>
         </ul>
         <div class="road-status">🟡 Plánovanie</div>
@@ -728,10 +846,13 @@
         <div class="road-dur">3 – 4 týždne</div>
         <ul>
           <li>XP engine a 10 levelov</li>
-          <li>Systém odznakov</li>
-          <li>Odmeňovňa</li>
+          <li>Rozšírený systém odznakov</li>
+          <li>Odmeňovňa (vlastný katalóg klubu)</li>
+          <li>Profilové skiny v Odmeňovni</li>
           <li>Hodnotenia po zápase</li>
-          <li>Klubový rebríček</li>
+          <li>Negatívne XP za karty (hráči aj tréneri)</li>
+          <li>Bonus XP za postup v lige</li>
+          <li>Klubový rebríček + tabuľky gólov a minút (sezónne)</li>
         </ul>
         <div class="road-status">🟡 Plánovanie</div>
       </div>
@@ -743,7 +864,11 @@
           <li>Adresár klubov</li>
           <li>Sledovanie klubov</li>
           <li>Live zápasový ticker</li>
+          <li>Zostavy zápasu (hráči, tréneri, rozhodcovia) s profilmi</li>
           <li>Regionálny rebríček</li>
+          <li>Pozícia v rebríčku na profile (top 50)</li>
+          <li>Fotky zo zápasov (fotograf, grafik)</li>
+          <li>Straty a nálezy</li>
         </ul>
         <div class="road-status">🟡 Plánovanie</div>
       </div>
@@ -754,8 +879,10 @@
         <ul>
           <li>OAuth a webhooky</li>
           <li>Overenie cez SFZ číslo</li>
-          <li>Automatický prestup a výsledky</li>
-          <li>Národný rebríček</li>
+          <li>Automatický prestup a výsledky + prenos XP pri prestupe</li>
+          <li>Sezónne štatistiky vrátane minút, kariet a rohov</li>
+          <li>Národný rebríček + kariérne tabuľky gólov a minút</li>
+          <li>Sezónne/celoslovenské umiestnenia (top 1-3) na profile</li>
           <li>Sezónne témy</li>
         </ul>
         <div class="road-status">🟡 Plánovanie</div>
@@ -798,7 +925,7 @@
         <div class="swatch" style="background:#FFB830;color:#06101E;">Gold<span class="hex">#FFB830</span></div>
         <div class="swatch" style="background:#FF6B6B;color:#06101E;">Coral<span class="hex">#FF6B6B</span></div>
       </div>
-      <p style="color:var(--muted);font-size:13px;margin-top:16px;">Sezónne témy menia akcentovú a pozaďovú farbu 6× do roka (jar, leto, jeseň, Halloween, Vianoce, zima) — vrátane farby dresu maskota Futbota.</p>
+      <p style="color:var(--muted);font-size:13px;margin-top:16px;">Sezónne témy menia akcentovú a pozaďovú farbu 6× do roka (jar, leto, jeseň, Halloween, Vianoce, zima) — vrátane farby pruhu a antény maskota Futbota.</p>
     </div>
   </div>
 </section>
@@ -809,7 +936,7 @@
     <div class="section-head">
       <div class="eyebrow" style="justify-content:center">Živý dizajn</div>
       <h2>Appka sa mení s ročným obdobím</h2>
-      <p>Akcentová farba, pozadie aj dres Futbota sa menia 6× do roka. Vyskúšaj si to naživo — klikni na sezónu.</p>
+      <p>Akcentová farba, pozadie aj pruh s anténou Futbota sa menia 6× do roka. Vyskúšaj si to naživo — klikni na sezónu.</p>
     </div>
     <div class="season-demo">
       <div>
@@ -833,23 +960,20 @@
       <div class="season-preview-wrap">
         <div class="phone" id="seasonPreview" aria-hidden="true">
           <div class="phone-top"><span>👋 Ahoj, Lukáš</span><span class="bell">🔔</span></div>
-          <div class="pcard" style="display:flex;justify-content:center;padding:18px;">
-            <svg id="seasonBot" viewBox="0 0 240 280" width="120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="55" y="170" width="130" height="95" rx="16" fill="var(--card)" stroke="var(--line)"/>
-              <rect x="95" y="195" width="50" height="22" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="1.5"/>
-              <text x="120" y="211" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="13" fill="var(--green)">FN</text>
-              <rect x="65" y="225" width="110" height="6" rx="3" fill="var(--green)" opacity=".5"/>
-              <rect x="30" y="180" width="22" height="60" rx="10" fill="var(--surface)" stroke="var(--line)"/>
-              <rect x="188" y="180" width="22" height="60" rx="10" fill="var(--surface)" stroke="var(--line)"/>
-              <rect x="75" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
-              <rect x="139" y="262" width="26" height="18" rx="6" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
-              <rect x="60" y="55" width="120" height="85" rx="20" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
-              <rect x="78" y="88" width="84" height="26" rx="8" fill="#03070d"/>
-              <rect x="90" y="95" width="22" height="12" rx="3" fill="var(--green)"/>
-              <rect x="128" y="95" width="22" height="12" rx="3" fill="var(--green)"/>
-              <line x1="120" y1="55" x2="120" y2="30" stroke="var(--green)" stroke-width="3"/>
-              <circle cx="120" cy="24" r="7" fill="var(--gold)"/>
-            </svg>
+          <div class="pcard">
+            <div class="ptitle">⚽ Dnešný zápas</div>
+            <div class="level-pill">📅 Dnes · 17:00</div>
+            <div class="score-row"><span>MFK Nová Baňa</span><span class="vs">vs</span><span>FK Žiar</span></div>
+            <div class="events-row"><span>📍 Domáci štadión</span><span>🏆 Liga U15</span></div>
+          </div>
+          <div class="pcard">
+            <div class="ptitle">🏆 Klubový prehľad</div>
+            <div class="lb-row me">
+              <span class="rank">3.</span>
+              <span class="lname">MFK Nová Baňa, U15</span>
+              <span class="lxp">28 b.</span>
+            </div>
+            <div class="events-row"><span>📊 8 V · 4 R · 2 P</span></div>
           </div>
           <div class="pcard">
             <div class="ptitle">🔥 Tréningový streak</div>
@@ -933,8 +1057,7 @@
   function setSeason(key, btn){
     const s = SEASONS[key];
     const preview = document.getElementById('seasonPreview');
-    const bot = document.getElementById('seasonBot');
-    [preview, bot].forEach(el=>{
+    [preview].forEach(el=>{
       el.style.setProperty('--green', s.accent);
       el.style.setProperty('--gold', s.gold);
       el.style.setProperty('--surface', s.surface);
@@ -959,7 +1082,7 @@
   }
 
   (function(){
-    const ids = ['hero','app','features','audience','roadmap','seasons','brand'];
+    const ids = ['hero','app','features','xp-explained','audience','roadmap','seasons','brand'];
     const sections = ids.map(id=>document.getElementById(id)).filter(Boolean);
     const links = document.querySelectorAll('.section-nav a');
     const obs = new IntersectionObserver((entries)=>{
