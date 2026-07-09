@@ -120,3 +120,55 @@ Badges are earned by meeting specific milestones. Each badge award comes with +1
 - Rating XP requires all fields to be completed
 - Duplicate badge awards are blocked at the system level
 - XP cannot go below zero (spending is blocked if insufficient balance)
+
+---
+
+## XP ako KPI — vyhodnocovanie v čase
+
+XP nie je len herná mena — každý XP záznam nesie **typ akcie, čas a kontext** (hráč, kategória, klub). Vďaka tomu je XP zároveň merateľný KPI systém: to, čo hráča motivuje, dáva trénerovi a klubu dáta.
+
+### Parametre, za ktoré sa XP zbiera, a čo merajú
+
+| XP parameter | Zdroj záznamu | KPI, ktorý z neho odvodíme |
+|---|---|---|
+| Dochádzka na tréning (+10) | tréner | **Miera dochádzky** — % absolvovaných tréningov hráča/tímu/kategórie |
+| Streak bonusy (+50) | automaticky | **Konzistentnosť** — podiel hráčov s aktívnym streakom, priemerná dĺžka streaku |
+| Odohraný zápas (+25) | Sportnet | **Zápasová vyťaženosť** — počet zápasov, minúty na ihrisku |
+| Pozápasové hodnotenie (+15) | hráč | **Miera zapojenia do spätnej väzby** — % vyplnených hodnotení po zápasoch |
+| Odznaky (+100) | automaticky | **Míľniky rozvoja** — tempo dosahovania cieľov (góly, asistencie, účasť) |
+| Kompletný profil (+30) | hráč | **Kvalita onboardingu** — % dokončených profilov v klube |
+| Pozvanie spoluhráča (+25) | hráč | **Organický rast** — virálny koeficient, noví hráči na pozvánku |
+| Záporné XP za žlté/červené karty | Sportnet | **Disciplína** — trend kariet hráča/tímu v čase (platí aj pre trénerov) |
+| Bonus za postup v lige | Sportnet | **Tímový výkon** — prepojenie individuálnej aktivity s výsledkom tímu |
+
+### Odvodené metriky
+
+- **XP velocity** — XP získané za týždeň/mesiac. Základná metrika zapojenia; jej pokles je najskorší signál, že hráč stráca záujem.
+- **Skladba XP** — pomer dochádzkového, zápasového a komunitného XP. Hráč s vysokým zápasovým, ale nízkym tréningovým XP = talent, ktorý vynecháva tréningy.
+- **Aktívny hráč** — hráč s nenulovým XP za posledných 14 dní. Presnejšie než počet registrácií.
+- **Index rizika odchodu** — kombinácia klesajúcej XP velocity, prerušeného streaku a neaktivity v appke. Tréner ho vidí ako zoznam rizikových hráčov (súčasť [Fynd+ Tréner](premium-profiles.md#fynd-tréner--399--mes-alebo-2999--rok)).
+- **Disciplinárny trend** — záporné XP za karty agregované po mesiacoch, porovnateľné medzi kategóriami.
+
+### Vyhodnocovanie v čase
+
+| Rytmus | Kto | Čo obsahuje |
+|---|---|---|
+| Týždenne | tréner | XP velocity tímu, dochádzka za týždeň, rizikoví hráči, prerušené streaky |
+| Mesačne | tréner + klub | trend dochádzky po kategóriách, skladba XP, disciplinárny trend, top 3 zlepšenia/poklesy |
+| Sezónne | klub | medziročné porovnanie kategórií, podklady na koncoročné ocenenia, retencia hráčov (koľko aktívnych na začiatku sezóny dohralo do konca) |
+| Priebežne | hráč | vlastný graf XP v čase, osobné rekordy, porovnanie s priemerom kategórie |
+
+Všetky série sa počítajú ako kĺzavý priemer (4 týždne), aby jeden vynechaný týždeň nespúšťal falošné alarmy. Porovnania vždy v rámci rovnakej vekovej kategórie — U9 sa nikdy neporovnáva s U19.
+
+### Štatistiky podľa role
+
+- **Hráč:** vývoj XP, streak história, percentil v kategórii (zadarmo základ, detailné grafy vo Fynd+ Hráč)
+- **Tréner:** tímové trendy, rizikoví hráči, export reportov (Fynd+ Tréner)
+- **Klub:** dashboard všetkých kategórií, aktívni vs. registrovaní, výročné podklady (Fynd+ Klub)
+- **SFZ (potenciálne partnerstvo):** anonymizované agregáty dochádzky podľa regiónov — dáta o aktivite medzi zápasmi, ktoré dnes zväz nemá
+
+### Zásady
+
+- KPI sa počítajú z existujúcich XP záznamov — hráč nevypĺňa nič navyše
+- Individuálne dáta vidí len hráč, jeho tréner a klub; navonok len anonymizované agregáty
+- XP kúpené ani ovplyvnené peniazmi neexistuje ([premium-profiles.md](premium-profiles.md)) — KPI preto ostávajú neskreslené

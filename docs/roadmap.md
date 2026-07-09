@@ -2,7 +2,7 @@
 
 ## Overview
 
-Five phases from MVP to national scale. Each phase is independently deployable — clubs can start using F1 features while F2 is in development.
+Six phases from MVP to national scale — and beyond it, towards a standalone sports network. Each phase is independently deployable — clubs can start using F1 features while F2 is in development.
 
 ---
 
@@ -120,14 +120,40 @@ Five phases from MVP to national scale. Each phase is independently deployable �
 
 ---
 
+## Phase 6 — Fynd Network (vlastná sociálna sieť)
+**Duration:** ongoing, starts after F5 proves scale (year 2+)  
+**Status:** ⚪ Vision
+
+Dlhodobá vízia: z klubovej platformy sa stane **samostatná športová sociálna sieť — „športový LinkedIn"**. Zameraná výhradne na športové témy: žiadny všeobecný feed, žiadne memy, žiadna politika. Profil hráča a trénera sa mení na overený športový životopis.
+
+### Deliverables
+- [ ] Kariérny profil — overená história klubov, štatistiky, odznaky a úspechy naprieč sezónami (dáta zo Sportnetu, nie samodeklarované)
+- [ ] Športový feed — príspevky viazané na kluby, zápasy a kariérne míľniky; moderácia obmedzená na športový obsah
+- [ ] Networking — prepojenia hráč ↔ tréner ↔ klub ↔ skaut, odporúčania a referencie (ako LinkedIn endorsements, ale za overené športové úspechy)
+- [ ] Scouting portál — vyhľadávanie talentov podľa veku, pozície, regiónu a KPI dát (explicitný opt-in hráča a rodiča)
+- [ ] Kariérna nástenka — kluby inzerujú nábory, trénerov, brigády okolo klubu; hráči a tréneri sa hlásia profilom
+- [ ] Medzinárodné rozšírenie — podpora federácií mimo SK ako predpoklad rastu siete
+
+### Success criteria
+- 30 %+ hráčov 15+ má vyplnený kariérny profil
+- Prvých 10 overených skautov/agentov aktívne používa scouting portál
+- Prvý prestup, ktorý preukázateľne vznikol cez Fynd Network
+
+### Prečo až po F5
+
+Sociálna sieť má hodnotu len s kritickou masou overených profilov. F1–F5 túto masu vybudujú cez každodennú klubovú prevádzku — F6 ju premení na sieť, ktorú nevie skopírovať nikto bez rovnakých dát.
+
+---
+
 ## Timeline (estimated)
 
 ```
-Month 1–2   F1 — Core MVP         ████████░░░░░░░░
-Month 2–3   F2 — XP & Motivation  ░░░░████████░░░░
-Month 3–4   F3 — Community        ░░░░░░░░████████
-Month 4–5   F4 — Sportnet         ░░░░░░░░░░░█████
-Month 5+    F5 — Scale            ░░░░░░░░░░░░░░██
+Month 1–2   F1 — Core MVP         ████████░░░░░░░░░░
+Month 2–3   F2 — XP & Motivation  ░░░░████████░░░░░░
+Month 3–4   F3 — Community        ░░░░░░░░████████░░
+Month 4–5   F4 — Sportnet         ░░░░░░░░░░░█████░░
+Month 5+    F5 — Scale            ░░░░░░░░░░░░░░████
+Year 2+     F6 — Fynd Network     ░░░░░░░░░░░░░░░░██
 ```
 
 Phases overlap slightly — backend work for F3 begins while F2 frontend is in testing.
@@ -142,5 +168,5 @@ These features are explicitly deferred to post-F5:
 - Live video streaming
 - Merchandise e-commerce
 - Ticket sales integration
-- Agent/scout portal
-- International club support (non-SK federations)
+- Agent/scout portal → planned as part of **F6 — Fynd Network**
+- International club support (non-SK federations) → planned as part of **F6 — Fynd Network**

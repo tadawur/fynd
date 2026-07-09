@@ -262,7 +262,7 @@
   .xp-level-num{display:flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--green);color:var(--ink);font-size:12px;font-weight:800;flex:none;}
 
   /* ---------- ROADMAP ---------- */
-  .roadmap-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+  .roadmap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
   @media(max-width:1080px){.roadmap-grid{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:560px){.roadmap-grid{grid-template-columns:1fr;}}
   .road-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px;}
@@ -840,8 +840,8 @@
   <div class="container">
     <div class="section-head">
       <div class="eyebrow" style="justify-content:center">Roadmapa</div>
-      <h2>Od MVP po celoslovenské pokrytie</h2>
-      <p>Päť fáz, každá samostatne nasaditeľná — kluby môžu používať F1 kým sa vyvíja F2.</p>
+      <h2>Od MVP po celoslovenské pokrytie — a vlastnú športovú sieť</h2>
+      <p>Šesť fáz, každá samostatne nasaditeľná — kluby môžu používať F1 kým sa vyvíja F2.</p>
     </div>
     <div class="roadmap-grid">
       <div class="road-card">
@@ -916,6 +916,19 @@
           <li>Multišport rámec</li>
         </ul>
         <div class="road-status">🟡 Plánovanie</div>
+      </div>
+      <div class="road-card">
+        <div class="road-phase">FÁZA 6</div>
+        <h3>Fynd Network — vlastná sociálna sieť</h3>
+        <div class="road-dur">rok 2+</div>
+        <ul>
+          <li>„Športový LinkedIn" — iba športové témy</li>
+          <li>Overený kariérny profil hráča a trénera</li>
+          <li>Networking: hráč – tréner – klub – skaut</li>
+          <li>Scouting portál (opt-in hráča a rodiča)</li>
+          <li>Kariérna nástenka klubov</li>
+        </ul>
+        <div class="road-status">⚪ Vízia</div>
       </div>
     </div>
   </div>
@@ -1029,14 +1042,8 @@
 
       <div class="feature-card">
         <span class="ic">⭐</span>
-        <h3>Prémiový profil</h3>
-        <p>Hráči si môžu voliteľne predplatiť exkluzívne animované pozadia, rámčeky avatara a sezónne skiny — od <strong style="color:var(--green)">1–2 €/mesiac</strong>. Základný profil zostáva vždy zadarmo.</p>
-      </div>
-
-      <div class="feature-card">
-        <span class="ic">⚡</span>
-        <h3>XP Booster</h3>
-        <p>Jednorazový nákup: dočasný bonus <strong style="color:var(--gold)">+20 % XP na 7 dní</strong> pre hráčov, ktorí chcú postúpiť rýchlejšie. Neovplyvňuje herný balanc — len tempo rastu.</p>
+        <h3>Prémiové profily</h3>
+        <p>Tri voliteľné tiery: <strong style="color:var(--green)">Fynd+ Hráč</strong> (kozmetika a rozšírené štatistiky, 1,99 €/mes.), <strong style="color:var(--green)">Fynd+ Tréner</strong> (engagement analytika a KPI reporty, 3,99 €/mes.) a <strong style="color:var(--green)">Fynd+ Klub</strong> (branding, klubová analytika a prioritná podpora, 14,99 €/mes.). Žiadne pay-to-win — XP sa kúpiť nedá a základ zostáva vždy zadarmo.</p>
       </div>
 
       <div class="feature-card">
@@ -1061,7 +1068,7 @@
     <div class="section-head">
       <div class="eyebrow">Financovanie</div>
       <h2>Koľko Fynd stojí — a kedy sa uživí sám</h2>
-      <p>Hráme s otvorenými kartami. Vývoj vieme spraviť lacno vďaka AI nástrojom, prevádzka moderného stacku stojí pár desiatok eur mesačne — a biznis model pokryje náklady už pri malom zlomku slovenského trhu.</p>
+      <p>Hráme s otvorenými kartami. Vývoj vieme spraviť lacno vďaka AI nástrojom, prevádzka moderného stacku — vrátane údržby, upgradov a SLA podpory — stojí v pilote do 150 € mesačne. Biznis model pokryje náklady už pri malom zlomku slovenského trhu.</p>
     </div>
 
     <div class="features-grid">
@@ -1089,16 +1096,16 @@
     </div>
 
     <div class="fin-stats">
-      <div class="fin-stat"><div class="num">&lt; 100 € / mes.</div><div class="label">prevádzka pilotu (do 2 000 používateľov)</div></div>
-      <div class="fin-stat"><div class="num">&lt; 1 000 € / rok</div><div class="label">celá ročná prevádzka pilotu — menej než klubový turnaj</div></div>
-      <div class="fin-stat"><div class="num">&lt; 300 € / mes.</div><div class="label">prevádzka pri ~10 000 aktívnych používateľoch</div></div>
+      <div class="fin-stat"><div class="num">&lt; 150 € / mes.</div><div class="label">prevádzka pilotu (do 2 000 používateľov) vrátane údržby, updateov a SLA podpory</div></div>
+      <div class="fin-stat"><div class="num">&lt; 1 800 € / rok</div><div class="label">celá ročná prevádzka pilotu so všetkými nákladmi — infra, údržba, upgrady, podpora</div></div>
+      <div class="fin-stat"><div class="num">&lt; 600 € / mes.</div><div class="label">prevádzka pri ~10 000 aktívnych používateľoch vrátane SLA (99,9 %) a priebežných upgradov</div></div>
     </div>
 
     <div class="fin-be">
       <div class="fin-be-num">~3 000</div>
       <div>
         <h3>aktívnych používateľov stačí, aby sa Fynd uživil sám</h3>
-        <p>Prémiové profily, XP boostery a lokálni sponzori pokryjú prevádzku už pri ~3 000 aktívnych používateľoch — menej než 1 % slovenského futbalového trhu. Pri 10 000 používateľoch generuje model ~1–1,5 tis. € mesačne. Základné funkcie zostávajú zadarmo, žiadne pay-to-win, žiadne agresívne reklamné siete.</p>
+        <p>Prémiové profily (hráči, tréneri, kluby) a lokálni sponzori pokryjú prevádzku vrátane SLA a údržby už pri ~3 000 aktívnych používateľoch — menej než 1 % slovenského futbalového trhu. Pri 10 000 používateľoch generuje model ~1–1,5 tis. € mesačne. Základné funkcie zostávajú zadarmo, žiadne pay-to-win, žiadne agresívne reklamné siete.</p>
       </div>
     </div>
 

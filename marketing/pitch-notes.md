@@ -43,21 +43,22 @@ Without Fynd, a young player's entire sporting career is invisible — no stats,
 
 ---
 
-## Business Model (proposed)
+## Business Model
 
-### Freemium by club size
+Kluby neplatia nič — základné funkcie sú bezplatné pre všetkých, bez limitov. Príjmy stoja na troch pilieroch (detail: [premium-profiles.md](../docs/premium-profiles.md), čísla: [FINANCIALS.md](../docs/FINANCIALS.md)):
 
-| Tier | Price | Features |
+| Pilier | Cena | Poznámka |
 |---|---|---|
-| Free | 0 €/month | 1 team, 25 players, basic features |
-| Club | 19 €/month | Unlimited teams, all features |
-| Pro | 39 €/month | Club + Sportnet sync + analytics + custom themes |
-| Federation | Custom | White-label, federation-wide rollout |
+| Fynd+ Hráč | 1,99 €/mes. | kozmetika + rozšírené štatistiky, žiadne pay-to-win |
+| Fynd+ Tréner | 3,99 €/mes. | engagement analytika, KPI reporty |
+| Fynd+ Klub | 14,99 €/mes. | branding, klubová analytika, prioritná podpora (SLA), tréneri v cene |
+| Lokálny sponzoring | 50 – 75 €/mes./sponzor | nenápadné bannery regionálnych firiem |
+| SFZ partnerstvo | symbolický príspevok za tréning | dochádzkové dáta, ktoré zväz dnes nemá — iba potenciál |
 
 ### Additional revenue streams (future)
 - Sponsored seasonal themes (brand co-creates Halloween/Christmas theme)
 - Club merchandise fulfilment via reward shop (% commission)
-- Scout/agent access to anonymised national leaderboard data
+- Scout/agent access to anonymised national leaderboard data — súčasť vízie F6 Fynd Network (opt-in)
 
 ---
 
@@ -115,5 +116,5 @@ This delivers a production-ready platform ready for 50+ clubs.
 ## Contact
 
 **Tadeáš Letko** — Founder  
-📧 info@fynd.sk  
+📧 info@fynd.fans  
 🐙 github.com/tadawur/fynd

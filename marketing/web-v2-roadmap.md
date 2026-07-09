@@ -70,7 +70,7 @@ Namiesto striktne sekvenčného prechodu 12 položiek nižšie, úlohy sú zosku
 
 ### Obsah (zdroj: `marketing/pitch-notes.md`)
 - [ ] Market size / TAM tabuľka (2 800+ klubov, 180 000+ hráčov, ~500 000 TAM)
-- [ ] Business model — freemium tiers (Free / Club / Pro / Federation)
+- [ ] Business model — 3 piliere: prémiové profily (Fynd+ Hráč / Tréner / Klub), lokálny sponzoring, SFZ partnerstvo (zdroj: `docs/premium-profiles.md`)
 - [ ] "Why now" — 4 dôvody (Sportnet adopcia, post-COVID, Gen Z, žiadna priama konkurencia)
 - [ ] "Why Fynd wins" — porovnávacia tabuľka s konkurenciou (zo `marketing/competitive-landscape.md`)
 - [ ] Traction goals (Year 1) — pilot, beta, kluby, MAU, platiace kluby
@@ -118,7 +118,7 @@ Toto poradie je len návrh — finálna priorita a termíny podľa rozhodnutia T
 - Workstream B: samostatná stránka, sekcia na hlavnej stránke, alebo PDF na stiahnutie?
 - Workstream C: aké partnerské tiery/ceny (alebo zatiaľ len "kontaktujte nás")?
 - Existuje formulárový backend (napr. Formspree, Google Form) na zber kontaktov, alebo zatiaľ len `mailto:info@fynd.fans`?
-- ~~Doména webu (`og:url` a text vo footeri) je stále `fynd.sk`...~~ **Vyriešené:** doména zjednotená na `fynd.fans` v celom `site/index.html` — dôvod je budúci zámer osloviť aj zahraničné značky a partnerov, preto `.fans` namiesto `.sk`. (`docs/branding.md`, `README.md` a `marketing/pitch-notes.md` ešte obsahujú staré `fynd.sk` — čaká na potvrdenie, či sa majú aktualizovať aj tieto dokumenty.)
+- ~~Doména webu (`og:url` a text vo footeri) je stále `fynd.sk`...~~ **Vyriešené:** doména zjednotená na `fynd.fans` v celom `site/index.html` — dôvod je budúci zámer osloviť aj zahraničné značky a partnerov, preto `.fans` namiesto `.sk`. **Dodatočne (júl 2026):** `docs/branding.md`, `README.md` aj `marketing/pitch-notes.md` zosúladené na `fynd.fans` / `info@fynd.fans`.
 
 ---
 
@@ -127,5 +127,5 @@ Toto poradie je len návrh — finálna priorita a termíny podľa rozhodnutia T
 - [`marketing/pitch-notes.md`](pitch-notes.md) — biznis model, market size, investment ask
 - [`marketing/target-audience.md`](target-audience.md) — persony
 - [`marketing/competitive-landscape.md`](competitive-landscape.md) — konkurencia
-- [`docs/roadmap.md`](../docs/roadmap.md) — produktový roadmap F1–F5
+- [`docs/roadmap.md`](../docs/roadmap.md) — produktový roadmap F1–F6
 - [`docs/features.md`](../docs/features.md) — detail funkcií

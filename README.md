@@ -62,6 +62,7 @@ One platform. Everything there.
 | F3 — Community | 🟡 Planning | Club following, live ticker, push notifications |
 | F4 — Sportnet | 🟡 Planning | API integration, transfers, stats |
 | F5 — Scale | 🟡 Planning | National rollout, 50+ clubs, SFZ partnership |
+| F6 — Fynd Network | ⚪ Vision | Own social network — "sports LinkedIn", career profiles, scouting |
 
 ---
 
@@ -73,18 +74,21 @@ fynd/
 ├── docs/
 │   ├── overview.md             ← Vision, mission, audience
 │   ├── features.md             ← All features in detail
-│   ├── xp-system.md            ← XP economy, levels, reward shop
+│   ├── xp-system.md            ← XP economy, levels, reward shop, XP as KPI
+│   ├── premium-profiles.md     ← Premium tiers (player, coach, club) & what stays free
+│   ├── FINANCIALS.md           ← Cost model, SLA, revenue, break-even
 │   ├── notifications.md        ← Push notification system
 │   ├── leaderboards.md         ← Club / regional / national rankings
 │   ├── chat-permissions.md     ← Who sees what in group chats
 │   ├── sportnet-integration.md ← Sportnet API connection plan
 │   ├── tech-stack.md           ← PWA vs native, recommended stack
-│   ├── roadmap.md              ← F1–F5 implementation phases
+│   ├── roadmap.md              ← F1–F6 implementation phases
 │   └── branding.md             ← Name, mascot, colours, themes
 └── marketing/
     ├── pitch-notes.md          ← Key investor/partner messages
     ├── target-audience.md      ← Detailed user personas
     ├── competitive-landscape.md← What exists, why Fynd is different
+    ├── club-adoption.md        ← Coach adoption plan & club sales playbook
     └── web-v2-roadmap.md       ← Roadmap: site content polish, business & partner sections
 ```
 
@@ -93,11 +97,14 @@ fynd/
 ## Quick Links
 
 - 📄 [Full Feature Overview](docs/features.md)
-- ⭐ [XP System & Levels](docs/xp-system.md)
+- ⭐ [XP System, Levels & KPI](docs/xp-system.md)
+- 💎 [Premium Profiles](docs/premium-profiles.md)
 - 🏆 [Leaderboard System](docs/leaderboards.md)
 - 🗺️ [Roadmap](docs/roadmap.md)
 - 🎨 [Brand & Design](docs/branding.md)
 - 💰 [Investment Overview](marketing/pitch-notes.md)
+- 📊 [Financial Model & SLA](docs/FINANCIALS.md)
+- 🤝 [Club Adoption Playbook](marketing/club-adoption.md)
 - 🗂️ [Marketing Web Roadmap v2](marketing/web-v2-roadmap.md)
 
 ---
@@ -105,8 +112,8 @@ fynd/
 ## Contact
 
 **Tadeáš Letko** — Founder  
-📧 info@fynd.sk  
-🌐 fynd.sk *(coming soon)*
+📧 info@fynd.fans  
+🌐 [fynd.fans](https://fynd.fans)
 
 ---
 

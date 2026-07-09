@@ -21,7 +21,7 @@ Signals that Fynd is about more than results — it's about community, progress,
 
 ## Domain
 
-`fynd.sk` *(registration pending)*
+`fynd.fans` — oficiálna doména (`.fans` namiesto `.sk` kvôli budúcemu osloveniu zahraničných značiek a partnerov)
 
 ---
 
