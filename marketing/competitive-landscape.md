@@ -38,6 +38,16 @@ No direct competitor exists for the specific combination Fynd offers: community 
 
 ---
 
+### Club Development / CD.app (SFZ)
+**Type:** Strategic SFZ development project (approved 11/2024) with a mobile app built on sportnet.online  
+**Price:** Free (ad-free content tied to paid SFZ/club membership)  
+**Used in Slovakia?** Rolling out federation-wide, horizon 3–7 years  
+**Strengths:** Official authority and data (ISSF), 200–300k €/year budget + UEFA co-financing, education content, 400 schools via DSG, licensing systems  
+**Weaknesses:** No gamification at all (nothing planned through 2028), players themselves are not a primary target group, text-only messages without attachments, federation-project pace  
+**Verdict:** Not a competitor — the official information & education layer Fynd complements. Fynd is the motivation layer for the same ecosystem. Full analysis and partnership strategy: [club-development-vs-fynd.md](club-development-vs-fynd.md).
+
+---
+
 ### Facebook / Facebook Groups
 **Type:** Social network  
 **Price:** Free  

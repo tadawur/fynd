@@ -4,11 +4,12 @@
 
 Fynd je a zostane pre kluby, hráčov aj rodičov **bezplatný vo všetkých základných funkciách**. Prémiové profily sú voliteľný doplnok, ktorý financuje prevádzku platformy — nikdy nie podmienka používania.
 
-Tri zásady, ktoré neporušíme:
+Štyri zásady, ktoré neporušíme:
 
 1. **Žiadne pay-to-win** — prémiový účet nikdy nezíska XP, lepšie umiestnenie v rebríčku ani žiadnu súťažnú výhodu. Platí sa len za kozmetiku, pohodlie a analytiku.
 2. **Žiadna funkčná stena** — všetko, čo klub potrebuje na fungovanie (chaty, kalendár, dochádzka, výsledky, notifikácie), je zadarmo bez limitov.
 3. **Deti nie sú zákazníci** — nákup prémiového profilu hráča do 18 rokov musí potvrdiť rodič. Žiadne dark patterns, žiadne časovo obmedzené ponuky tlačiace na nákup.
+4. **Nič, čo oficiálna CD.app (SFZ Club Development) ponúka zadarmo, nebude vo Fynde spoplatnené** — Fynd nesmie pôsobiť ako paywall na verejné informácie. Detail: [club-development-vs-fynd.md](../marketing/club-development-vs-fynd.md).
 
 ---
 
