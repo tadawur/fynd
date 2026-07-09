@@ -48,21 +48,23 @@ Tento prienik nie je hrozba — je to **potvrdenie problému aj riešenia**. Ná
 
 ---
 
-## 3. V čom je Fynd iný (a lepší vo svojej vrstve)
+## 3. V čom je Fynd lepší a prečo sa oplatí viac
 
-Club Development je top-down projekt riadenia a informovania ekosystému. Fynd je bottom-up produkt pre každodenný život klubu. Z toho vyplýva šesť zásadných rozdielov:
+Club Development je top-down projekt riadenia a informovania ekosystému. Fynd je bottom-up produkt pre každodenný život klubu. Porovnanie po oblastiach:
 
-**1. Hráč-dieťa je hlavný používateľ.** Primárne cieľové skupiny CD sú rodičia, fanúšikovia, tréneri a funkcionári — samotný mladý hráč v nich chýba. Fynd je postavený od začiatku okolo hráča 8 – 18 rokov: jeho streak, jeho level, jeho profil. CD doručuje informácie o futbale; Fynd buduje návyk chodiť na tréning.
+| Oblasť | Club Development | Fynd | Prečo sa Fynd oplatí viac |
+|---|---|---|---|
+| **Hlavný používateľ** | rodičia, fanúšikovia, tréneri, funkcionári — samotný mladý hráč medzi primárnymi skupinami chýba | hráč 8 – 18 rokov v centre: jeho streak, level, profil | Appku denne otvára presne ten, koho má ekosystém udržať pri športe. Bez dieťaťa ako používateľa sa retencia mládeže nedá vyhrať. |
+| **Motivácia a gamifikácia** | žiadna — nie je v pláne ani do 2028 | XP, levely, odznaky, streaky ako jadro produktu | Duolingom overené mechaniky menia informáciu na návyk. CD doručuje správy, Fynd buduje dôvod prísť na tréning. |
+| **Odmeňovňa** | neexistuje | klubový katalóg odmien za XP (fľaša, dres, tréning s trénerom) | Dieťa má hmatateľný dôvod zbierať XP, klub digitalizuje odmeňovanie bez excelov — funkcia, ktorú žiadna iná appka na trhu nemá. |
+| **Dochádzka a dáta** | „formuláre na zber údajov o kvalite klubov" (2025) | 30-sekundové označenie trénerom → streaky, [KPI, index rizika odchodu](../docs/xp-system.md#xp-ako-kpi--vyhodnocovanie-v-čase) | Dáta vznikajú automaticky z každodennej prevádzky — nikto nevypĺňa formuláre. Presnejšie čísla pre klub aj SFZ, nula byrokracie navyše. |
+| **Rýchlosť a cena** | horizont 3 – 7 rokov, 200 – 300 tis. € ročne + UEFA grant | F1 – F5 za ~5 mesiacov, hotovosť do 2 500 € ([FINANCIALS.md](../docs/FINANCIALS.md)) | Kluby nemusia čakať roky. Fynd si môže dovoliť experimentovať a iterovať rýchlo — federačný projekt nie. Za zlomok nákladov overí, čo funguje. |
+| **Komunikácia klubu** | textové správy bez príloh, automatické tímové skupiny | chaty s vekovými právami (U9 nevidí A-tím), prílohy, fotky, roly Fotograf/Grafik | Klub vo Fynde žije, nielen číta: fotky zo zápasov, straty a nálezy, oznamy s kontextom. Bezpečnosť detí riešená právami, nie zákazom obsahu. |
+| **Live zážitok** | živá mapa zápasov s navigáciou | live ticker so zostavami, push o góle/karte, per-klub notifikácie | Rodič v práci vie o góle syna do sekundy. Emócia v reálnom čase drží rodičov aj fanúšikov v appke — mapa hovorí „kam ísť", ticker „čo sa deje". |
+| **Biznis model** | závislý od rozpočtu SFZ a UEFA; bez reklamy len pre platiacich členov | nezávislý: 3 piliere, break-even ~3 000 používateľov; bez reklamných sietí pre všetkých | Prežije aj bez grantov a politických zmien vo zväze. Férovosť (nič nie je za paywallom, čo je inde zadarmo) buduje dôveru klubov. |
+| **Rozsah športov** | futbal (projekt SFZ) | multi-šport od F5 (hokej, basketbal, hádzaná), F6 Fynd Network | Rodina s deťmi v rôznych športoch má jednu appku. Trh Fyndu nekončí pri futbale — a tým ani jeho sieťový efekt. |
 
-**2. Gamifikácia je jadro, nie feature.** XP, levely, odznaky, streaky a Odmeňovňa s klubovým katalógom odmien — mechaniky overené Duolingom, aplikované na mládežnícky šport. CD nič také nemá v pláne ani do roku 2028. Toto je vrstva, ktorú Fynd robí najlepšie a ktorá v ekosystéme chýba.
-
-**3. Dochádzka ako živé dáta.** Tréner označí dochádzku za 30 sekúnd — a z nej rastú streaky hráčov, KPI tímu aj index rizika odchodu ([xp-system.md](../docs/xp-system.md#xp-ako-kpi--vyhodnocovanie-v-čase)). CD plánuje „formuláre na zber údajov o kvalite klubov" — Fynd tie isté údaje generuje automaticky z každodennej prevádzky, bez vypĺňania čohokoľvek.
-
-**4. Rýchlosť a cena.** CD počíta s horizontom 3 – 7 rokov a rozpočtom státisícov eur. Fynd má plán F1 – F5 na ~5 mesiacov s hotovosťou do 2 500 € ([FINANCIALS.md](../docs/FINANCIALS.md)). Fynd si môže dovoliť experimentovať, zlyhať lacno a iterovať rýchlo — presne to, čo si federačný projekt dovoliť nemôže.
-
-**5. Bohatšia klubová každodennosť.** Live ticker so zostavami, fotografie zo zápasov (role Fotograf/Grafik), Odmeňovňa, straty a nálezy, sezónne témy. Správy v CD.app sú zámerne „len textové bez príloh" — Fynd je miesto, kde klub žije, nie len číta.
-
-**6. Nezávislý a transparentný biznis model.** Fynd nezávisí od rozpočtu zväzu ani UEFA grantu: 3 piliere (prémiové profily, lokálny sponzoring, SFZ partnerstvo ako bonus), break-even pri ~3 000 používateľoch. CD viaže bezreklamný obsah na platené členstvo SFZ; Fynd je bez reklamných sietí pre všetkých od začiatku.
+Jednou vetou: **CD informuje ekosystém, Fynd motivuje jeho najdôležitejšieho člena — dieťa. Preto sa oplatí viac tomu, kto chce, aby deti pri športe zostali, nie len o ňom vedeli.**
 
 ### Interne úprimne: v čom je CD silnejšie a aké sú riziká
 
