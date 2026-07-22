@@ -172,4 +172,5 @@ Závery pre [premium-profiles.md](../docs/premium-profiles.md) (hranica free/pre
 - [Prémiové profily](../docs/premium-profiles.md) — hranica free/premium
 - [Adopcia klubmi](club-adoption.md) — pilot, ktorý môže byť zároveň spoločným pilotom so SFZ
 - [Roadmap](../docs/roadmap.md) — F4 Sportnet integrácia, F6 Fynd Network
+- [Marketingový podklad pre SFZ](sfz-marketing-pitch.md) — rovnaký pilot, marketingový a PR uhol pohľadu navyše (dosah, DSG, co-branding), plus zhrnutie pripravenej prezentácie
 - [XP ako KPI](../docs/xp-system.md#xp-ako-kpi--vyhodnocovanie-v-čase) — dáta, ktoré Fynd vie dodať SFZ

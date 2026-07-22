@@ -10,11 +10,11 @@ No direct competitor exists for the specific combination Fynd offers: community 
 
 ### Spond
 **Type:** Club management app  
-**Price:** Free  
+**Price:** Free (Spond Club adds a small transaction fee on payments)  
 **Used in Slovakia?** Some clubs, growing  
-**Strengths:** Free, clean UI, works for any sport, good attendance tracking  
-**Weaknesses:** No gamification, no live results, no XP/rewards, no federation integration, no Slovak localisation, no leaderboards  
-**Verdict:** Closest functional overlap. Fynd differentiates on engagement mechanics and local integration.
+**Strengths:** Free and ad-free, clean UI, works for any sport, 12M+ users globally, event RSVP with waiting lists, built-in membership/event **payment collection** (fees, trips, kit), a dedicated public **club website**, and paid **course/academy registration**.  
+**Weaknesses:** No gamification, no live results, no XP/rewards, no federation integration, no Slovak localisation, no leaderboards, football-specific context (Sportnet/SFZ) is entirely absent.  
+**Verdict:** Closest functional overlap. Fynd differentiates on engagement mechanics and local integration — but Spond's admin/payment layer (RSVP, fee collection, club website) is genuinely ahead of Fynd today. None of it is in the F1–F6 roadmap. Full breakdown: [sfz-marketing-pitch.md](sfz-marketing-pitch.md), section 1.
 
 ---
 

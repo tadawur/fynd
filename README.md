@@ -89,6 +89,7 @@ fynd/
     ├── target-audience.md      ← Detailed user personas
     ├── competitive-landscape.md← What exists, why Fynd is different
     ├── club-development-vs-fynd.md ← SFZ Club Development: comparison & partnership strategy
+    ├── sfz-marketing-pitch.md  ← SFZ marketing/PR angle: Spond gap analysis + partnership deck notes
     ├── club-adoption.md        ← Coach adoption plan & club sales playbook
     └── web-v2-roadmap.md       ← Roadmap: site content polish, business & partner sections
 ```
@@ -107,6 +108,7 @@ fynd/
 - 📊 [Financial Model & SLA](docs/FINANCIALS.md)
 - 🤝 [Club Adoption Playbook](marketing/club-adoption.md)
 - 🏛️ [SFZ Club Development × Fynd](marketing/club-development-vs-fynd.md)
+- 📣 [SFZ Marketing Pitch](marketing/sfz-marketing-pitch.md)
 - 🗂️ [Marketing Web Roadmap v2](marketing/web-v2-roadmap.md)
 
 ---
