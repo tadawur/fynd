@@ -72,6 +72,31 @@ Na základe bodov 1–2 bola pripravená kombinovaná prezentácia (produkt + d�
 
 ---
 
+## 4. Prezentácia — [`fynd-x-club-development.pptx`](fynd-x-club-development.pptx)
+
+Samostatná, ručne pripravená prezentácia (14 slidov) pre partnerský podklad Fynd × Club Development, postupne rozšírená v rámci viacerých úprav v tejto aj nadväzujúcej session:
+
+1. Titulka
+2. Rovnaký cieľ, iná vrstva — Fynd nesúperí s CD, stavia naň
+3. Kľúčová medzera — samotný mladý hráč chýba v cieľových skupinách CD.app
+4. Navyše č. 1 — Motivácia (streak, XP/levely, odznaky/rebríčky, Odmeňovňa)
+5. Dôveryhodnosť streaku — pravidlá individuálnych (mimoklubových) tréningov: nahlásenie do 23:59, súhlas rodiča do 24 h pre U9–U13, max. 2 za sebou, nižšie XP
+6. Ochrana proti fakovaniu — anti-podvodný systém pre klubovú dochádzku: náhodný peer-quorum spoluhráčov, whistle-bonus, štatistický radar
+7. Overenie individuálnych tréningov — analogický systém pre solo tréningy: tréningový buddy, náhodný video dôkaz, kontextová kontrola cez verejné dáta o počasí
+8. Prehľad — tabuľka CD.app vs. Fynd naprieč oblasťami (informácie, motivácia, dochádzka, komunikácia, obsah, hráč-dieťa)
+9. Biznis model
+10. Navyše č. 3 — Skauting (Fynd Scout: platený tier pre skautov/agentov, vekovo odstupňovaný súhlas na zobrazenie súkromných štatistík)
+11. Technický dodatok — frontend/backend/databáza v skratke, odkaz na `docs/tech-stack.md`
+12. Návrh pre SFZ
+13. Prvý krok — pilot 2026/27
+14. Zhrnutie
+
+**Anti-fraud princípy (slidy 5–7):** žiadna GPS, žiadna biometria maloletých (GDPR čl. 9 — citlivá kategória). Dôveryhodnosť namiesto toho stavia na ekonomickej motivácii (nízka XP hodnota streaku), decentralizovanej peer verifikácii a náhodných/nepredvídateľných kontrolách namiesto trvalého sledovania.
+
+**Stav:** súbor je uložený priamo v `marketing/fynd-x-club-development.pptx`, prešiel validáciou aj vizuálnou kontrolou všetkých 14 slidov.
+
+---
+
 ## Súvisiace dokumenty
 
 - [Club Development × Fynd](club-development-vs-fynd.md) — produktovo orientovaný partner-facing podklad, časť 5
