@@ -53,6 +53,26 @@ Detailný rozpis nákladov, príjmov a bodu zlomu, na ktorý sa odkazuje sekcia 
 - **Štvrťročne:** upgrade frameworkov a závislostí, test na nových verziách iOS/Android/prehliadačov
 - **Ročne:** technologický audit (výkon, bezpečnosť, náklady) pred začiatkom sezóny
 
+### 3b. Škála — národný rollout (100 000 – 200 000 používateľov ročne)
+
+Ilustračný odhad pri rozsahu blízko celého slovenského futbalového trhu (TAM ~500-tis., viď [pitch-notes.md](../marketing/pitch-notes.md)). Architektonicky ide o rovnaký stack ako pri 10-tisícovej škále, len s väčšou kapacitou — detail zmien v [tech-stack.md](tech-stack.md#národná-škála--100-000--200-000-používateľov-ročne).
+
+| Položka | 100 000 použ. | 200 000 použ. |
+|---|---|---|
+| Hosting (frontend + API) | 80 – 150 € | 150 – 250 € |
+| Databáza (dedikovaná + read replika) | 150 – 250 € | 250 – 400 € |
+| Redis (cache, session, real-time) | 30 – 50 € | 50 – 80 € |
+| Push notifikácie (FCM) | 0 € | 0 – 30 € |
+| Storage + CDN (fotky, médiá) | 80 – 150 € | 150 – 250 € |
+| Monitoring / error tracking | 40 – 60 € | 60 – 100 € |
+| **Infraštruktúra spolu** | **~400 – 650 € / mes.** | **~650 – 1 100 € / mes.** |
+| Ľudia (DevOps/podpora, čiastočný úväzok navyše k zakladateľovi) | 800 – 1 500 € / mes. | 800 – 1 500 € / mes. |
+| **Spolu (illustračne)** | **~1 200 – 2 150 € / mes.** | **~1 450 – 2 600 € / mes.** |
+
+Ročne: **~14 – 26 tis. €** (100-tis. použ.) až **~17 – 31 tis. €** (200-tis. použ.) — rádovo desaťnásobok pilotného rozpočtu, no stále mimoriadne nízke voči klasickému enterprise vývoju vďaka PWA + serverless prístupu. Náklady rastú výrazne pomalšie než počet používateľov (~2× infra pri 20× viac používateľov oproti 10-tisícovej škále).
+
+Pre porovnanie, príjmový potenciál pri tejto škále (rovnaké konzervatívne konverzie ako v sekcii 5): rádovo **10 000 – 25 000 € / mes.**, teda pri hornej hranici nákladov už komfortne pokrýva prevádzku aj tím. Čísla sú illustračné, nie záväzný forecast — reálne overenie až po dosiahnutí medzikroku ~10-tisícovej škály.
+
 ---
 
 ## 4. Príjmový model (3 piliere)
@@ -66,6 +86,42 @@ Detail tierov: [premium-profiles.md](premium-profiles.md). Žiadny pilier neobme
 | Fynd+ Klub | 14,99 € / mes. (119 € / rok) | 10 – 20 % klubov po prvej sezóne |
 | Lokálny sponzoring | 50 – 75 € / mes. / sponzor | 2 – 6 regionálnych sponzorov podľa fázy |
 | SFZ partnerstvo | symbolický príspevok za zaznamenaný tréning | nezarátané do break-evenu — iba potenciál |
+| Darovanie Fynd+ Hráč | rovnaká cena ako Fynd+ Hráč (1,99 €/mes. alebo 14,99 €/rok), platí darca | starí rodičia, fanúšikovia, firmy — nezávislé od rozpočtu rodiny |
+| Firemný CSR kanál | hromadný nákup Fynd+ Hráč seats pre deti zamestnancov, množstevná zľava dohodou | B2B kanál, väčšie jednorazové obchody namiesto rodiča po rodičovi |
+| Odmeňovňa — marketplace provízia | 10 – 15 % z ceny sprostredkovaného produktu | pozri detail nižšie — z nákladovej položky klubu sa stáva príjem pre Fynd |
+
+### Darovanie a firemný CSR kanál — detail
+
+Obe cesty riešia rovnaký problém inak než priama subscription rodiča: niekto iný než rodina platí za prémiový profil dieťaťa.
+
+- **Darovanie:** hociktorý používateľ appky (aj bez vlastného dieťaťa v appke) môže darovať Fynd+ Hráč konkrétnemu profilu — mesačne alebo ročne, rovnaká cena ako bežné predplatné. Generuje PR hodnotu (prístup nezávislý od rodinného rozpočtu, sedí s inkluzívnym posolstvom SFZ) aj nový mikro-kanál príjmu bez zmeny ceny pre existujúcich používateľov.
+- **Firemný CSR kanál:** zamestnávateľ kúpi balík Fynd+ Hráč licencií pre deti zamestnancov ako benefit (analogicky k príspevku na šport/fitness). Predáva sa ako jeden B2B obchod (napr. 50 licencií naraz s množstevnou zľavou), nie stovky jednotlivých rodičovských konverzií — nižšie predajné náklady na euro príjmu.
+
+### Odmeňovňa ako marketplace — detail
+
+Dnes: klub si sám kupuje a fyzicky odovzdáva odmeny (fľaša, dres, tréning s A-tímom) — čistá nákladová položka, Fynd na tom nezarába nič.
+
+Marketplace verzia: Fynd dojedná veľkoobchodné/affiliate partnerstvá so značkami športových potrieb. V katalógu Odmeňovne popri klubových odmenách (nulový náklad — tréning s A-tímom, meno na nástenke) pribudnú aj reálne produkty od partnerov. Hráč minie nazbierané XP ako zľavu a doplatí len rozdiel do plnej ceny (napr. fľaša za 8 €, XP zníži doplatok na 3 €) — objedná sa priamo v appke, klub nič neskladuje ani nekupuje vopred. Fynd si necháva 10 – 15 % marže ako sprostredkovateľ, zvyšok ide výrobcovi/distribútorovi.
+
+Efekt: z nákladovej položky klubu sa stáva príjmový kanál pre Fynd, klub navyše profituje z veľkoobchodných cien vyjednaných naprieč všetkými Fynd klubmi (ktoré by sám nedosiahol), a pravidlo "žiadne pay-to-win" zostáva nedotknuté — XP určuje len veľkosť zľavy, nikdy priamy nákup hernej výhody.
+
+---
+
+## 4b. Dynamická monetizácia
+
+Cena, ktorá reaguje na správanie hráča a sezónnosť klubu namiesto plochej sadzby po celý rok.
+
+| Nápad | Mechanika | Efekt |
+|---|---|---|
+| Zľava za streak/XP | Dlhší streak alebo vyššie XP → lacnejší Fynd+ Hráč (napr. -20 % pri 30-dňovom streaku) | Prepája monetizáciu s gamifikačnou slučkou — len na kozmetiku, nikdy na hernú výhodu |
+| Rodinná zľava | 2. dieťa pod tým istým rodičovským účtom -25 %, 3. a ďalšie zadarmo | Drží pri appke celú rodinu, nie len jedno dieťa |
+| Odporúčací bonus | Pozvi rodiča/hráča, ktorý sa stane platiacim → mesiac Fynd+ zadarmo | Priamy monetizačný dopad organického rastu cez zdieľateľnosť |
+| Sezónna cena Klub tieru | -30 až 40 % počas letnej prestávky namiesto plnej ceny | Udrží kontinuitu platieb cez mŕtve obdobie namiesto úplného zrušenia |
+| Dynamická cena sponzoringu | Cena sa mení podľa reálnej mesačnej aktivity klubu — viac v sezóne, menej cez prázdniny | Nižšie vstupné riziko pre sponzora → viac firiem to skúsi |
+
+### Rodinná zľava — prečo sa nedá jednoducho fakovať
+
+Zľava nie je zdieľateľný kód, ale automatický benefit na 2., 3. a ďalšie dieťa **pod tým istým rodičovským účtom**, ktorý už dnes musí potvrdiť každý nákup prémia pre hráča do 18 rokov (pozri [premium-profiles.md](premium-profiles.md), zásada 3). Aby to niekto obišiel, musel by reálne zaregistrovať ďalšie dieťa — a hráčsky profil vo Fynde sa overuje cez registráciu SFZ na Sportnete (["Player registrations... Verifies player identity"](sportnet-integration.md#what-we-sync)). Fiktívne dieťa bez reálnej registrácie v klube teda nejde len tak vytvoriť. Doplnkovo možno pridať strop (napr. max. 4 – 5 detí na rodinu) pre prípad, že by niekto mal skutočne veľa detí v jednom klube.
 
 ---
 

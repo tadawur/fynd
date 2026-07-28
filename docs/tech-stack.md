@@ -122,3 +122,19 @@ CI/CD via **GitHub Actions**:
 - Backend: Horizontal scaling via container orchestration (Railway or fly.io)
 
 Initial architecture comfortably handles 50 clubs × 100 players = 5 000 users with no infrastructure changes.
+
+### Národná škála — 100 000 – 200 000 používateľov ročne
+
+Rovnaký stack, žiadna prestavba architektúry — len viac kapacity na tých istých vrstvách:
+
+| Vrstva | Zmena oproti pilotu/škále 10k |
+|---|---|
+| Frontend / CDN | Vercel/Cloudflare vyšší tier (Pro/Business), viac edge cache pravidiel pre live ticker počas zápasových špičiek |
+| Backend | Horizontálne škálovanie na 2–4 inštancie (Railway/Render/fly.io), autoscaling podľa záťaže počas tréningových a zápasových hodín |
+| Databáza | Dedikovaná PostgreSQL inštancia + 1 read replika (reporting/KPI dotazy oddelené od zápisov), connection pooling (PgBouncer/Supabase built-in) |
+| Cache / real-time | Redis na session + rate limiting, WebSocket/SSE vrstva pre live ticker škáluje horizontálne s backendom |
+| Push notifikácie | FCM bez zmeny — škáluje na milióny správ zadarmo, žiadny extra náklad |
+| Storage / médiá | CDN-backed objektové úložisko (Supabase Storage/S3+CloudFront), automatická WebP kompresia už znižuje rast nákladov |
+| Tím | Solo + AI hybrid model (pozri FINANCIALS.md) už nestačí na spoľahlivosť pri tejto škále — potrebný aspoň 1 človek na čiastočný úväzok pre DevOps/incident response |
+
+Odhad nákladov pri tejto škále: [FINANCIALS.md, sekcia 3b](FINANCIALS.md#3b-škála--národný-rollout-100-000--200-000-používateľov-ročne).

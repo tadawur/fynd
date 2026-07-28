@@ -85,15 +85,21 @@ Samostatná, ručne pripravená prezentácia (14 slidov) pre partnerský podklad
 7. Overenie individuálnych tréningov — analogický systém pre solo tréningy: tréningový buddy, náhodný video dôkaz, kontextová kontrola cez verejné dáta o počasí
 8. Prehľad — tabuľka CD.app vs. Fynd naprieč oblasťami (informácie, motivácia, dochádzka, komunikácia, obsah, hráč-dieťa)
 9. Biznis model
-10. Navyše č. 3 — Skauting (Fynd Scout: platený tier pre skautov/agentov, vekovo odstupňovaný súhlas na zobrazenie súkromných štatistík)
-11. Technický dodatok — frontend/backend/databáza v skratke, odkaz na `docs/tech-stack.md`
-12. Návrh pre SFZ
-13. Prvý krok — pilot 2026/27
-14. Zhrnutie
+10. Ďalšie príjmové kanály — darovanie Fynd+ Hráč, firemný CSR kanál, Odmeňovňa ako marketplace s províziou (10–15 %)
+11. Dynamická monetizácia I — zľava za streak/XP, rodinná zľava (+ prečo sa nedá fakovať), odporúčací bonus
+12. Dynamická monetizácia II — sezónna cena Klub tieru cez leto, dynamická cena sponzoringu podľa dosahu
+13. Navyše č. 3 — Skauting (Fynd Scout: platený tier pre skautov/agentov, vekovo odstupňovaný súhlas na zobrazenie súkromných štatistík)
+14. Technický dodatok — frontend/backend/databáza v skratke, odkaz na `docs/tech-stack.md`
+15. Škálovanie a náklady — ilustračný odhad infraštruktúry a tímu pri ročnej návštevnosti 100 000 – 200 000, odkaz na `docs/FINANCIALS.md` (sekcia 3b) a `docs/tech-stack.md`
+16. Návrh pre SFZ
+17. Prvý krok — pilot 2026/27
+18. Zhrnutie
 
 **Anti-fraud princípy (slidy 5–7):** žiadna GPS, žiadna biometria maloletých (GDPR čl. 9 — citlivá kategória). Dôveryhodnosť namiesto toho stavia na ekonomickej motivácii (nízka XP hodnota streaku), decentralizovanej peer verifikácii a náhodných/nepredvídateľných kontrolách namiesto trvalého sledovania.
 
-**Stav:** súbor je uložený priamo v `marketing/fynd-x-club-development.pptx`, prešiel validáciou aj vizuálnou kontrolou všetkých 14 slidov.
+**Stav:** súbor je uložený priamo v `marketing/fynd-x-club-development.pptx`, prešiel validáciou aj vizuálnou kontrolou všetkých 18 slidov. Rovnaký obsah dynamickej monetizácie (5 nápadov) je aj na [fynd.fans](../site/index.html) v sekcii `#dynamicka-cena` a v `docs/FINANCIALS.md`, sekcia 4b.
+
+**Rozpracované/na zváženie (zatiaľ len v chate, nie v repe ani v deku):** Scout na kredity namiesto paušálu, Klub tier škálovaný podľa počtu hráčov + Fynd+ Akadémia ako 4. stupeň (~25–30 €/mes. celkovo za hlbšiu analytiku), zakladateľská zľava pre prvé kluby ("Founding Club"), sezónny pass namiesto mesačného predplatného pre hráča.
 
 ---
 
