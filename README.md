@@ -57,12 +57,17 @@ One platform. Everything there.
 
 | Phase | Status | Description |
 |---|---|---|
-| F1 — MVP Core | 🟡 Planning | Login, profile, chats, calendar, streak |
-| F2 — XP & Rewards | 🟡 Planning | XP system, levels, reward shop, badges |
-| F3 — Community | 🟡 Planning | Club following, live ticker, push notifications |
-| F4 — Sportnet | 🟡 Planning | API integration, transfers, stats |
+| F1 — MVP Core | 🟢 Built | Login, onboarding, profile, chats, calendar, streak, announcements |
+| F2 — XP & Rewards | 🟢 Built | XP ledger, levels, reward shop, badges, profile skins |
+| F3 — Community | 🟢 Built | Club following, leaderboards, live ticker (manual/Sportnet-fallback), in-app notifications, lost & found |
+| F4 — Sportnet | 🟡 Fallback only | Manual "Coach input" live ticker per docs/sportnet-integration.md#fallback — no real Sportnet API credentials available yet |
 | F5 — Scale | 🟡 Planning | National rollout, 50+ clubs, SFZ partnership |
 | F6 — Fynd Network | ⚪ Vision | Own social network — "sports LinkedIn", career profiles, scouting |
+
+See [TASKS.md](TASKS.md) for the honest, feature-by-feature breakdown of what's fully working versus
+simplified (real push notifications, payments, and Sportnet sync are not yet connected — no
+Firebase/APNs or payment processor credentials, and the app is built to be transparent about it rather
+than fake the functionality).
 
 ---
 
@@ -74,7 +79,9 @@ fynd/
 ├── TASKS.md                    ← Implementation status (webapp/), tracked against docs/roadmap.md
 ├── webapp/                     ← Next.js + Supabase PWA (F1 Core MVP) — see webapp/README.md
 ├── supabase/
-│   └── schema.sql              ← F1 database schema (Postgres) + RLS policies
+│   ├── schema.sql              ← F1 database schema (Postgres) + RLS policies
+│   ├── schema_v2.sql           ← F2/F3 schema — badges, rewards, matches, ratings, lost & found, photos
+│   └── schema_v3.sql           ← RLS write policies, chat permissions (incl. U9 rule), realtime, seed
 ├── docs/
 │   ├── overview.md             ← Vision, mission, audience
 │   ├── features.md             ← All features in detail

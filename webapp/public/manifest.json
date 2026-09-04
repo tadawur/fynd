@@ -4,8 +4,8 @@
   "description": "Digitálny domov pre športové kluby a ich komunity — tréningové streaky, XP, live výsledky a klubový chat.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
+  "background_color": "#06101e",
+  "theme_color": "#06101e",
   "orientation": "portrait",
   "icons": [
     { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },

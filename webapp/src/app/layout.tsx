@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0f172a",
+  themeColor: "#06101e",
   width: "device-width",
   initialScale: 1,
 };
@@ -30,7 +30,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="sk" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-[#0b1220] text-zinc-100 font-sans">
+      <body className="min-h-full flex flex-col bg-ink text-fg font-sans">
         <RegisterServiceWorker />
         {children}
       </body>
