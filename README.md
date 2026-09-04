@@ -71,6 +71,10 @@ One platform. Everything there.
 ```
 fynd/
 ├── README.md                   ← You are here
+├── TASKS.md                    ← Implementation status (webapp/), tracked against docs/roadmap.md
+├── webapp/                     ← Next.js + Supabase PWA (F1 Core MVP) — see webapp/README.md
+├── supabase/
+│   └── schema.sql              ← F1 database schema (Postgres) + RLS policies
 ├── docs/
 │   ├── overview.md             ← Vision, mission, audience
 │   ├── features.md             ← All features in detail
@@ -103,6 +107,8 @@ fynd/
 - 💎 [Premium Profiles](docs/premium-profiles.md)
 - 🏆 [Leaderboard System](docs/leaderboards.md)
 - 🗺️ [Roadmap](docs/roadmap.md)
+- 🛠️ [Implementation Tasks](TASKS.md)
+- 💻 [Webapp Setup](webapp/README.md)
 - 🎨 [Brand & Design](docs/branding.md)
 - 💰 [Investment Overview](marketing/pitch-notes.md)
 - 📊 [Financial Model & SLA](docs/FINANCIALS.md)
@@ -122,3 +128,24 @@ fynd/
 ---
 
 *Fynd — Beyond the Score.*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

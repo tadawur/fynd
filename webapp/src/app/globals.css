@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b1220;
+  --foreground: #f4f4f5;
+  --fynd-navy: #0f172a;
+  --fynd-green: #22c55e;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-fynd-navy: var(--fynd-navy);
+  --color-fynd-green: var(--fynd-green);
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
