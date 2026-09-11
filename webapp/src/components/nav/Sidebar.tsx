@@ -6,7 +6,7 @@ import { NAV_ITEMS } from "./nav-items";
 import { FutbotMark } from "@/components/icons/FutbotMark";
 import { IconBell, IconStar } from "@/components/icons/BrandIcons";
 
-export function Sidebar() {
+export function Sidebar({ seasonDecor }: { seasonDecor?: string }) {
   const pathname = usePathname();
 
   return (
@@ -14,6 +14,11 @@ export function Sidebar() {
       <Link href="/dashboard" className="mb-6 flex items-center gap-2.5 px-2">
         <FutbotMark size={32} />
         <span className="font-display text-lg font-bold tracking-tight">Fynd</span>
+        {seasonDecor && (
+          <span className="text-lg" aria-hidden>
+            {seasonDecor}
+          </span>
+        )}
       </Link>
 
       {NAV_ITEMS.map((item) => {

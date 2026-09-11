@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { levelProgress } from "@/lib/fynd/xp";
 import { frameForLevel } from "@/lib/fynd/frame";
+import { seasonDecor } from "@/lib/fynd/season";
 import { Avatar } from "@/components/Avatar";
 import { ProfileEditForm } from "./ProfileEditForm";
 import { AvatarUpload } from "./AvatarUpload";
@@ -62,6 +63,7 @@ export default async function ProfilePage() {
   const instagram = (profile.socials as { instagram?: string } | null)?.instagram;
   const tier = frameForLevel(profile.level);
   const photoUrl = (profile as { photo_url?: string | null }).photo_url ?? null;
+  const decor = seasonDecor((profile as { season_theme?: string }).season_theme);
 
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-6 px-4 py-6 lg:px-8 lg:py-8">
@@ -93,6 +95,14 @@ export default async function ProfilePage() {
             }}
             aria-hidden
           />
+          {decor && (
+            <span
+              className="absolute -right-2 -top-3 text-6xl opacity-20"
+              aria-hidden
+            >
+              {decor}
+            </span>
+          )}
         </div>
 
         <div className="relative px-5 pb-5">

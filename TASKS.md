@@ -148,10 +148,16 @@ Legenda: ✅ hotovo · 🔶 rozrobené / čiastočné / zjednodušené · ⬜ ne
 
 ### Nastavenia
 - ✅ `/dashboard/settings` — nová stránka; ručný výber sezónnej vizuálnej témy appky (Predvolená /
-  Jar / Leto / Jeseň / Zima). Mení len akcentové farby (`--color-green/gold/coral`) cez
-  `[data-season]` CSS premenné na `dashboard/layout.tsx`, tmavá základňa (ink/surface/card) ostáva
-  rovnaká kvôli kontrastu. Uložené v `profiles.season_theme` (`schema_v8.sql`), nie automaticky podľa
-  dátumu — presne podľa zadania.
+  Jar / Leto / Jeseň / Zima / Halloween / Vianoce / Veľká noc). Mení akcentové farby
+  (`--color-green/gold/coral`) cez `[data-season]` CSS premenné na `dashboard/layout.tsx`. Pri
+  sviatočných témach (Halloween/Vianoce/Veľká noc) sa navyše zobrazí drobná dekorácia (🎃/🎄/🐣) pri
+  logu v Sidebar/mobilnej hlavičke a jemný watermark v banneri profilu (`lib/fynd/season.ts`
+  `decor`) — zámerne bez zásahu do navigačných ikoniek. Uložené v `profiles.season_theme`
+  (`schema_v8.sql`, rozšírené v `schema_v9.sql`), nie automaticky podľa dátumu.
+- ✅ Svetlý/tmavý režim appky — nezávislý prepínač (`lib/fynd/mode.ts`, `ColorModeForm.tsx`),
+  mení základné farby (`--color-ink/surface/card/fg/muted/line`) cez `[data-mode]`, sezónny akcent
+  ostáva nezávislý. Uložené v `profiles.color_mode` (`schema_v9.sql`), zatiaľ platí len v
+  `/dashboard` sekcii (landing/pricing zostávajú v pôvodnom tmavom brande).
 
 ### Push notifikácie a notifikačné centrum
 - ✅ In-app notifikačné centrum (`/dashboard/notifications`) — posledných 30 dní, označenie

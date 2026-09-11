@@ -141,3 +141,36 @@ body {
   --color-gold: #d9e6f2;
   --color-coral: #7a9abb;
 }
+
+[data-season="halloween"] {
+  --color-green: #8bd346;
+  --color-gold: #ff8c1a;
+  --color-coral: #8b5cf6;
+}
+
+[data-season="vianoce"] {
+  --color-green: #1f8a4c;
+  --color-gold: #d4af37;
+  --color-coral: #c0392b;
+}
+
+[data-season="velkanoc"] {
+  --color-green: #8fd14f;
+  --color-gold: #ffd66b;
+  --color-coral: #ff9eb5;
+}
+
+/* ============================================================
+   Svetlý / tmavý režim (Nastavenia → nezávislý prepínač).
+   Sezónna téma naďalej mení len akcent (green/gold/coral) —
+   svetlý režim mení základňu (ink/surface/card/fg/muted/line).
+   ============================================================ */
+
+[data-mode="light"] {
+  --color-ink: #f4f6f9;
+  --color-surface: #ffffff;
+  --color-card: #eef1f5;
+  --color-fg: #101826;
+  --color-muted: #5b6b7c;
+  --color-line: rgba(16, 24, 38, 0.12);
+}

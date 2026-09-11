@@ -6,6 +6,7 @@ import { BottomNav } from "@/components/nav/BottomNav";
 import { FutbotMark } from "@/components/icons/FutbotMark";
 import { IconBell } from "@/components/icons/BrandIcons";
 import { Avatar } from "@/components/Avatar";
+import { seasonDecor } from "@/lib/fynd/season";
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createClient();
@@ -18,7 +19,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("full_name, xp, level, onboarded, avatar_config, photo_url, season_theme")
+    .select("full_name, xp, level, onboarded, avatar_config, photo_url, season_theme, color_mode")
     .eq("id", user.id)
     .maybeSingle();
 
@@ -35,16 +36,24 @@ export default async function DashboardLayout({ children }: { children: React.Re
     (profile.avatar_config as { kit_color?: string } | null)?.kit_color ?? "#00D97E";
 
   const seasonTheme = (profile as { season_theme?: string }).season_theme ?? "default";
+  const colorMode = (profile as { color_mode?: string }).color_mode ?? "dark";
+  const decor = seasonDecor(seasonTheme);
 
   return (
-    <div className="flex min-h-dvh" data-season={seasonTheme}>
-      <Sidebar />
+    <div
+      className="flex min-h-dvh"
+      data-season={seasonTheme}
+      data-mode={colorMode}
+      style={{ colorScheme: colorMode }}
+    >
+      <Sidebar seasonDecor={decor} />
 
       <div className="flex min-h-dvh flex-1 flex-col">
         <header className="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-ink/90 px-4 py-3 backdrop-blur lg:px-8">
           <Link href="/dashboard" className="flex items-center gap-2 lg:hidden">
             <FutbotMark size={24} />
             <span className="font-display font-bold">Fynd</span>
+            {decor && <span aria-hidden>{decor}</span>}
           </Link>
           <span className="hidden text-sm text-muted lg:inline">
             Vitaj, {profile.full_name}
