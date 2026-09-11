@@ -212,6 +212,7 @@ Národná škála, viacero federácií (SZĽH, SBA, SZH, SAZ), Fynd Network — 
   spomína len "záporné XP za karty" bez presných čísel; klub si ich vie v budúcnosti nakonfigurovať.
 - **XP za "odohraný zápas" (+25) sa pripisuje pri manuálnom "koniec zápasu" evente, nie po Sportnet
   potvrdení** — vzhľadom na chýbajúce Sportnet napojenie je to najbližšia poctivá náhrada.
+- **Jemné pozadie ihriska v `/dashboard`** — presne tie isté SVG čiary ako v prezentácii (`site/index.html` hero, `.pitch-bg`), len prenesené do appky ako statická dekorácia s nízkou priehľadnosťou (`components/PitchBackground.tsx`), farba sleduje sezónny akcent. Vybrané z niekoľkých ukázaných variantov (A–I) priamo používateľom.
 - **Produkčný `npm run build` nebol overený v tomto vývojovom prostredí** — sandbox beží na Linuxe a
   nemá sieťový prístup na `registry.npmjs.org` na stiahnutie `@next/swc-linux-*` binárky (`node_modules`
   má len `darwin-arm64` z tvojho Macu). `npx tsc --noEmit` a `npm run lint` prešli čisto — over
