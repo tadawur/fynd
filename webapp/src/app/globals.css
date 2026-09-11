@@ -143,9 +143,22 @@ body {
 }
 
 [data-season="halloween"] {
+  --color-ink: #170d06;
+  --color-surface: #2a1509;
+  --color-card: #3a1e0e;
   --color-green: #8bd346;
   --color-gold: #ff8c1a;
   --color-coral: #8b5cf6;
+  --color-line: rgba(255, 140, 26, 0.16);
+}
+
+[data-season="halloween"][data-mode="light"] {
+  --color-ink: #fdf1e3;
+  --color-surface: #fff8ef;
+  --color-card: #fce8d1;
+  --color-fg: #2a1509;
+  --color-muted: #8a5a2e;
+  --color-line: rgba(139, 69, 19, 0.16);
 }
 
 [data-season="vianoce"] {

@@ -12,7 +12,7 @@ export function PitchBackground() {
   return (
     <div
       className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
-      style={{ opacity: 0.2 }}
+      style={{ opacity: 0.32 }}
       aria-hidden
     >
       <svg
