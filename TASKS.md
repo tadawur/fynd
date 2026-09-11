@@ -224,6 +224,9 @@ Národná škála, viacero federácií (SZĽH, SBA, SZH, SAZ), Fynd Network — 
   `position: relative` bez vlastného `z-index`, takže nevytváral stacking context a `-z-10` vrstva s SVG
   čiarami unikla za nepriehľadné pozadie `<body>`. Pridaný explicitný `z-0` na wrapper toto opravuje;
   priehľadnosť SVG zvýšená 0.14 → 0.2 pre lepšiu viditeľnosť.
+- **Veľká noc má vlastnú dekoráciu pozadia** (`components/SeasonCorners.tsx`) — kvitnúca vetvička v rohoch
+  celej appky (rovnaká -z-10/pointer-events-none logika ako `PitchBackground`), zobrazuje sa iba pri
+  `season_theme === "velkanoc"`. Vybraná z 4 ukázaných variantov (A–D) priamo používateľom (zvolil "B").
 
 ---
 

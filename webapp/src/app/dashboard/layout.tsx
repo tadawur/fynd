@@ -7,6 +7,7 @@ import { FutbotMark } from "@/components/icons/FutbotMark";
 import { IconBell } from "@/components/icons/BrandIcons";
 import { Avatar } from "@/components/Avatar";
 import { PitchBackground } from "@/components/PitchBackground";
+import { SeasonCorners } from "@/components/SeasonCorners";
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createClient();
@@ -45,6 +46,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
       style={{ colorScheme: colorMode }}
     >
       <PitchBackground />
+      <SeasonCorners seasonTheme={seasonTheme} />
       <Sidebar seasonTheme={seasonTheme} />
 
       <div className="flex min-h-dvh flex-1 flex-col">
