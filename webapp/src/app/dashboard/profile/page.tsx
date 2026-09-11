@@ -1,6 +1,10 @@
 import { createClient } from "@/lib/supabase/server";
 import { levelProgress } from "@/lib/fynd/xp";
+import { frameForLevel } from "@/lib/fynd/frame";
+import { Avatar } from "@/components/Avatar";
 import { ProfileEditForm } from "./ProfileEditForm";
+import { AvatarUpload } from "./AvatarUpload";
+import { BadgeShowcase } from "./BadgeShowcase";
 import { logout } from "../actions";
 
 export default async function ProfilePage() {
@@ -17,11 +21,20 @@ export default async function ProfilePage() {
     .maybeSingle();
   if (!profile) return null;
 
-  const { data: badges } = await supabase
+  const { data: badgesRaw } = await supabase
     .from("player_badges")
     .select("earned_at, badges(slug, name, emoji, description)")
     .eq("profile_id", user.id)
     .order("earned_at", { ascending: false });
+
+  const badges = (badgesRaw ?? [])
+    .map(
+      (b) =>
+        (b as unknown as {
+          badges?: { slug: string; name: string; emoji: string; description: string };
+        }).badges
+    )
+    .filter((b): b is NonNullable<typeof b> => !!b);
 
   const { count: trainingsAttended } = await supabase
     .from("training_attendance")
@@ -44,34 +57,87 @@ export default async function ProfilePage() {
       ? Math.round((ratings.reduce((s, r) => s + r.stars, 0) / ratings.length) * 10) / 10
       : null;
 
-  const { current } = levelProgress(profile.xp);
+  const { current, next, progressPct } = levelProgress(profile.xp);
   const kitColor = (profile.avatar_config as { kit_color?: string })?.kit_color ?? "#00D97E";
   const instagram = (profile.socials as { instagram?: string } | null)?.instagram;
+  const tier = frameForLevel(profile.level);
+  const photoUrl = (profile as { photo_url?: string | null }).photo_url ?? null;
 
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-6 px-4 py-6 lg:px-8 lg:py-8">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-semibold">Môj profil</h1>
         <form action={logout}>
-          <button type="submit" className="rounded-full border border-line px-4 py-2 text-sm text-muted hover:bg-card">
+          <button
+            type="submit"
+            className="rounded-full border border-line px-4 py-2 text-sm text-muted hover:bg-card"
+          >
             Odhlásiť sa
           </button>
         </form>
       </div>
 
-      <div className="flex items-center gap-4 rounded-2xl border border-line bg-surface p-5">
+      {/* Hero banner — Steam-like hlavička profilu */}
+      <div className="overflow-hidden rounded-2xl border border-line bg-surface">
         <div
-          className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl font-display text-xl font-bold text-ink"
-          style={{ backgroundColor: kitColor }}
+          className="animate-fynd-banner relative h-28 w-full sm:h-32"
+          style={{
+            backgroundImage: `linear-gradient(120deg, ${kitColor}55, var(--color-surface) 35%, var(--color-ink) 70%, ${kitColor}33)`,
+          }}
         >
-          {profile.level}
+          <div
+            className="absolute inset-0 opacity-20"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(45deg, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 2px, transparent 2px, transparent 14px)",
+            }}
+            aria-hidden
+          />
         </div>
-        <div>
-          <p className="font-display text-lg font-semibold">{profile.full_name}</p>
-          <p className="text-sm text-muted">
-            Level {profile.level} · {current.name} · {profile.xp} XP
-          </p>
-          {instagram && <p className="text-sm text-muted">@{instagram}</p>}
+
+        <div className="relative px-5 pb-5">
+          <div className="-mt-10 flex items-end gap-4 sm:-mt-12">
+            <Avatar
+              level={profile.level}
+              kitColor={kitColor}
+              photoUrl={photoUrl}
+              name={profile.full_name}
+              size={84}
+              showFrame
+              className="ring-4 ring-surface rounded-full"
+            />
+            <div className="pb-1">
+              <p className="font-display text-lg font-semibold sm:text-xl">
+                {profile.full_name}
+              </p>
+              <p className="text-sm text-muted">
+                Level {profile.level} · {current.name}
+                {instagram && <span> · @{instagram}</span>}
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-4 flex items-center gap-1.5 text-[11px] font-medium text-muted">
+            <span className="text-gold">{tier.label}</span>
+            <span>·</span>
+            <span>{profile.xp} XP</span>
+          </div>
+
+          <div className="mt-2">
+            <div className="h-2 w-full overflow-hidden rounded-full bg-card">
+              <div
+                className="relative h-full rounded-full bg-gradient-to-r from-green to-gold"
+                style={{ width: `${progressPct}%` }}
+              >
+                <span className="animate-fynd-sheen absolute inset-y-0 left-0 w-1/3 bg-white/25 blur-sm" />
+              </div>
+            </div>
+            <p className="mt-1 text-[11px] text-muted">
+              {next
+                ? `${progressPct}% do levelu ${next.level} · ${next.name}`
+                : "Maximálny level 🏆"}
+            </p>
+          </div>
         </div>
       </div>
 
@@ -96,24 +162,17 @@ export default async function ProfilePage() {
         </div>
       </div>
 
+      <BadgeShowcase badges={badges} />
+
       <div className="rounded-2xl border border-line bg-surface p-5">
-        <h2 className="mb-3 font-medium">Odznaky ({badges?.length ?? 0})</h2>
-        <div className="grid grid-cols-4 gap-3 sm:grid-cols-6">
-          {(badges ?? []).map((b) => {
-            const badge = (b as unknown as { badges?: { slug: string; name: string; emoji: string; description: string } }).badges;
-            return (
-              <div key={badge?.slug} title={badge?.description} className="flex flex-col items-center gap-1 text-center">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/15 text-2xl">
-                  {badge?.emoji}
-                </span>
-                <span className="text-[10px] text-muted">{badge?.name}</span>
-              </div>
-            );
-          })}
-          {(!badges || badges.length === 0) && (
-            <p className="col-span-full text-sm text-muted">Zatiaľ žiadne odznaky — ukáž sa na tréningu 💪</p>
-          )}
-        </div>
+        <h2 className="mb-3 font-medium">Profilová fotka</h2>
+        <AvatarUpload
+          userId={user.id}
+          level={profile.level}
+          kitColor={kitColor}
+          name={profile.full_name}
+          initialPhotoUrl={photoUrl}
+        />
       </div>
 
       <ProfileEditForm

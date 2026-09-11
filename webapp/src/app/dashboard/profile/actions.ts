@@ -48,3 +48,23 @@ export async function updateProfile(
   revalidatePath("/dashboard");
   return { error: null, success: true };
 }
+
+/** Uloží URL novo nahranej profilovej fotky (Supabase Storage bucket "avatars"). */
+export async function savePhotoUrl(photoUrl: string): Promise<{ error: string | null }> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) redirect("/login");
+
+  const { error } = await supabase
+    .from("profiles")
+    .update({ photo_url: photoUrl })
+    .eq("id", user.id);
+
+  if (error) return { error: "Nepodarilo sa uložiť fotku." };
+
+  revalidatePath("/dashboard/profile");
+  revalidatePath("/dashboard");
+  return { error: null };
+}

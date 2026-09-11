@@ -10,6 +10,7 @@ import {
   IconMegaphone,
   IconSearch,
   IconJersey,
+  IconSettings,
 } from "@/components/icons/BrandIcons";
 
 export type NavItem = {
@@ -30,4 +31,5 @@ export const NAV_ITEMS: NavItem[] = [
   { href: "/dashboard/announcements", label: "Oznamy", icon: IconMegaphone },
   { href: "/dashboard/lost-found", label: "Straty a nálezy", icon: IconSearch },
   { href: "/dashboard/profile", label: "Profil", icon: IconJersey, mobile: true },
+  { href: "/dashboard/settings", label: "Nastavenia", icon: IconSettings },
 ];

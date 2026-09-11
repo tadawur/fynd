@@ -54,3 +54,90 @@ body {
 .animate-fynd-pulse {
   animation: fynd-pulse 1.8s ease-in-out infinite;
 }
+
+/* ============================================================
+   Steam-like profil — rámček avatara, banner, jemné animácie
+   (docs/branding.md paleta, len CSS — žiadne externé knižnice)
+   ============================================================ */
+
+@keyframes fynd-glow-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(0.97); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+.animate-fynd-glow {
+  animation: fynd-glow-pulse 2.6s ease-in-out infinite;
+}
+
+@keyframes fynd-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-fynd-spin {
+  animation: fynd-spin 7s linear infinite;
+}
+
+@keyframes fynd-particle-float {
+  0% { opacity: 0; transform: translateY(0) scale(0.6); }
+  30% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-14px) scale(1); }
+}
+.animate-fynd-particle {
+  animation: fynd-particle-float 3.4s ease-in-out infinite;
+}
+
+@keyframes fynd-banner-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-fynd-banner {
+  background-size: 220% 220%;
+  animation: fynd-banner-shift 14s ease-in-out infinite;
+}
+
+@keyframes fynd-sheen {
+  0% { transform: translateX(-120%) skewX(-12deg); }
+  100% { transform: translateX(220%) skewX(-12deg); }
+}
+.animate-fynd-sheen {
+  animation: fynd-sheen 3.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fynd-glow,
+  .animate-fynd-spin,
+  .animate-fynd-particle,
+  .animate-fynd-banner,
+  .animate-fynd-sheen {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   Sezónne témy (Nastavenia → ručný výber) — menia len akcentové
+   farby (green/gold/coral), tmavá základňa appky (ink/surface/card)
+   ostáva rovnaká kvôli čitateľnosti a kontrastu.
+   ============================================================ */
+
+[data-season="jar"] {
+  --color-green: #5fd97e;
+  --color-gold: #c8e06a;
+  --color-coral: #ff8fb1;
+}
+
+[data-season="leto"] {
+  --color-green: #1fd6c8;
+  --color-gold: #ffd23f;
+  --color-coral: #ff7a45;
+}
+
+[data-season="jesen"] {
+  --color-green: #e0a83e;
+  --color-gold: #d9622b;
+  --color-coral: #b33f2e;
+}
+
+[data-season="zima"] {
+  --color-green: #5fc9e8;
+  --color-gold: #d9e6f2;
+  --color-coral: #7a9abb;
+}

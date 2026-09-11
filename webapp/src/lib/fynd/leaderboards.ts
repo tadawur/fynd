@@ -167,7 +167,9 @@ export async function computeLeaderboard(
     (rows ?? []).forEach((r) => {
       totals.set(r.profile_id, (totals.get(r.profile_id) ?? 0) + r.amount);
     });
-    eligible.forEach((p) => values.set(p.id, -(totals.get(p.id) ?? 0)));
+    // Kladné amount = penalizácia sa zapisuje ako záporné XP (docs/xp-system.md),
+    // takže súčet je už 0 (čisté konto) alebo záporný (karty) — netreba negovať.
+    eligible.forEach((p) => values.set(p.id, totals.get(p.id) ?? 0));
   }
 
   return eligible

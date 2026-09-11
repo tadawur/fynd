@@ -5,6 +5,7 @@ import { Sidebar } from "@/components/nav/Sidebar";
 import { BottomNav } from "@/components/nav/BottomNav";
 import { FutbotMark } from "@/components/icons/FutbotMark";
 import { IconBell } from "@/components/icons/BrandIcons";
+import { Avatar } from "@/components/Avatar";
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createClient();
@@ -17,7 +18,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("full_name, xp, level, onboarded, avatar_config")
+    .select("full_name, xp, level, onboarded, avatar_config, photo_url, season_theme")
     .eq("id", user.id)
     .maybeSingle();
 
@@ -33,8 +34,10 @@ export default async function DashboardLayout({ children }: { children: React.Re
   const kitColor =
     (profile.avatar_config as { kit_color?: string } | null)?.kit_color ?? "#00D97E";
 
+  const seasonTheme = (profile as { season_theme?: string }).season_theme ?? "default";
+
   return (
-    <div className="flex min-h-dvh">
+    <div className="flex min-h-dvh" data-season={seasonTheme}>
       <Sidebar />
 
       <div className="flex min-h-dvh flex-1 flex-col">
@@ -64,12 +67,13 @@ export default async function DashboardLayout({ children }: { children: React.Re
               href="/dashboard/profile"
               className="flex items-center gap-2 rounded-full border border-line py-1 pl-1 pr-3 text-sm"
             >
-              <span
-                className="flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold text-ink"
-                style={{ backgroundColor: kitColor }}
-              >
-                {profile.level}
-              </span>
+              <Avatar
+                level={profile.level}
+                kitColor={kitColor}
+                photoUrl={(profile as { photo_url?: string | null }).photo_url}
+                name={profile.full_name}
+                size={28}
+              />
               <span className="hidden font-display font-semibold text-gold sm:inline">
                 {profile.xp} XP
               </span>

@@ -185,3 +185,17 @@ export function IconStar(props: IconProps) {
     </svg>
   );
 }
+
+// Nastavenia — posuvníky
+export function IconSettings(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <line x1="10" y1="18" x2="54" y2="18" stroke="var(--color-muted)" strokeWidth="3" strokeLinecap="round" />
+      <circle cx="38" cy="18" r="6" fill="var(--color-green)" />
+      <line x1="10" y1="32" x2="54" y2="32" stroke="var(--color-muted)" strokeWidth="3" strokeLinecap="round" />
+      <circle cx="22" cy="32" r="6" fill="var(--color-gold)" />
+      <line x1="10" y1="46" x2="54" y2="46" stroke="var(--color-muted)" strokeWidth="3" strokeLinecap="round" />
+      <circle cx="42" cy="46" r="6" fill="var(--color-coral)" />
+    </svg>
+  );
+}

@@ -50,12 +50,19 @@ Legenda: ✅ hotovo · 🔶 rozrobené / čiastočné / zjednodušené · ⬜ ne
 - ⬜ Prihlásenie cez Google (Supabase Google OAuth provider)
 
 ### Profil hráča
-- ✅ `/dashboard/profile` — meno, level/XP, bio, farba dresu, Instagram handle, viditeľnosť na
-  rebríčkoch, odznaky (grid), sezónne štatistiky (tréningy, góly, priemerné hodnotenie)
+- ✅ `/dashboard/profile` — prerobený na "Steam-like" vzhľad: animovaný banner s hlavičkou, avatar s
+  rámčekom podľa levelu (5 tierov — Štartér/Strieborný/Zlatý/Smaragdový/Legendárny,
+  `lib/fynd/frame.ts`), XP progress bar k ďalšiemu levelu, vitrína odznakov (`BadgeShowcase.tsx`,
+  najnovšie 3 zvýraznené), jemné CSS animácie (glow pulz, rotujúci gradient, mikro-častice pri
+  najvyššom tieri — `globals.css`, rešpektuje `prefers-reduced-motion`)
+- ✅ Reálny upload profilovej fotky — Supabase Storage bucket `avatars` (RLS: čítanie verejné, zápis
+  len do vlastného priečinka `{uid}/...`, `schema_v6.sql`), `AvatarUpload.tsx` (client upload) +
+  `savePhotoUrl` server action, zapisuje sa do `profiles.photo_url` (stĺpec existoval už v
+  `schema_v2.sql`, doteraz nepoužitý). Zdieľaný `components/Avatar.tsx` sa používa aj v hlavičke
+  dashboardu.
 - ✅ Reálne XP/level napojenie (`profiles.xp`/`level`, `lib/fynd/xp.ts` zrkadlí SQL prahy)
-- 🔶 Avatar je zatiaľ len farba dresu (`avatar_config.kit_color`) + skin pozadie z Odmeňovne —
-  plnohodnotný SVG avatar (vlasy, pleť, doplnky) nie je implementovaný
-- ⬜ Fotka profilu (upload cez Supabase Storage)
+- 🔶 Avatar bez fotky je stále len farba dresu (`avatar_config.kit_color`) + level — plnohodnotný SVG
+  avatar (vlasy, pleť, doplnky) nie je implementovaný, teraz je ale plnohodnotná alternatíva reálna fotka
 
 ### Kluby a kategórie
 - ✅ Klubový adresár (`/dashboard/clubs`) — zoznam, sledovanie (follow/unfollow)
@@ -113,6 +120,11 @@ Legenda: ✅ hotovo · 🔶 rozrobené / čiastočné / zjednodušené · ⬜ ne
   (`match_events` nemá typ pre asistenciu), zjednodušené na "Góly"
 - ⬜ Sezónny reset a automatické koncoročné ocenenia (XP Champion, Iron Attendance, ...) — nie sú
   implementované
+- ✅ **Ukážkoví hráči pre demo rebríčkov** — 12 fiktívnych profilov (`@fynd.demo`) s rozličnou
+  dochádzkou, gólmi, XP a level 1–4, naviazaných na MFK Nová Baňa (`schema_v5.sql`, idempotentné,
+  ľahko zmazateľné cez `delete from auth.users where email like '%@fynd.demo'`). Pri seedovaní
+  objavený a opravený bug v `lib/fynd/leaderboards.ts` — dimenzia Fair Play mala obrátené poradie
+  (karty hráčov radila nad čistých hráčov).
 
 ### Zápasy a live ticker (Sportnet fallback)
 - ✅ `/dashboard/matches` — zoznam zápasov, tréner/admin vytvára nový zápas
@@ -131,6 +143,15 @@ Legenda: ✅ hotovo · 🔶 rozrobené / čiastočné / zjednodušené · ⬜ ne
 
 ### Straty a nálezy
 - ✅ `/dashboard/lost-found` — nahlásenie straty/nálezu, vláknové správy, označenie ako vyriešené
+- ✅ Ukážkový obsah — 6 demo položiek (stratené/nájdené, vrátane vyriešených) + 3 správy vo vlákne,
+  naviazané na demo hráčov z `schema_v5.sql` (`schema_v7.sql`, idempotentné)
+
+### Nastavenia
+- ✅ `/dashboard/settings` — nová stránka; ručný výber sezónnej vizuálnej témy appky (Predvolená /
+  Jar / Leto / Jeseň / Zima). Mení len akcentové farby (`--color-green/gold/coral`) cez
+  `[data-season]` CSS premenné na `dashboard/layout.tsx`, tmavá základňa (ink/surface/card) ostáva
+  rovnaká kvôli kontrastu. Uložené v `profiles.season_theme` (`schema_v8.sql`), nie automaticky podľa
+  dátumu — presne podľa zadania.
 
 ### Push notifikácie a notifikačné centrum
 - ✅ In-app notifikačné centrum (`/dashboard/notifications`) — posledných 30 dní, označenie
@@ -144,6 +165,9 @@ Legenda: ✅ hotovo · 🔶 rozrobené / čiastočné / zjednodušené · ⬜ ne
   triggera s reálnou URL) — presný postup v `docs/push-notifications.md`, kým sa to nespraví,
   DB trigger nemá kam volať a push reálne nechodí.
 - ⬜ Quiet hours (23:00–07:00) a rate limiting na typ udalosti — nie sú implementované
+- ✅ **Manuálne nastavenie v Supabase overené naživo** — Edge Function nasadená, secrets
+  nastavené, DB trigger reálne zavolal funkciu (`200 {"sent":0}` na testovacom notification
+  riadku, následne zmazaný)
 
 ### Fotky (fotograf/grafik)
 - ⬜ Nie je implementované — DB schéma (`photo_sets`, `photos`) existuje v `schema_v2.sql`, ale bez UI
@@ -189,4 +213,4 @@ Národná škála, viacero federácií (SZĽH, SBA, SZH, SAZ), Fynd Network — 
 
 ---
 
-*Posledná aktualizácia: 2026-09-04*
+*Posledná aktualizácia: 2026-09-11*
