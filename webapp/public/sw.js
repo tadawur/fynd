@@ -41,3 +41,46 @@ self.addEventListener("fetch", (event) => {
     caches.match(request).then((cached) => cached || fetch(request))
   );
 });
+
+// ============================================================
+// Web Push — príjem push udalosti a klik na notifikáciu
+// (docs/push-notifications.md — payload posiela supabase/functions/send-push)
+// ============================================================
+
+self.addEventListener("push", (event) => {
+  let data = { title: "Fynd", body: "Máš novú notifikáciu.", url: "/dashboard/notifications" };
+  try {
+    if (event.data) data = { ...data, ...event.data.json() };
+  } catch {
+    // fallback na default, ak payload nie je JSON
+  }
+
+  event.waitUntil(
+    self.registration.showNotification(data.title, {
+      body: data.body,
+      icon: "/icons/icon-192.png",
+      badge: "/icons/icon-32.png",
+      data: { url: data.url || "/dashboard/notifications" },
+    })
+  );
+});
+
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  const targetUrl = event.notification.data?.url || "/dashboard/notifications";
+
+  event.waitUntil(
+    self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((clientsArr) => {
+      for (const client of clientsArr) {
+        if (client.url.includes(targetUrl) && "focus" in client) return client.focus();
+      }
+      for (const client of clientsArr) {
+        if ("focus" in client && "navigate" in client) {
+          client.focus();
+          return client.navigate(targetUrl);
+        }
+      }
+      if (self.clients.openWindow) return self.clients.openWindow(targetUrl);
+    })
+  );
+});

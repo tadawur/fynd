@@ -135,8 +135,14 @@ Legenda: ✅ hotovo · 🔶 rozrobené / čiastočné / zjednodušené · ⬜ ne
 ### Push notifikácie a notifikačné centrum
 - ✅ In-app notifikačné centrum (`/dashboard/notifications`) — posledných 30 dní, označenie
   prečítaného, zvonček s počtom neprečítaných v hlavičke
-- ⬜ **Skutočné push notifikácie (FCM/APNs) nie sú implementované** — nemám Firebase/APNs credentials;
-  notifikácie sa ukladajú do `notifications` tabuľky a zobrazujú in-app, ale netrigrujú mobilný push
+- ✅ **Web Push notifikácie implementované** (`schema_v4.sql`, `supabase/functions/send-push`,
+  `public/sw.js`, `src/lib/fynd/push.ts`, UI na `/dashboard/notifications`) — nový riadok v
+  `notifications` (oznam, zmena/pripomienka tréningu, zápasová udalosť, nová chat správa) DB
+  triggerom zavolá Edge Function, ktorá pošle Web Push cez VAPID. Funguje na Android/desktop
+  priamo v prehliadači, na iOS 16.4+ len z appky pridanej na plochu (Apple obmedzenie).
+  ⚠️ **Vyžaduje manuálne nastavenie v Supabase** (nasadenie Edge Function + secrets + úprava
+  triggera s reálnou URL) — presný postup v `docs/push-notifications.md`, kým sa to nespraví,
+  DB trigger nemá kam volať a push reálne nechodí.
 - ⬜ Quiet hours (23:00–07:00) a rate limiting na typ udalosti — nie sú implementované
 
 ### Fotky (fotograf/grafik)

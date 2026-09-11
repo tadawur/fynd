@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { formatDateTimeSk } from "@/lib/fynd/date";
 import { markAllRead, markRead } from "./actions";
+import { PushSetup } from "./PushSetup";
 
 export default async function NotificationsPage() {
   const supabase = await createClient();
@@ -23,6 +24,8 @@ export default async function NotificationsPage() {
 
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-4 px-4 py-6 lg:px-8 lg:py-8">
+      <PushSetup />
+
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-semibold">Notifikácie</h1>
         {unread > 0 && (
