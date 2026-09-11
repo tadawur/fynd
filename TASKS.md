@@ -217,6 +217,13 @@ Národná škála, viacero federácií (SZĽH, SBA, SZH, SAZ), Fynd Network — 
   nemá sieťový prístup na `registry.npmjs.org` na stiahnutie `@next/swc-linux-*` binárky (`node_modules`
   má len `darwin-arm64` z tvojho Macu). `npx tsc --noEmit` a `npm run lint` prešli čisto — over
   `npm run build` priamo u seba pred nasadením.
+- **Ikonka "Domov" v navigácii teraz reaguje na aktívnu sezónnu tému** (`seasonEmoji()` v `lib/fynd/season.ts`,
+  použité v `Sidebar.tsx` a `BottomNav.tsx`) — napr. pri Halloween téme sa namiesto ikony domčeka zobrazí 🎃.
+  Značka "Fynd" už nikdy nemá emoji priamo v nápise (pôsobilo to neupratane) — teraz je len "Fynd." s bodkou.
+- **Oprava neviditeľného pozadia ihriska (`PitchBackground`)** — wrapper `<div>` v `dashboard/layout.tsx` mal
+  `position: relative` bez vlastného `z-index`, takže nevytváral stacking context a `-z-10` vrstva s SVG
+  čiarami unikla za nepriehľadné pozadie `<body>`. Pridaný explicitný `z-0` na wrapper toto opravuje;
+  priehľadnosť SVG zvýšená 0.14 → 0.2 pre lepšiu viditeľnosť.
 
 ---
 

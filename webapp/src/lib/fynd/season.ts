@@ -55,3 +55,8 @@ export function seasonLabel(key: string | null | undefined): string {
 export function seasonDecor(key: string | null | undefined): string | undefined {
   return SEASONS.find((s) => s.key === key)?.decor;
 }
+
+/** Emoji danej témy (má ho úplne každá téma) — používa sa napr. na ikonku "Domov" v navigácii. */
+export function seasonEmoji(key: string | null | undefined): string {
+  return SEASONS.find((s) => s.key === key)?.emoji ?? SEASONS[0].emoji;
+}

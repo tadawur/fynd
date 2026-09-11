@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAV_ITEMS } from "./nav-items";
+import { seasonEmoji } from "@/lib/fynd/season";
 
-export function BottomNav() {
+export function BottomNav({ seasonTheme }: { seasonTheme?: string }) {
   const pathname = usePathname();
   const items = NAV_ITEMS.filter((i) => i.mobile);
+  const homeEmoji = seasonEmoji(seasonTheme);
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-20 flex border-t border-line bg-surface/95 backdrop-blur lg:hidden">
@@ -15,6 +17,7 @@ export function BottomNav() {
           item.href === "/dashboard"
             ? pathname === "/dashboard"
             : pathname.startsWith(item.href);
+        const isHome = item.href === "/dashboard";
         const Icon = item.icon;
         return (
           <Link
@@ -25,7 +28,13 @@ export function BottomNav() {
               (active ? "text-green" : "text-muted")
             }
           >
-            <Icon className={"h-5 w-5 " + (active ? "opacity-100" : "opacity-70")} />
+            {isHome ? (
+              <span className={"text-base leading-5 " + (active ? "opacity-100" : "opacity-70")} aria-hidden>
+                {homeEmoji}
+              </span>
+            ) : (
+              <Icon className={"h-5 w-5 " + (active ? "opacity-100" : "opacity-70")} />
+            )}
             {item.label}
           </Link>
         );

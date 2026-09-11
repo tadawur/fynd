@@ -5,20 +5,17 @@ import { usePathname } from "next/navigation";
 import { NAV_ITEMS } from "./nav-items";
 import { FutbotMark } from "@/components/icons/FutbotMark";
 import { IconBell, IconStar } from "@/components/icons/BrandIcons";
+import { seasonEmoji } from "@/lib/fynd/season";
 
-export function Sidebar({ seasonDecor }: { seasonDecor?: string }) {
+export function Sidebar({ seasonTheme }: { seasonTheme?: string }) {
   const pathname = usePathname();
+  const homeEmoji = seasonEmoji(seasonTheme);
 
   return (
     <aside className="hidden w-60 shrink-0 flex-col gap-1 border-r border-line bg-surface p-4 lg:flex">
       <Link href="/dashboard" className="mb-6 flex items-center gap-2.5 px-2">
         <FutbotMark size={32} />
-        <span className="font-display text-lg font-bold tracking-tight">Fynd</span>
-        {seasonDecor && (
-          <span className="text-lg" aria-hidden>
-            {seasonDecor}
-          </span>
-        )}
+        <span className="font-display text-lg font-bold tracking-tight">Fynd.</span>
       </Link>
 
       {NAV_ITEMS.map((item) => {
@@ -26,6 +23,7 @@ export function Sidebar({ seasonDecor }: { seasonDecor?: string }) {
           item.href === "/dashboard"
             ? pathname === "/dashboard"
             : pathname.startsWith(item.href);
+        const isHome = item.href === "/dashboard";
         const Icon = item.icon;
         return (
           <Link
@@ -38,7 +36,16 @@ export function Sidebar({ seasonDecor }: { seasonDecor?: string }) {
                 : "text-muted hover:bg-card/60 hover:text-fg")
             }
           >
-            <Icon className={"h-5 w-5 shrink-0 " + (active ? "opacity-100" : "opacity-70")} />
+            {isHome ? (
+              <span
+                className={"flex h-5 w-5 shrink-0 items-center justify-center text-base " + (active ? "opacity-100" : "opacity-70")}
+                aria-hidden
+              >
+                {homeEmoji}
+              </span>
+            ) : (
+              <Icon className={"h-5 w-5 shrink-0 " + (active ? "opacity-100" : "opacity-70")} />
+            )}
             {item.label}
           </Link>
         );

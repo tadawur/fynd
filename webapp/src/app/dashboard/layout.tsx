@@ -6,7 +6,6 @@ import { BottomNav } from "@/components/nav/BottomNav";
 import { FutbotMark } from "@/components/icons/FutbotMark";
 import { IconBell } from "@/components/icons/BrandIcons";
 import { Avatar } from "@/components/Avatar";
-import { seasonDecor } from "@/lib/fynd/season";
 import { PitchBackground } from "@/components/PitchBackground";
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
@@ -38,24 +37,21 @@ export default async function DashboardLayout({ children }: { children: React.Re
 
   const seasonTheme = (profile as { season_theme?: string }).season_theme ?? "default";
   const colorMode = (profile as { color_mode?: string }).color_mode ?? "dark";
-  const decor = seasonDecor(seasonTheme);
-
   return (
     <div
-      className="relative flex min-h-dvh overflow-hidden bg-ink text-fg"
+      className="relative z-0 flex min-h-dvh overflow-hidden bg-ink text-fg"
       data-season={seasonTheme}
       data-mode={colorMode}
       style={{ colorScheme: colorMode }}
     >
       <PitchBackground />
-      <Sidebar seasonDecor={decor} />
+      <Sidebar seasonTheme={seasonTheme} />
 
       <div className="flex min-h-dvh flex-1 flex-col">
         <header className="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-ink/90 px-4 py-3 backdrop-blur lg:px-8">
           <Link href="/dashboard" className="flex items-center gap-2 lg:hidden">
             <FutbotMark size={24} />
-            <span className="font-display font-bold">Fynd</span>
-            {decor && <span aria-hidden>{decor}</span>}
+            <span className="font-display font-bold">Fynd.</span>
           </Link>
           <span className="hidden text-sm text-muted lg:inline">
             Vitaj, {profile.full_name}
@@ -95,7 +91,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
         <main className="flex-1 pb-20 lg:pb-8">{children}</main>
       </div>
 
-      <BottomNav />
+      <BottomNav seasonTheme={seasonTheme} />
     </div>
   );
 }
