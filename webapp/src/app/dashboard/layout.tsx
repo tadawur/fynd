@@ -41,7 +41,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
 
   return (
     <div
-      className="flex min-h-dvh"
+      className="flex min-h-dvh bg-ink text-fg"
       data-season={seasonTheme}
       data-mode={colorMode}
       style={{ colorScheme: colorMode }}
