@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
+import { IconChat, IconWhistle, IconShield, IconMegaphone } from "@/components/icons/BrandIcons";
 
-const KIND_ICON: Record<string, string> = {
-  category: "💬",
-  coaches: "🧑‍🏫",
-  management: "🏛️",
-  marketing: "📢",
+const KIND_ICON: Record<string, typeof IconChat> = {
+  category: IconChat,
+  coaches: IconWhistle,
+  management: IconShield,
+  marketing: IconMegaphone,
 };
 
 export default async function ChatListPage() {
@@ -29,7 +30,10 @@ export default async function ChatListPage() {
             href={`/dashboard/chat/${c.id}`}
             className="flex items-center gap-3 rounded-2xl border border-line bg-surface p-4 hover:bg-card"
           >
-            <span className="text-xl">{KIND_ICON[c.kind] ?? "💬"}</span>
+            {(() => {
+              const Icon = KIND_ICON[c.kind] ?? IconChat;
+              return <Icon className="h-6 w-6 shrink-0" />;
+            })()}
             <div>
               <p className="font-medium">{c.name}</p>
               <p className="text-sm text-muted">

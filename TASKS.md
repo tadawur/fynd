@@ -165,7 +165,11 @@ Národná škála, viacero federácií (SZĽH, SBA, SZH, SAZ), Fynd Network — 
 - **Systémový font stack namiesto Google Fonts** — build prostredie nemalo prístup na
   `fonts.googleapis.com`. Zatiaľ neplatí pre "Space Grotesk"/"Nunito" z `docs/branding.md` — CSS na ne
   odkazuje s fallbackom, no fonty samotné nie sú lokálne pribalené.
-- **Placeholder ikony/maskot** — nahradiť skutočným Futbot maskotom keď bude k dispozícii.
+- **Vizuál appky napojený na skutočné brand assety** — nav ikony (`Sidebar`, `BottomNav`), PWA ikony
+  (`icon-32/192/512`, `icon-512-maskable`, `apple-touch-icon`, `favicon.ico`) aj logomark na landing
+  stránke a v hlavičkách teraz vychádzajú zo `site/favicon.svg` (Futbot maskot) a `site/icon-set.html`
+  (34-icon brand sada) — `webapp/src/components/icons/{FutbotMark,BrandIcons}.tsx`. Emoji ostali len
+  v drobnom obsahovom kontexte (nastavenia notifikácií, event feed zápasu), nie v navigácii/branding.
 - **U9 chat pravidlo presadené v RLS, nie len v UI** (`can_access_chat_channel()`) — child-safety
   pravidlo z `docs/chat-permissions.md` nesmie závisieť len od toho, čo appka zobrazí.
 - **Karty vo Fynd (žltá/červená) majú predvolené XP penalizácie −20/−50** — `docs/xp-system.md`

@@ -1,12 +1,11 @@
 import Link from "next/link";
+import { FutbotMark } from "@/components/icons/FutbotMark";
 
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-8 px-6 py-24 text-center">
       <div className="flex items-center gap-3">
-        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-ink ring-1 ring-line">
-          <div className="h-3 w-8 rounded-full bg-green" />
-        </div>
+        <FutbotMark size={56} className="rounded-2xl ring-1 ring-line" />
         <span className="text-2xl font-semibold tracking-tight">Fynd</span>
       </div>
 

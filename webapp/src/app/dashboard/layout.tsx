@@ -3,6 +3,8 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { Sidebar } from "@/components/nav/Sidebar";
 import { BottomNav } from "@/components/nav/BottomNav";
+import { FutbotMark } from "@/components/icons/FutbotMark";
+import { IconBell } from "@/components/icons/BrandIcons";
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createClient();
@@ -38,7 +40,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
       <div className="flex min-h-dvh flex-1 flex-col">
         <header className="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-ink/90 px-4 py-3 backdrop-blur lg:px-8">
           <Link href="/dashboard" className="flex items-center gap-2 lg:hidden">
-            <span className="h-2 w-2 rounded-full bg-green" />
+            <FutbotMark size={24} />
             <span className="font-display font-bold">Fynd</span>
           </Link>
           <span className="hidden text-sm text-muted lg:inline">
@@ -51,7 +53,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
               className="relative flex h-9 w-9 items-center justify-center rounded-full border border-line text-base"
               aria-label="Notifikácie"
             >
-              🔔
+              <IconBell className="h-5 w-5" />
               {!!unreadCount && (
                 <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-coral px-1 text-[10px] font-bold text-ink">
                   {unreadCount}

@@ -15,6 +15,7 @@ export function BottomNav() {
           item.href === "/dashboard"
             ? pathname === "/dashboard"
             : pathname.startsWith(item.href);
+        const Icon = item.icon;
         return (
           <Link
             key={item.href}
@@ -24,7 +25,7 @@ export function BottomNav() {
               (active ? "text-green" : "text-muted")
             }
           >
-            <span className="text-lg leading-none">{item.icon}</span>
+            <Icon className={"h-5 w-5 " + (active ? "opacity-100" : "opacity-70")} />
             {item.label}
           </Link>
         );

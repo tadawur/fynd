@@ -5,6 +5,7 @@ import { StreakGrid, type StreakDay } from "@/components/StreakGrid";
 import { levelProgress } from "@/lib/fynd/xp";
 import { startOfWeek, addDays, isSameDay, formatDateTimeSk } from "@/lib/fynd/date";
 import { logout } from "./actions";
+import { IconMatches, IconGift, IconTrophy, IconMegaphone } from "@/components/icons/BrandIcons";
 
 const DAY_LABELS = ["Po", "Ut", "St", "Št", "Pi", "So", "Ne"];
 
@@ -154,8 +155,9 @@ export default async function DashboardPage() {
         {recentAnnouncements && recentAnnouncements.length > 0 ? (
           <ul className="flex flex-col gap-2">
             {recentAnnouncements.map((a) => (
-              <li key={a.id} className="text-sm text-muted">
-                📣 {a.title}
+              <li key={a.id} className="flex items-center gap-2 text-sm text-muted">
+                <IconMegaphone className="h-4 w-4 shrink-0" />
+                {a.title}
               </li>
             ))}
           </ul>
@@ -165,14 +167,26 @@ export default async function DashboardPage() {
       </div>
 
       <div className="grid grid-cols-3 gap-3 text-center text-sm">
-        <Link href="/dashboard/matches" className="rounded-xl border border-line bg-surface py-4">
-          ⚽<br />Zápasy
+        <Link
+          href="/dashboard/matches"
+          className="flex flex-col items-center gap-1.5 rounded-xl border border-line bg-surface py-4"
+        >
+          <IconMatches className="h-6 w-6" />
+          Zápasy
         </Link>
-        <Link href="/dashboard/rewards" className="rounded-xl border border-line bg-surface py-4">
-          🎁<br />Odmeňovňa
+        <Link
+          href="/dashboard/rewards"
+          className="flex flex-col items-center gap-1.5 rounded-xl border border-line bg-surface py-4"
+        >
+          <IconGift className="h-6 w-6" />
+          Odmeňovňa
         </Link>
-        <Link href="/dashboard/leaderboards" className="rounded-xl border border-line bg-surface py-4">
-          🏆<br />Rebríčky
+        <Link
+          href="/dashboard/leaderboards"
+          className="flex flex-col items-center gap-1.5 rounded-xl border border-line bg-surface py-4"
+        >
+          <IconTrophy className="h-6 w-6" />
+          Rebríčky
         </Link>
       </div>
     </div>

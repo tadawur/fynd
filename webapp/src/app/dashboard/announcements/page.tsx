@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { formatDateTimeSk } from "@/lib/fynd/date";
 import { NewAnnouncementForm } from "./NewAnnouncementForm";
+import { IconMegaphone } from "@/components/icons/BrandIcons";
 
 export default async function AnnouncementsPage() {
   const supabase = await createClient();
@@ -61,7 +62,10 @@ export default async function AnnouncementsPage() {
               </span>
               <span>{formatDateTimeSk(a.created_at)}</span>
             </div>
-            <p className="font-medium">📣 {a.title}</p>
+            <p className="flex items-center gap-2 font-medium">
+              <IconMegaphone className="h-4 w-4 shrink-0" />
+              {a.title}
+            </p>
             <p className="mt-1 text-sm text-muted">{a.body}</p>
           </div>
         ))}
